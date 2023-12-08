@@ -1,12 +1,12 @@
 import { ReactNode } from 'react'
 
-import { $theme } from '@/features/select-color-theme/model/selectColorTheme'
-import { GlobalStyles } from '@/shared/theme/global'
+import { selectColorThemeModel } from '@/features/select-color-theme'
+import { GlobalStyles } from '@/shared/theme'
 import { useStore } from '@nanostores/react'
 import { ThemeProvider } from 'styled-components'
 
 export const withTheme = (children: () => ReactNode) => () => {
-  const theme = useStore($theme)
+  const theme = useStore(selectColorThemeModel.$theme)
 
   return (
     <ThemeProvider theme={theme}>

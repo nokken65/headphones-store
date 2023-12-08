@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ColorThemeSelector } from '@/features/select-color-theme/ui/ColorThemeSelector'
+import { ColorThemeSelector } from '@/features/select-color-theme'
 import { styled } from 'styled-components'
 
 import { withProviders } from './providers'

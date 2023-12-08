@@ -1,8 +1,8 @@
 import { styled } from 'styled-components'
 
-import './App.css'
+import { withProviders } from './providers'
 
-function App() {
+const _App = () => {
   return (
     <div className={'App'}>
       <Title>Headphones Store</Title>
@@ -10,11 +10,9 @@ function App() {
   )
 }
 
-export default App
+export const App = withProviders(_App)
 
 const Title = styled.h1`
-  font-size: 1.5em;
   text-align: center;
   margin-bottom: 32px;
-  color: #d16b8d;
 `

@@ -1,16 +1,15 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
-import { dark } from '@/shared/theme/dark'
+import { $theme } from '@/features/select-color-theme/model/selectColorTheme'
 import { GlobalStyles } from '@/shared/theme/global'
-import { light } from '@/shared/theme/light'
+import { useStore } from '@nanostores/react'
 import { ThemeProvider } from 'styled-components'
 
 export const withTheme = (children: () => ReactNode) => () => {
-  const [theme, setTheme] = React.useState('light')
+  const theme = useStore($theme)
 
   return (
-    <ThemeProvider theme={theme === 'light' ? light : dark}>
-      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>toggle theme</button>
+    <ThemeProvider theme={theme}>
       {children()}
       <GlobalStyles />
     </ThemeProvider>

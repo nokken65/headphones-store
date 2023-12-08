@@ -18,6 +18,8 @@ type Color =
     }
   | string
 
+type ThemeNames = 'auto' | 'dark' | 'light'
+
 type Theme = {
   colors?: {
     accent?: Color
@@ -49,4 +51,4 @@ type Theme = {
   }
 }
 
-export type { Color, ColorNames, Theme }
+export type { Color, ColorNames, Theme, ThemeNames }

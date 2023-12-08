@@ -1,3 +1,6 @@
+import React from 'react'
+
+import { ColorThemeSelector } from '@/features/select-color-theme/ui/ColorThemeSelector'
 import { styled } from 'styled-components'
 
 import { withProviders } from './providers'
@@ -6,6 +9,7 @@ const _App = () => {
   return (
     <div className={'App'}>
       <Title>Headphones Store</Title>
+      <ColorThemeSelector />
     </div>
   )
 }

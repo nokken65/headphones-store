@@ -3,6 +3,7 @@ import { styled } from 'styled-components'
 const Section = styled.div(({ theme }) => ({
   alignItems: 'flex-start',
   display: 'flex',
+  flexDirection: 'column',
   gap: theme.spacing['2xl'],
   height: '100%',
   justifyContent: 'space-between',

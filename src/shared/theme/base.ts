@@ -1,11 +1,12 @@
 import { Theme } from './types'
 
-const base: Theme = {
+const base: Omit<Theme, 'colors'> = {
   defaultRadius: 'md',
   defaultSpacing: 'md',
   fontFamily: `Rubik,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif`,
   fontSize: '16px',
   radius: {
+    '2xl': '32px',
     full: '100%',
     lg: '16px',
     md: '12px',

@@ -7,7 +7,7 @@ import { Theme } from './types'
 const dark: Theme = {
   ...base,
   colors: {
-    accent: colors.red,
+    accent: colors.red.DEFAULT,
     background: colors.grey[600],
     text: colors.grey[50],
     textInvert: colors.grey[900],

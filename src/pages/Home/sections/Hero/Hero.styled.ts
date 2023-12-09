@@ -9,12 +9,12 @@ const mapper: Record<AccentColorNames, string> = {
 }
 
 type HeroProps = {
-  accentColor: AccentColorNames
+  $accentColor: AccentColorNames
 }
 
-const Hero = styled(Section)<HeroProps>(({ accentColor }) => ({
+const Hero = styled(Section)<HeroProps>(props => ({
   '::before': {
-    background: mapper[accentColor],
+    background: mapper[props.$accentColor],
     bottom: 0,
     content: '""',
     height: '100%',

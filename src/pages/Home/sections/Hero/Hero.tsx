@@ -10,7 +10,7 @@ type HeroProps = React.PropsWithChildren
 const Hero = ({ children }: HeroProps) => {
   const accentColor = useStore(selectAccentColorModel.$accentColor)
 
-  return <S.Hero accentColor={accentColor}>{children}</S.Hero>
+  return <S.Hero $accentColor={accentColor}>{children}</S.Hero>
 }
 
 export { Hero }

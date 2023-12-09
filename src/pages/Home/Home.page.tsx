@@ -1,8 +1,10 @@
 import { ColorThemeSelector } from '@/features/select-color-theme'
 import { styled } from 'styled-components'
 
+import { Features } from './sections/Features'
 import { Hero } from './sections/Hero'
 import { LatestCollection } from './sections/LatestCollection'
+import { Subscribe } from './sections/Subscribe'
 
 const Home = () => {
   return (
@@ -11,9 +13,17 @@ const Home = () => {
         <ColorThemeSelector />
       </Hero>
       <LatestCollection>
-        <Title>latest Collection</Title>
+        <Title>latest collection</Title>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, enim?</p>
       </LatestCollection>
+      <Features>
+        <Title>features</Title>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, enim?</p>
+      </Features>
+      <Subscribe>
+        <Title>features</Title>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, enim?</p>
+      </Subscribe>
     </>
   )
 }

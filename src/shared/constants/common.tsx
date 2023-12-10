@@ -5,6 +5,8 @@ import sunIconId from '@/assets/images/svg/sun.svg'
 import { blueGradient, colors, cyanGradient, dark, light, redGradient } from '../theme'
 import { AccentColorNames, Theme, ThemeNames } from '../theme/types'
 
+const HEADER_HEIGHT: number = 48 as const
+
 const THEME_NAMES: ThemeNames[] = ['light', 'dark', 'auto'] as const
 
 const THEME_MAP: Record<ThemeNames, Theme> = {
@@ -43,4 +45,11 @@ const THEME_ICON_MAP: Record<ThemeNames, JSX.Element> = {
   ),
 } as const
 
-export { ACCENT_COLOR_GRADIENTS_MAP, ACCENT_COLOR_MAP, THEME_ICON_MAP, THEME_MAP, THEME_NAMES }
+export {
+  ACCENT_COLOR_GRADIENTS_MAP,
+  ACCENT_COLOR_MAP,
+  HEADER_HEIGHT,
+  THEME_ICON_MAP,
+  THEME_MAP,
+  THEME_NAMES,
+}

@@ -1,21 +1,19 @@
 import { styled } from 'styled-components'
 
 const Header = styled.header(props => ({
-  bottom: 0,
-  height: '62px',
   position: 'fixed',
+  bottom: 0,
   width: props.theme.spacing.full,
-  zIndex: 100,
-}))
-
-const Container = styled.div(props => ({
-  display: 'flex',
-  gap: props.theme.spacing.md,
-  height: props.theme.spacing.full,
-  justifyContent: 'space-between',
+  height: '48px',
   padding: props.theme.spacing.xs,
-  position: 'absolute',
-  width: props.theme.spacing.full,
+  zIndex: 100,
+  overflow: 'hidden',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  gap: props.theme.spacing.md,
+  transition: 'background-color 0.1s ease-in-out',
+  color: props.theme.colors.headerContent,
 }))
 
-export { Container, Header }
+export { Header }

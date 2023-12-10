@@ -1,5 +1,3 @@
-/* eslint sort-keys: 0 */
-
 import { base } from './base'
 import { colors } from './colors'
 import { Theme } from './types'

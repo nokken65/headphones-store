@@ -1,5 +1,3 @@
-import { KeyOf } from '../types/utils'
-
 type ColorNames = 'blue' | 'cyan' | 'grey' | 'red'
 
 type Color = {
@@ -27,8 +25,6 @@ type Theme = {
     text: string
     textInvert: string
   }
-  defaultRadius: KeyOf<Theme['radius']>
-  defaultSpacing: KeyOf<Theme['spacing']>
   fontFamily: string
   fontSize: string
   radius: {

@@ -1,16 +1,18 @@
-import { ColorThemeSelector } from '@/features/select-color-theme'
+import React from 'react'
+
+import { Features } from '@/widgets/sections/Features'
+import { Hero } from '@/widgets/sections/Hero'
+import { LatestCollection } from '@/widgets/sections/LatestCollection'
+import { Subscribe } from '@/widgets/sections/Subscribe'
 import { styled } from 'styled-components'
 
-import { Features } from './sections/Features'
-import { Hero } from './sections/Hero'
-import { LatestCollection } from './sections/LatestCollection'
-import { Subscribe } from './sections/Subscribe'
+import { DefaultLayout } from '../layouts/Default'
 
-const Home = () => {
+const _Home = () => {
   return (
-    <>
+    <DefaultLayout>
       <Hero>
-        <ColorThemeSelector />
+        <p>sds</p>
       </Hero>
       <LatestCollection>
         <Title>latest collection</Title>
@@ -21,10 +23,10 @@ const Home = () => {
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, enim?</p>
       </Features>
       <Subscribe>
-        <Title>features</Title>
+        <Title>subscribe</Title>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, enim?</p>
       </Subscribe>
-    </>
+    </DefaultLayout>
   )
 }
 
@@ -34,4 +36,4 @@ const Title = styled.h1`
   margin-bottom: 32px;
 `
 
-export { Home }
+export const Home = React.memo(_Home)

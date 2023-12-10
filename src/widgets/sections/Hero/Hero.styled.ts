@@ -1,12 +1,8 @@
-import { Section } from '@/shared/components/Section'
-import { type AccentColorNames, blueGradient, cyanGradient, redGradient } from '@/shared/theme'
-import { styled } from 'styled-components'
+import type { AccentColorNames } from '@/shared/theme'
 
-const mapper: Record<AccentColorNames, string> = {
-  blue: blueGradient,
-  cyan: cyanGradient,
-  red: redGradient,
-}
+import { Section } from '@/shared/components/Section'
+import { ACCENT_COLOR_GRADIENTS_MAP } from '@/shared/constants'
+import { styled } from 'styled-components'
 
 type HeroProps = {
   $accentColor: AccentColorNames
@@ -14,7 +10,7 @@ type HeroProps = {
 
 const Hero = styled(Section)<HeroProps>(props => ({
   '::before': {
-    background: mapper[props.$accentColor],
+    background: ACCENT_COLOR_GRADIENTS_MAP[props.$accentColor],
     bottom: 0,
     content: '""',
     height: '100%',

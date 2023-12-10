@@ -9,6 +9,7 @@ const dark: Theme = {
     background: colors.grey[600],
     text: colors.grey[50],
     textInvert: colors.grey[900],
+    headerContent: colors.grey[900],
   },
 }
 

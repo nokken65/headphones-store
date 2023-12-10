@@ -22,6 +22,7 @@ type Theme = {
   colors: {
     accent: string
     background: string
+    headerContent: string
     text: string
     textInvert: string
   }

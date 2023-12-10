@@ -9,6 +9,7 @@ const light: Theme = {
     background: colors.grey[50],
     text: colors.grey[900],
     textInvert: colors.grey[50],
+    headerContent: colors.grey[900],
   },
 }
 

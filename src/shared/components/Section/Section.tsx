@@ -1,17 +1,21 @@
-import { styled } from 'styled-components'
+import React from 'react'
 
-const Section = styled.div(({ theme }) => ({
-  alignItems: 'flex-start',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: theme.spacing['2xl'],
-  height: '100%',
-  justifyContent: 'space-between',
-  minHeight: '100vh',
-  minWidth: '100%',
-  overflow: 'hidden',
-  padding: theme.spacing['2xl'],
-  width: '100%',
-}))
+import { Content } from './Content'
+import { Heading } from './Heading'
+import * as S from './Section.styled'
+import { SectionContext } from './SectionContext'
+
+type SectionProps = React.ComponentPropsWithoutRef<typeof S.Section>
+
+const Section = ({ children, ...props }: SectionProps) => {
+  return (
+    <SectionContext.Provider value={{}}>
+      <S.Section {...props}>{children}</S.Section>
+    </SectionContext.Provider>
+  )
+}
+
+Section.Heading = Heading
+Section.Content = Content
 
 export { Section }

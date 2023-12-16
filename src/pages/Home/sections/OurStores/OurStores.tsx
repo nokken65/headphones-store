@@ -1,13 +1,13 @@
 import React from 'react'
 
-import * as S from './OurStores.styled'
+import { Section } from '@/shared/components/Section'
 
 const _OurStores = () => {
   return (
-    <S.Section>
-      <S.Section.Heading hidden title={'Our stores'} />
+    <Section>
+      <h2 hidden>Our stores</h2>
       content
-    </S.Section>
+    </Section>
   )
 }
 

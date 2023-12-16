@@ -1,12 +1,11 @@
 import React from 'react'
 
 import image from '@/assets/images/headphones_1.png'
-
-import * as S from './Hero.styled'
+import { Section } from '@/shared/components/Section'
 
 const _Hero = () => {
   return (
-    <S.Section>
+    <Section>
       <div
         style={{
           width: '50%',
@@ -103,7 +102,7 @@ const _Hero = () => {
           Buy now
         </button>
       </div>
-    </S.Section>
+    </Section>
   )
 }
 

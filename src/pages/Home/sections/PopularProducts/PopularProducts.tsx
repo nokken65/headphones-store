@@ -1,13 +1,13 @@
 import React from 'react'
 
-import * as S from './PopularProducts.styled'
+import { Section } from '@/shared/components/Section'
 
 const _PopularProducts = () => {
   return (
-    <S.Section>
-      <S.Section.Heading title={'Popular products'} />
+    <Section>
+      <h2>Popular products</h2>
       content
-    </S.Section>
+    </Section>
   )
 }
 

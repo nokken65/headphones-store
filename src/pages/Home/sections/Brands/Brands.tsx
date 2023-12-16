@@ -2,13 +2,14 @@ import React from 'react'
 
 import beatsaudioSrc from '@/assets/images/brands/beatsaudio.png'
 import { Marquee } from '@/shared/components/Marquee'
+import { Section } from '@/shared/components/Section'
 
 import * as S from './Brands.styled'
 
 const _Subscribe = () => {
   return (
-    <S.Section>
-      <S.Section.Heading title={'Brands'} />
+    <Section>
+      <h2>Brands</h2>
       <Marquee
         items={[
           beatsaudioSrc,
@@ -28,7 +29,7 @@ const _Subscribe = () => {
           </S.Item>
         ))}
       />
-    </S.Section>
+    </Section>
   )
 }
 

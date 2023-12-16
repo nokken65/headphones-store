@@ -1,18 +1,15 @@
-import { Section as BaseSection, SectionStyled } from '@/shared/components/Section'
+import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
 const Section = styled(BaseSection)`
   background-color: ${({ theme }) => theme.colors.backgroundPale};
-
-  padding: 48px;
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: 1fr 1fr;
   column-gap: 0;
 
-  ${SectionStyled.Heading} {
+  & > h2 {
     grid-column: 1 / 3;
-    padding: 0;
   }
 `
 

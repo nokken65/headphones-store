@@ -56,47 +56,45 @@ const CONTACTS_LIST = {
 const _Footer = () => {
   return (
     <S.Footer>
-      <S.Content>
-        <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items}>
-          {item => <a href={'#'}>{item}</a>}
-        </NavigationSection>
-        <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items}>
-          {item => <a href={'#'}>{item}</a>}
-        </NavigationSection>
-        <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items}>
-          {item => <a href={'#'}>{item}</a>}
-        </NavigationSection>
-        <NavigationSection heading={CONTACTS_LIST.heading} items={CONTACTS_LIST.items}>
-          {item => (typeof item === 'string' ? <a href={'tel:#'}>{item}</a> : item)}
-        </NavigationSection>
-        <S.SocialsList>
-          <li>
-            <a href={'#'}>
-              <Icon height={32} id={telegramIconId} width={32} />
-            </a>
-          </li>
-          <li>
-            <a href={'#'}>
-              <Icon height={32} id={youtubeIconId} width={32} />
-            </a>
-          </li>
-          <li>
-            <a href={'#'}>
-              <Icon height={32} id={facebookIconId} width={32} />
-            </a>
-          </li>
-          <li>
-            <a href={'#'}>
-              <Icon height={32} id={twitterIconId} width={32} />
-            </a>
-          </li>
-          <li>
-            <a href={'#'}>
-              <Icon height={32} id={instagramIconId} width={32} />
-            </a>
-          </li>
-        </S.SocialsList>
-      </S.Content>
+      <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items}>
+        {item => <a href={'#'}>{item}</a>}
+      </NavigationSection>
+      <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items}>
+        {item => <a href={'#'}>{item}</a>}
+      </NavigationSection>
+      <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items}>
+        {item => <a href={'#'}>{item}</a>}
+      </NavigationSection>
+      <NavigationSection heading={CONTACTS_LIST.heading} items={CONTACTS_LIST.items}>
+        {item => (typeof item === 'string' ? <a href={'tel:#'}>{item}</a> : item)}
+      </NavigationSection>
+      <S.SocialsList>
+        <li>
+          <a href={'#'}>
+            <Icon height={32} id={telegramIconId} width={32} />
+          </a>
+        </li>
+        <li>
+          <a href={'#'}>
+            <Icon height={32} id={youtubeIconId} width={32} />
+          </a>
+        </li>
+        <li>
+          <a href={'#'}>
+            <Icon height={32} id={facebookIconId} width={32} />
+          </a>
+        </li>
+        <li>
+          <a href={'#'}>
+            <Icon height={32} id={twitterIconId} width={32} />
+          </a>
+        </li>
+        <li>
+          <a href={'#'}>
+            <Icon height={32} id={instagramIconId} width={32} />
+          </a>
+        </li>
+      </S.SocialsList>
       <S.Copyright>© 2022, All rights reserved</S.Copyright>
     </S.Footer>
   )

@@ -5,7 +5,7 @@ import * as S from './UsefulInformation.styled'
 const _UsefulInformation = () => {
   return (
     <S.Section>
-      <S.Section.Heading title={'Useful information'} />
+      <h2>Useful information</h2>
       <nav>
         <S.List>
           <li>

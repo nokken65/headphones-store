@@ -15,4 +15,19 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  preview: { port: 3000 },
+  build: {
+    minify: false,
+    cssMinify: 'lightningcss',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'nanostores-vendor': ['nanostores', '@nanostores/persistent', '@nanostores/react'],
+          'styled-components-vendor': ['styled-components'],
+          'utils-vendor': ['ramda'],
+        },
+      },
+    },
+  },
 })

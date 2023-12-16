@@ -1,17 +1,31 @@
-import { Section } from '@/shared/components/Section'
-import { ACCENT_COLOR_MAP } from '@/shared/constants'
-import { AccentColorNames } from '@/shared/theme'
 import { styled } from 'styled-components'
 
-type FooterProps = {
-  $accentColor: AccentColorNames
-}
+const Footer = styled.footer(({ theme }) => ({
+  padding: '4rem 4rem 1.5rem',
+  color: theme.colors.textInvert,
 
-const Footer = styled.footer<FooterProps>(props => ({
-  backgroundColor: ACCENT_COLOR_MAP[props.$accentColor],
-  height: '320px',
-  maxHeight: '320px',
-  paddingBottom: '62px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '3rem',
 }))
 
-export { Footer }
+const Content = styled.div(() => ({
+  width: '100%',
+  display: 'flex',
+  gap: '4rem',
+}))
+
+const SocialsList = styled.ul(() => ({
+  marginLeft: 'auto',
+
+  '& li:not(:last-of-type)': {
+    marginBottom: '1rem',
+  },
+}))
+
+const Copyright = styled.small(() => ({
+  fontWeight: 500,
+}))
+
+export { Content, Copyright, Footer, SocialsList }

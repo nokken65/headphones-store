@@ -1,9 +1,11 @@
-import { Home } from '@/pages/Home'
+import { Routing } from '@/pages/Routing'
 
 import { withProviders } from './providers'
 
 const _App = () => {
-  return <Home />
+  return <Routing />
 }
 
-export const App = withProviders(_App)
+const App = withProviders(_App)
+
+export { App }

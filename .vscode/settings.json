@@ -1,16 +1,23 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
-  "stylelint.validate": ["css", "scss"],
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll": true
   },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
   "files.associations": {
     "*.svg": "html"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"

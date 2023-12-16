@@ -12,6 +12,7 @@ const _Header = () => {
       <Background />
       <Button style={{ height: '48px', width: '48px' }}>{'en'}</Button>
       <ColorThemeSelector />
+      <Button style={{ height: '48px', width: '48px' }}>{'en'}</Button>
     </S.Header>
   )
 }

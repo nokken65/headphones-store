@@ -7,9 +7,14 @@ const dark: Theme = {
   colors: {
     accent: colors.red.DEFAULT,
     background: colors.grey[600],
+    backgroundPale: colors.grey[700],
     text: colors.grey[50],
     textInvert: colors.grey[900],
-    headerContent: colors.grey[900],
+    backgroundImageFallback: '#282536',
+    link: colors.blue[500],
+    textPale: colors.grey[300],
+    cardBackground: colors.grey[700],
+    cardBorder: colors.grey[600],
   },
 }
 

@@ -1,12 +1,12 @@
+import { HEADER_HEIGHT } from '@/shared/constants'
 import { styled } from 'styled-components'
 
 const Header = styled.header(props => ({
   position: 'fixed',
   bottom: 0,
   width: props.theme.spacing.full,
-  height: '48px',
-  padding: props.theme.spacing.xs,
-  zIndex: 100,
+  height: `${HEADER_HEIGHT}px`,
+  zIndex: 1000,
   overflow: 'hidden',
   display: 'flex',
   justifyContent: 'space-between',

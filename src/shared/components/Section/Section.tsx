@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { Content } from './Content'
 import { Heading } from './Heading'
 import * as S from './Section.styled'
 import { SectionContext } from './SectionContext'
@@ -16,6 +15,5 @@ const Section = ({ children, ...props }: SectionProps) => {
 }
 
 Section.Heading = Heading
-Section.Content = Content
 
 export { Section }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { Button } from '@/shared/components/Button'
 import { THEME_ICON_MAP, THEME_NAMES } from '@/shared/constants'
+import { colors, light } from '@/shared/theme'
 import { ThemeNames } from '@/shared/theme/types'
 import {
   FloatingPortal,
@@ -14,6 +15,7 @@ import {
 } from '@floating-ui/react'
 import { useStore } from '@nanostores/react'
 
+import { selectColorThemeModel } from '..'
 import { $themeName } from '../model/selectColorTheme'
 
 export const ColorThemeSelector = () => {
@@ -25,9 +27,20 @@ export const ColorThemeSelector = () => {
     open: isOpen,
     placement: 'top',
     strategy: 'fixed',
-    transform: true,
+    transform: false,
   })
-  const { isMounted, styles } = useTransitionStyles(context)
+
+  const { isMounted, styles } = useTransitionStyles(context, {
+    initial: {
+      transform: 'translateY(100%)',
+    },
+    close: {
+      transform: 'translateY(100%)',
+    },
+    open: {
+      transform: ' translateY(0)',
+    },
+  })
 
   const focus = useFocus(context)
   // const hover = useHover(context, { mouseOnly: true })
@@ -40,7 +53,7 @@ export const ColorThemeSelector = () => {
       <Button
         onClick={toggleIsOpen}
         ref={refs.setReference}
-        style={{ height: '48px', width: '48px' }}
+        style={{ height: '48px', width: '48px', backdropFilter: 'blur(10px)' }}
         {...getReferenceProps()}
       >
         {THEME_ICON_MAP[colorTheme]}
@@ -48,7 +61,19 @@ export const ColorThemeSelector = () => {
       {isMounted && (
         <div
           ref={refs.setFloating}
-          style={{ borderRadius: '12px', overflow: 'hidden', ...floatingStyles, ...styles }}
+          style={{
+            borderTopLeftRadius: '12px',
+            borderTopRightRadius: '12px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 0,
+            overflow: 'hidden',
+            zIndex: -10,
+            backdropFilter: 'blur(10px)',
+            // backgroundColor: light.colors.accent,
+            ...styles,
+            ...floatingStyles,
+          }}
           {...getFloatingProps()}
         >
           {THEME_NAMES.filter(t => t !== colorTheme).map(theme => (
@@ -59,6 +84,7 @@ export const ColorThemeSelector = () => {
                 backgroundColor: 'var(--header-block-background-color)',
                 height: '48px',
                 width: '48px',
+                // zIndex: -1,
               }}
             >
               {THEME_ICON_MAP[theme]}

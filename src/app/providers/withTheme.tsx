@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 import { selectColorThemeModel } from '@/features/select-color-theme'
-import { GlobalStyles } from '@/shared/theme'
+import { GlobalStyles } from '@/shared/theme/global'
 import { useStore } from '@nanostores/react'
 import { ThemeProvider } from 'styled-components'
 

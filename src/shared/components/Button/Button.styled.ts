@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 
 const Button = styled.button(props => ({
   alignItems: 'center',
-  background: 'unset',
+  backgroundColor: 'transparent',
   border: 'none',
   color: 'inherit',
   cursor: 'pointer',
@@ -11,9 +11,17 @@ const Button = styled.button(props => ({
   fontWeight: 'bold',
   justifyContent: 'center',
   outline: 'unset',
-  padding: props.theme.spacing.md,
-}))
+  // padding: props.theme.spacing.md,
 
-const a = light.spacing.md
+  ':hover': {
+    backgroundColor: props.theme.colors.accent,
+  },
+
+  '& svg': {
+    width: '100%',
+    height: '100%',
+    padding: props.theme.spacing.md,
+  },
+}))
 
 export { Button }

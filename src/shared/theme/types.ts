@@ -1,5 +1,3 @@
-type ColorNames = 'blue' | 'cyan' | 'grey' | 'red'
-
 type Color = {
   '50': string
   '100': string
@@ -14,38 +12,54 @@ type Color = {
   DEFAULT: string
 }
 
-type AccentColorNames = 'blue' | 'cyan' | 'red'
+type ColorNames = 'blue' | 'grey' | 'red'
 
 type ThemeNames = 'auto' | 'dark' | 'light'
 
+type Px = `${number}px`
+type Rem = `${number}rem`
+type Em = `${number}em`
+type Percent = `${number}%`
+type Vw = `${number}vw`
+type Vh = `${number}vh`
+
+type Unit = Em | Percent | Px | Rem | Vh | Vw
+
 type Theme = {
   colors: {
-    accent: string
     background: string
-    headerContent: string
+    backgroundImageFallback: string
+    backgroundPale: string
     text: string
+    textPale: string
     textInvert: string
+    link: string
+    accent: string
+    cardBackground: string
+    cardBorder: string
   }
   fontFamily: string
-  fontSize: string
+  fontSize: Px
   radius: {
-    '2xl': string
-    full: string
-    lg: string
-    md: string
-    sm: string
-    xl: string
-    xs: string
+    xs: Unit
+    sm: Unit
+    md: Unit
+    lg: Unit
+    xl: Unit
+    '2xl': Unit
+    full: Percent
   }
   spacing: {
-    '2xl': string
-    full: string
-    lg: string
-    md: string
-    sm: string
-    xl: string
-    xs: string
+    xs: Unit
+    sm: Unit
+    md: Unit
+    lg: Unit
+    xl: Unit
+    '2xl': Unit
+    full: Percent
+    screenW: Vw
+    screenH: Vh
   }
 }
 
-export type { AccentColorNames, Color, ColorNames, Theme, ThemeNames }
+export type { Color, ColorNames, Theme, ThemeNames }

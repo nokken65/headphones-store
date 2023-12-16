@@ -7,9 +7,14 @@ const light: Theme = {
   colors: {
     accent: colors.red.DEFAULT,
     background: colors.grey[50],
+    backgroundPale: colors.grey[100],
     text: colors.grey[900],
     textInvert: colors.grey[50],
-    headerContent: colors.grey[900],
+    backgroundImageFallback: '#282536',
+    link: colors.blue[500],
+    textPale: colors.grey[400],
+    cardBackground: colors.grey[100],
+    cardBorder: colors.grey[200],
   },
 }
 

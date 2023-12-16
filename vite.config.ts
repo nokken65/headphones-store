@@ -5,12 +5,14 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [
+    tsconfigPaths(),
     react({ babel: { babelrc: true } }),
     createSvgSpritePlugin({
       symbolId: 'icon-[name]-[hash]',
     }),
-    tsconfigPaths(),
   ],
   publicDir: './public',
-  server: { port: 3000 },
+  server: {
+    port: 3000,
+  },
 })

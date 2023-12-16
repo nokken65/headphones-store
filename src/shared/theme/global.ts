@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { backgroundImageMixin } from './backgroundImageMixin'
+import { backgroundImage } from './mixins/backgroundImage'
+import { headings } from './mixins/headings'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -8,6 +9,8 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
+  ${headings}
 
   ul { list-style: none }
 
@@ -47,11 +50,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   #app-root {
-    width: ${({ theme }) => theme.spacing.full};
-    min-width: ${({ theme }) => theme.spacing.full};
-    height: ${({ theme }) => theme.spacing.full};
-    min-height: ${({ theme }) => theme.spacing.screenH};
-    ${backgroundImageMixin}
+    ${backgroundImage}
   }
 `
 

@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: inherit;
   }
 
-  ul { list-style: none }
+  ul,ol { list-style: none }
 
   a {
     text-decoration: none;

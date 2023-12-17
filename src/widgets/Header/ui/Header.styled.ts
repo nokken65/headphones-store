@@ -1,19 +1,21 @@
 import { HEADER_HEIGHT } from '@/shared/constants'
 import { styled } from 'styled-components'
 
-const Header = styled.header(props => ({
-  position: 'fixed',
-  bottom: 0,
-  width: props.theme.spacing.full,
-  height: `${HEADER_HEIGHT}px`,
-  zIndex: 1000,
-  overflow: 'hidden',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  gap: props.theme.spacing.md,
-  transition: 'background-color 0.1s ease-in-out',
-  color: props.theme.colors.headerContent,
-}))
+const Header = styled.header`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: ${HEADER_HEIGHT}px;
+  z-index: 1000;
+  // overflow: 'hidden',
+  padding: 0 3rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  // transition: 'background-color 0.1s ease-in-out',
+  color: ${({ theme }) => theme.colors.textContrast};
+`
 
 export { Header }

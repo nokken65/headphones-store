@@ -1,18 +1,30 @@
 import React from 'react'
 
-import { ColorThemeSelector } from '@/features/select-color-theme'
-import { Button } from '@/shared/components/Button'
+import searchIconId from '@/assets/images/svg/search.svg'
+import { CartIconLink } from '@/entities/Cart'
+import { ProfileIconLink } from '@/entities/Profile'
+import { WishlistIconLink } from '@/entities/Wishlist'
+import { CitySelector } from '@/features/select-city'
+import { ColorSchemeSelector } from '@/features/select-color-scheme'
+import { LanguageSelector } from '@/features/select-language'
+import { Icon } from '@/shared/components/Icon'
 
-import { Background } from './Backgroud'
 import * as S from './Header.styled'
 
 const _Header = () => {
   return (
     <S.Header>
-      <Background />
-      <Button style={{ height: '48px', width: '48px' }}>{'en'}</Button>
-      <ColorThemeSelector />
-      <Button style={{ height: '48px', width: '48px' }}>{'en'}</Button>
+      <LanguageSelector />
+      <CitySelector />
+      <ColorSchemeSelector />
+
+      <button style={{ marginLeft: 'auto' }}>
+        <Icon height={18} id={searchIconId} width={18} />
+      </button>
+
+      <WishlistIconLink />
+      <CartIconLink />
+      <ProfileIconLink />
     </S.Header>
   )
 }

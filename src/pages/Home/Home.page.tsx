@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Header } from '@/widgets/Header'
 import { Logo } from '@/widgets/Logo'
 
 import { DefaultLayout } from '../layouts/Default'
@@ -17,6 +18,7 @@ const _Home = () => {
   return (
     <DefaultLayout>
       <Logo />
+      <Header />
       <Hero />
       <PopularProducts />
       <Advantages />

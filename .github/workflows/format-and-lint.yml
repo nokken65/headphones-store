@@ -18,7 +18,6 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-<<<<<<< HEAD
           node-version: 16
 
       - uses: pnpm/action-setup@v2
@@ -44,11 +43,7 @@ jobs:
         run: pnpm install
       - name: Formatting
         run: pnpm format
-
-=======
-          node-version: '21.2.0'
-      - run: npm run format
->>>>>>> 0214f93cfc6b623e1fb53c31c62a1caee73228d2
+  
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -58,7 +53,6 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-<<<<<<< HEAD
           node-version: 16
 
       - uses: pnpm/action-setup@v2
@@ -84,7 +78,3 @@ jobs:
         run: pnpm install
       - name: Formatting
         run: pnpm lint
-=======
-          node-version: '21.2.0'
-      - run: npm run lint
->>>>>>> 0214f93cfc6b623e1fb53c31c62a1caee73228d2

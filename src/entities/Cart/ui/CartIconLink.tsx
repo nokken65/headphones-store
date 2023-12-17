@@ -1,3 +1,5 @@
+import React from 'react'
+
 import cartIconId from '@/assets/images/svg/cart.svg'
 import { Icon } from '@/shared/components/Icon'
 import { useStore } from '@nanostores/react'
@@ -5,7 +7,7 @@ import { useStore } from '@nanostores/react'
 import { count } from '../model'
 import * as S from './CartIconLink.styled'
 
-const CartIconLink = () => {
+const _CartIconLink = () => {
   const itemsCount = useStore(count.$value)
 
   return (
@@ -16,4 +18,4 @@ const CartIconLink = () => {
   )
 }
 
-export { CartIconLink }
+export const CartIconLink = React.memo(_CartIconLink)

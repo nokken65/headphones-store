@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { LanguageSelectorTrigger } from '@/entities/Language'
 
-const LanguageSelector = () => {
+const _LanguageSelector = () => {
   return (
     <>
       <LanguageSelectorTrigger />
@@ -8,4 +10,4 @@ const LanguageSelector = () => {
   )
 }
 
-export { LanguageSelector }
+export const LanguageSelector = React.memo(_LanguageSelector)

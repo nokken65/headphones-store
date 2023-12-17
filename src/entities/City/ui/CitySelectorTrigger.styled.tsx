@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 const Trigger = styled.button`
-  color: ${({ theme }) => theme.colors.textContrast};
+  color: inherit;
   line-height: 1.4;
 
   & > svg {

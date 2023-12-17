@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { ColorSchemeSelectorTrigger } from '@/entities/ColorScheme'
 
-const ColorSchemeSelector = () => {
+const _ColorSchemeSelector = () => {
   return (
     <>
       <ColorSchemeSelectorTrigger />
@@ -8,4 +10,4 @@ const ColorSchemeSelector = () => {
   )
 }
 
-export { ColorSchemeSelector }
+export const ColorSchemeSelector = React.memo(_ColorSchemeSelector)

@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { CitySelectorTrigger } from '@/entities/City'
 
-const CitySelector = () => {
+const _CitySelector = () => {
   return (
     <>
       <CitySelectorTrigger />
@@ -8,4 +10,4 @@ const CitySelector = () => {
   )
 }
 
-export { CitySelector }
+export const CitySelector = React.memo(_CitySelector)

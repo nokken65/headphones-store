@@ -1,3 +1,5 @@
+import React from 'react'
+
 import heartIconId from '@/assets/images/svg/heart.svg'
 import { Icon } from '@/shared/components/Icon'
 import { useStore } from '@nanostores/react'
@@ -5,7 +7,7 @@ import { useStore } from '@nanostores/react'
 import { count } from '../model'
 import * as S from './WishlistIconLink.styled'
 
-const WishlistIconLink = () => {
+const _WishlistIconLink = () => {
   const itemsCount = useStore(count.$value)
 
   return (
@@ -16,4 +18,4 @@ const WishlistIconLink = () => {
   )
 }
 
-export { WishlistIconLink }
+export const WishlistIconLink = React.memo(_WishlistIconLink)

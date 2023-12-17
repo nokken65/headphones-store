@@ -14,7 +14,7 @@ type Color = {
 
 type ColorNames = 'blue' | 'grey' | 'red'
 
-type ThemeNames = 'auto' | 'dark' | 'light'
+type ColorScheme = 'auto' | 'dark' | 'light'
 
 type Px = `${number}px`
 type Rem = `${number}rem`
@@ -33,6 +33,7 @@ type Theme = {
     text: string
     textPale: string
     textInvert: string
+    textContrast: string
     link: string
     accent: string
     cardBackground: string
@@ -62,4 +63,4 @@ type Theme = {
   }
 }
 
-export type { Color, ColorNames, Theme, ThemeNames }
+export type { Color, ColorNames, ColorScheme, Theme }

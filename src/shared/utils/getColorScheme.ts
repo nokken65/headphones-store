@@ -1,7 +1,7 @@
-import { ThemeNames } from '../theme'
+import { ColorScheme } from '../theme'
 
-const getColorScheme = (scheme: ThemeNames) => {
-  const schemeMap: Record<ThemeNames, Exclude<ThemeNames, 'auto'>> = {
+const getColorScheme = (scheme: ColorScheme) => {
+  const schemeMap: Record<ColorScheme, Exclude<ColorScheme, 'auto'>> = {
     auto: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
     dark: 'dark',
     light: 'light',

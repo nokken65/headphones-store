@@ -10,6 +10,7 @@ const dark: Theme = {
     backgroundPale: colors.grey[700],
     text: colors.grey[50],
     textInvert: colors.grey[900],
+    textContrast: colors.grey[50],
     backgroundImageFallback: '#282536',
     link: colors.blue[500],
     textPale: colors.grey[300],

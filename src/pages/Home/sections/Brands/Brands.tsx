@@ -7,7 +7,8 @@ import beatsaudioLightAvifSrc from '@/assets/images/brands/beatsaudio/beatsaudio
 import beatsaudioLightPngSrc from '@/assets/images/brands/beatsaudio/beatsaudio_light@1x.png'
 import beatsaudioLightWebpSrc from '@/assets/images/brands/beatsaudio/beatsaudio_light@1x.webp'
 import { BrandPreviewCard } from '@/entities/Brand'
-import { selectColorThemeModel } from '@/features/select-color-theme'
+import { colorSchemeModel } from '@/entities/ColorScheme'
+import { selectColorThemeModel } from '@/features/select-color-scheme'
 import { Marquee } from '@/shared/components/Marquee'
 import { Section } from '@/shared/components/Section'
 import { getColorScheme } from '@/shared/utils/getColorScheme'
@@ -19,7 +20,7 @@ const BEATSAUDIO_SRC = {
 }
 
 const _Subscribe = () => {
-  const theme = useStore(selectColorThemeModel.$themeName)
+  const theme = useStore(colorSchemeModel.$currentColorScheme)
 
   return (
     <Section>

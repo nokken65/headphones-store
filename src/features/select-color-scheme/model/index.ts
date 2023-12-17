@@ -1,1 +1,1 @@
-export * from './selectColorTheme'
+export * from './theme'

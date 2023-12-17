@@ -5,17 +5,17 @@ import moonIconId from '@/assets/images/svg/moon.svg'
 import sunIconId from '@/assets/images/svg/sun.svg'
 
 import { dark, light } from '../theme'
-import { Theme, ThemeNames } from '../theme/types'
+import { ColorScheme, Theme } from '../theme/types'
 
-const THEME_NAMES: ThemeNames[] = ['light', 'dark', 'auto'] as const
+const THEME_NAMES: ColorScheme[] = ['light', 'dark', 'auto'] as const
 
-const THEME_MAP: Record<ThemeNames, Theme> = {
+const THEME_MAP: Record<ColorScheme, Theme> = {
   auto: window.matchMedia('(prefers-color-scheme: dark)').matches ? dark : light,
   dark: dark,
   light: light,
 } as const
 
-const THEME_ICON_MAP: Record<ThemeNames, React.JSX.Element> = {
+const THEME_ICON_MAP: Record<ColorScheme, React.JSX.Element> = {
   auto: (
     <svg height={18}>
       <use xlinkHref={`#${autoIconId}`}></use>

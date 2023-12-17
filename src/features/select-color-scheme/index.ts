@@ -1,2 +1,2 @@
-export * as selectColorThemeModel from './model'
+export * as selectColorSchemeModel from './model'
 export * from './ui'

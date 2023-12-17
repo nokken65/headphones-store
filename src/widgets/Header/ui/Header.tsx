@@ -8,12 +8,23 @@ import { CitySelector } from '@/features/select-city'
 import { ColorSchemeSelector } from '@/features/select-color-scheme'
 import { LanguageSelector } from '@/features/select-language'
 import { Icon } from '@/shared/components/Icon'
+import { HEADER_HEIGHT } from '@/shared/constants'
+import { useMotionValueEvent, useScroll } from 'framer-motion'
 
 import * as S from './Header.styled'
 
 const _Header = () => {
+  const [isInverted, setIsInverted] = React.useState(
+    window.scrollY >= document.documentElement.clientHeight - HEADER_HEIGHT
+  )
+  const { scrollY } = useScroll({ axis: 'y' })
+
+  useMotionValueEvent(scrollY, 'change', latest =>
+    setIsInverted(latest >= document.documentElement.clientHeight - HEADER_HEIGHT)
+  )
+
   return (
-    <S.Header>
+    <S.Header $isInverted={isInverted}>
       <LanguageSelector />
       <CitySelector />
       <ColorSchemeSelector />

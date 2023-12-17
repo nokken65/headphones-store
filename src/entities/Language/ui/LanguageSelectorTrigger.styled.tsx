@@ -1,7 +1,6 @@
 import { styled } from 'styled-components'
 
 const Trigger = styled.button`
-  /* color: var(--color); */
   color: inherit;
   line-height: 1.4;
 

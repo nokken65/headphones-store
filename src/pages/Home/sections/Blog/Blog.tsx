@@ -1,33 +1,23 @@
 import React from 'react'
 
-import cover from '@/assets/images/blog/cover_1.webp'
-import eyeIconId from '@/assets/images/svg/eye.svg'
-import { Icon } from '@/shared/components/Icon'
+import coverAvifSrc from '@/assets/images/blog/cover_1@1x.avif'
+import coverPngSrc from '@/assets/images/blog/cover_1@1x.png'
+import coverWebpSrc from '@/assets/images/blog/cover_1@1x.webp'
+import { Post, PostPreviewCard } from '@/entities/Post'
 import { Section } from '@/shared/components/Section'
 
 import * as S from './Blog.styled'
 
-const Article = () => (
-  <S.Card>
-    <S.Cover alt={'cover'} src={cover} />
-    <ul>
-      <li>
-        <a href={'#'}>News</a>
-      </li>
-      <li>
-        <a href={'#'}>Articles</a>
-      </li>
-    </ul>
-    <h4>Awards 2023: what to expect from the main award of the year?</h4>
-    <footer>
-      <time dateTime={'2023-12-07'}>07.12.2023</time>
-      <span>
-        <Icon id={eyeIconId} />
-        2597
-      </span>
-    </footer>
-  </S.Card>
-)
+const POST: Post = {
+  title: 'Awards 2023: what to expect from the main award of the year?',
+  date: new Date(),
+  views: 2597,
+  tags: [
+    { label: 'News', href: '#' },
+    { label: 'Articles', href: '#' },
+  ],
+  cover: { original: coverPngSrc, avif: coverAvifSrc, webp: coverWebpSrc },
+}
 
 const _Blog = () => {
   return (
@@ -39,7 +29,7 @@ const _Blog = () => {
       <S.Grid>
         {[...Array(6)].map((_, index) => (
           <li key={index}>
-            <Article />
+            <PostPreviewCard {...POST} />
           </li>
         ))}
       </S.Grid>

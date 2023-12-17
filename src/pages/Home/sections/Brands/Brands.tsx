@@ -1,32 +1,34 @@
 import React from 'react'
 
-import beatsaudioSrc from '@/assets/images/brands/beatsaudio.png'
+import beatsaudioDarkAvifSrc from '@/assets/images/brands/beatsaudio/beatsaudio_dark@1x.avif'
+import beatsaudioDarkPngSrc from '@/assets/images/brands/beatsaudio/beatsaudio_dark@1x.png'
+import beatsaudioDarkWebpSrc from '@/assets/images/brands/beatsaudio/beatsaudio_dark@1x.webp'
+import beatsaudioLightAvifSrc from '@/assets/images/brands/beatsaudio/beatsaudio_light@1x.avif'
+import beatsaudioLightPngSrc from '@/assets/images/brands/beatsaudio/beatsaudio_light@1x.png'
+import beatsaudioLightWebpSrc from '@/assets/images/brands/beatsaudio/beatsaudio_light@1x.webp'
+import { BrandPreviewCard } from '@/entities/Brand'
+import { selectColorThemeModel } from '@/features/select-color-theme'
 import { Marquee } from '@/shared/components/Marquee'
 import { Section } from '@/shared/components/Section'
+import { getColorScheme } from '@/shared/utils/getColorScheme'
+import { useStore } from '@nanostores/react'
 
-import * as S from './Brands.styled'
+const BEATSAUDIO_SRC = {
+  light: { png: beatsaudioLightPngSrc, webp: beatsaudioLightWebpSrc, avif: beatsaudioLightAvifSrc },
+  dark: { png: beatsaudioDarkPngSrc, webp: beatsaudioDarkWebpSrc, avif: beatsaudioDarkAvifSrc },
+}
 
 const _Subscribe = () => {
+  const theme = useStore(selectColorThemeModel.$themeName)
+
   return (
     <Section>
       <h2>Brands</h2>
       <Marquee
-        items={[
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-          beatsaudioSrc,
-        ].map((src, index) => (
-          <S.Item as={'li'} key={index}>
-            <img alt={'brand'} src={src} />
-          </S.Item>
+        items={[...Array(5).fill(BEATSAUDIO_SRC[getColorScheme(theme)])].map((src, index) => (
+          <li key={index}>
+            <BrandPreviewCard src={src} />
+          </li>
         ))}
       />
     </Section>

@@ -18,8 +18,8 @@ const _Home = () => {
   return (
     <DefaultLayout>
       <Logo />
-      <Header />
       <Hero />
+      <Header />
       <PopularProducts />
       <Advantages />
       <Stores />

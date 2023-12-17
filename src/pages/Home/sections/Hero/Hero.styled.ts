@@ -1,12 +1,12 @@
 import { Icon } from '@/shared/components/Icon'
 import { Section as BaseSection } from '@/shared/components/Section'
+import { HEADER_HEIGHT } from '@/shared/constants'
 import { styled } from 'styled-components'
 
 const Section = styled(BaseSection)`
   color: ${({ theme }) => theme.colors.textContrast};
   background-color: transparent;
-  min-height: 100dvh;
-  height: 100dvh;
+  min-height: calc(100dvh - ${HEADER_HEIGHT}px);
   padding: 10dvw 4dvw;
 
   display: grid;

@@ -25,7 +25,7 @@ const _Header = () => {
   )
 
   return (
-    <S.Header $isInverted={isInverted}>
+    <S.Header data-is-inverted={isInverted ? '' : undefined}>
       <ColorSchemeSelector />
       <LanguageSelector />
       <CitySelector />

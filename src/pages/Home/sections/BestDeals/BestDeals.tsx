@@ -1,6 +1,6 @@
 import React from 'react'
 
-import image from '@/assets/images/headphones_1.png'
+import image from '@/assets/images/headphones/headphones_1@1x.png'
 import cartIconId from '@/assets/images/svg/cart.svg'
 import starIconId from '@/assets/images/svg/star.svg'
 import { Icon } from '@/shared/components/Icon'

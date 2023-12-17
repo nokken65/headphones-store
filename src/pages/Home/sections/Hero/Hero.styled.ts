@@ -3,7 +3,7 @@ import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
 const Section = styled(BaseSection)`
-  color: ${({ theme }) => theme.colors.textInvert};
+  color: ${({ theme }) => theme.colors.textContrast};
   background-color: transparent;
   min-height: 100dvh;
   height: 100dvh;

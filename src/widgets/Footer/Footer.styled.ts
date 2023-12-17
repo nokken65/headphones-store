@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 const Footer = styled.footer`
   padding: 4rem 4rem 1.5rem;
-  color: ${({ theme }) => theme.colors.textInvert};
+  color: ${({ theme }) => theme.colors.textContrast};
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: repeat(4, max-content);

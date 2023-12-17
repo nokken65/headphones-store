@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 
 const Section = styled(BaseSection)`
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.textInvert};
+  color: ${({ theme }) => theme.colors.textContrast};
 
   display: grid;
   grid-template-columns: 1fr 1fr;

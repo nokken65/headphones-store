@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Logo } from '@/widgets/Logo'
+
 import { DefaultLayout } from '../layouts/Default'
 import { Advantages } from './sections/Advantages'
 import { BestDeals } from './sections/BestDeals'
@@ -14,9 +16,7 @@ import { UsefulInformation } from './sections/UsefulInformation'
 const _Home = () => {
   return (
     <DefaultLayout>
-      <h1 hidden style={{ fontSize: 0 }}>
-        Headphones store
-      </h1>
+      <Logo />
       <Hero />
       <PopularProducts />
       <Advantages />

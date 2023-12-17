@@ -12,6 +12,7 @@ import { HEADER_HEIGHT } from '@/shared/constants'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 
 import * as S from './Header.styled'
+import { Navigation } from './Navigation'
 
 const _Header = () => {
   const [isInverted, setIsInverted] = React.useState(
@@ -25,9 +26,11 @@ const _Header = () => {
 
   return (
     <S.Header $isInverted={isInverted}>
+      <ColorSchemeSelector />
       <LanguageSelector />
       <CitySelector />
-      <ColorSchemeSelector />
+
+      <Navigation />
 
       <button style={{ marginLeft: 'auto' }}>
         <Icon height={18} id={searchIconId} width={18} />

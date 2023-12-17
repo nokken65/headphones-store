@@ -25,6 +25,7 @@ export default defineConfig({
           'react-vendor': ['react', 'react-dom'],
           'nanostores-vendor': ['nanostores', '@nanostores/persistent', '@nanostores/react'],
           'styled-components-vendor': ['styled-components'],
+          'framer-motion-vendor': ['framer-motion'],
           'utils-vendor': ['ramda'],
         },
       },

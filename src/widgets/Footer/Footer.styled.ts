@@ -7,6 +7,8 @@ const Footer = styled.footer`
   grid-auto-rows: auto;
   grid-template-columns: repeat(4, max-content);
   gap: 3rem 4rem;
+
+  overflow-x: hidden;
 `
 
 const Content = styled.div(() => ({

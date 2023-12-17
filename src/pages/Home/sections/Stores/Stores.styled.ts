@@ -11,18 +11,19 @@ const Section = styled(BaseSection)`
   grid-column-gap: 1rem;
 `
 
-const Map = styled.img`
+const Map = styled.picture`
   grid-column: 2;
   grid-row: 1 / 3;
 
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
+  & img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+  }
 `
 
 const Store = styled.article`
-  /* height: 100%; */
   & > button {
     margin-top: 3rem;
   }

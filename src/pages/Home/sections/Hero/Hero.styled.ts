@@ -35,12 +35,15 @@ const NextIcon = styled(Icon)`
   grid-area: next;
 `
 
-const Image = styled.img`
+const Image = styled.picture`
   grid-area: image;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  height: 100%;
+
+  & img {
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const Small = styled.small`

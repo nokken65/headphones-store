@@ -1,6 +1,8 @@
 import React from 'react'
 
-import ymap from '@/assets/images/map.png'
+import mapAvif from '@/assets/images/map@1x.avif'
+import mapPng from '@/assets/images/map@1x.png'
+import mapWebp from '@/assets/images/map@1x.webp'
 import emailIconId from '@/assets/images/svg/email.svg'
 import telegramIconId from '@/assets/images/svg/telegram.svg'
 import whatsappIconId from '@/assets/images/svg/whatsapp.svg'
@@ -57,7 +59,12 @@ const _Stores = () => {
         </table>
         <button>Learn more about store</button>
       </S.Store>
-      <S.Map alt={'map'} src={ymap} />
+      <S.Map>
+        <source srcSet={`${mapAvif} 1x`} type={'image/avif'} />
+        <source srcSet={`${mapWebp} 1x`} type={'image/webp'} />
+        <source srcSet={`${mapPng} 1x`} type={'image/png'} />
+        <img loading={'lazy'} src={mapPng} />
+      </S.Map>
     </S.Section>
   )
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 
-import image from '@/assets/images/headphones_1.png'
+import headphonesAvif from '@/assets/images/headphones/headphones_1@1x.avif'
+import headphonesPng from '@/assets/images/headphones/headphones_1@1x.png'
+import headphonesWebp from '@/assets/images/headphones/headphones_1@1x.webp'
 import arrowIconId from '@/assets/images/svg/arrow.svg'
 
 import * as S from './Hero.styled'
@@ -8,7 +10,12 @@ import * as S from './Hero.styled'
 const _Hero = () => {
   return (
     <S.Section>
-      <S.Image alt={'alt'} src={image} style={{ width: '100%', height: '100%' }} />
+      <S.Image>
+        <source srcSet={`${headphonesAvif} 1x`} type={'image/avif'} />
+        <source srcSet={`${headphonesWebp} 1x`} type={'image/webp'} />
+        <source srcSet={`${headphonesPng} 1x`} type={'image/png'} />
+        <img loading={'lazy'} src={headphonesPng} />
+      </S.Image>
 
       <S.Small>Hear it. feel it</S.Small>
       <S.Slogan>move with the music</S.Slogan>

@@ -8,8 +8,8 @@ import { BestDeals } from './sections/BestDeals'
 import { Blog } from './sections/Blog'
 import { Brands } from './sections/Brands'
 import { Hero } from './sections/Hero'
-import { OurStores } from './sections/OurStores'
 import { PopularProducts } from './sections/PopularProducts'
+import { Stores } from './sections/Stores'
 import { Subscribe } from './sections/Subscribe'
 import { UsefulInformation } from './sections/UsefulInformation'
 
@@ -20,7 +20,7 @@ const _Home = () => {
       <Hero />
       <PopularProducts />
       <Advantages />
-      <OurStores />
+      <Stores />
       <BestDeals />
       <Blog />
       <Brands />

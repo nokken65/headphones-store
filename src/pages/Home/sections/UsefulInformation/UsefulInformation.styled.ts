@@ -33,7 +33,7 @@ const Link = styled.a`
 const Description = styled.p`
   font-size: 1.25rem;
   line-height: 1.4;
-  color: ${({ theme }) => theme.colors.textPale};
+  opacity: 0.7;
 `
 
 export { Description, Link, List, Section }

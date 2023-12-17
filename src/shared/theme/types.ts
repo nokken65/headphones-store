@@ -31,7 +31,6 @@ type Theme = {
     backgroundImageFallback: string
     backgroundPale: string
     text: string
-    textPale: string
     textInvert: string
     textContrast: string
     link: string

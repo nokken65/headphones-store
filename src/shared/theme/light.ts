@@ -13,7 +13,6 @@ const light: Theme = {
     textContrast: colors.grey[50],
     backgroundImageFallback: '#282536',
     link: colors.blue[500],
-    textPale: colors.grey[400],
     cardBackground: colors.grey[100],
     cardBorder: colors.grey[200],
   },

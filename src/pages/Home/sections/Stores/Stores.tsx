@@ -23,7 +23,10 @@ const _Stores = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Seven days a week from 10:00 AM to 10:00 PM</td>
+              <td>
+                Seven days a week from <time dateTime={'10am'}>10:00 AM</time> to{' '}
+                <time dateTime={'10pm'}>10:00 PM</time>
+              </td>
               <td>
                 <a href={'tel:#'}>+44 20 7234 3456</a>
               </td>

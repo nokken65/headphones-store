@@ -42,9 +42,9 @@ const Card = styled(CardBase)`
     gap: 1rem;
 
     & svg {
-      height: 1rem;
+      height: 0.8rem;
       width: 1rem;
-      margin-right: 0.6rem;
+      margin-right: 0.2rem;
     }
   }
 `

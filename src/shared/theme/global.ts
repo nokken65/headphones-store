@@ -12,6 +12,12 @@ const GlobalStyles = createGlobalStyle`
 
   ${headings}
 
+  button {
+    border:none;
+    background-color: transparent;
+    font-family: inherit;
+  }
+
   ul { list-style: none }
 
   a {

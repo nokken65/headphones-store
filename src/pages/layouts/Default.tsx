@@ -8,7 +8,6 @@ type DefaultLayoutProps = React.PropsWithChildren
 const _DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
     <>
-      {/* <Header /> */}
       {children}
       <Footer />
     </>

@@ -1,4 +1,3 @@
-import { Icon } from '@/shared/components/Icon'
 import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
@@ -11,13 +10,13 @@ const Section = styled(BaseSection)`
 
   display: grid;
   grid-template-areas:
-    'prev image small    next'
-    'prev image slogan   next'
-    'prev image category next'
-    'prev image name     next'
-    'prev image price    next'
-    'prev image action   next';
-  grid-template-columns: 32px 1fr 1fr 32px;
+    'image small'
+    'image slogan'
+    'image category'
+    'image name'
+    'image price'
+    'image action';
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: fit-content(40%) 1fr;
   grid-column-gap: 3rem;
   grid-row-gap: 1rem;
@@ -25,14 +24,6 @@ const Section = styled(BaseSection)`
   & > * {
     align-self: center;
   }
-`
-const PreviousIcon = styled(Icon)`
-  grid-area: prev;
-  transform: rotate(180deg);
-`
-
-const NextIcon = styled(Icon)`
-  grid-area: next;
 `
 
 const Image = styled.picture`
@@ -109,4 +100,4 @@ const Action = styled.button`
   width: fit-content;
 `
 
-export { Action, Category, Image, Name, NextIcon, PreviousIcon, Price, Section, Slogan, Small }
+export { Action, Category, Image, Name, Price, Section, Slogan, Small }

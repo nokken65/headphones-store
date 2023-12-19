@@ -3,7 +3,6 @@ import React from 'react'
 import headphonesAvif from '@/assets/images/headphones/headphones_1@1x.avif'
 import headphonesPng from '@/assets/images/headphones/headphones_1@1x.png'
 import headphonesWebp from '@/assets/images/headphones/headphones_1@1x.webp'
-import arrowIconId from '@/assets/images/svg/arrow.svg'
 
 import * as S from './Hero.styled'
 
@@ -26,9 +25,6 @@ const _Hero = () => {
         $ 435 | <sup>$ 465</sup>
       </S.Price>
       <S.Action>buy now</S.Action>
-
-      <S.PreviousIcon height={24} id={arrowIconId} width={14} />
-      <S.NextIcon height={24} id={arrowIconId} width={14} />
     </S.Section>
   )
 }

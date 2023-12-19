@@ -11,7 +11,7 @@ type BrandPreviewCardProps = {
 
 const BrandPreviewCard = ({ name, src }: BrandPreviewCardProps) => {
   return (
-    <S.Card aria-label={name} title={name}>
+    <S.Card aria-label={name}>
       <picture>
         <source srcSet={`${src.avif} 1x`} type={'image/avif'} />
         <source srcSet={`${src.webp} 1x`} type={'image/webp'} />

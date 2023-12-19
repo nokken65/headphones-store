@@ -8,10 +8,38 @@ const Card = styled(BaseCard)`
   flex-direction: column;
   gap: 1rem;
 
+  position: relative;
+
   justify-content: space-between;
 
   width: 100%;
   height: 100%;
+
+  transition: outline-color 0.2s ease-in-out;
+  outline: 5px solid transparent;
+  outline-offset: 0.2rem;
+
+  &:focus-within,
+  &:has(a:hover) {
+    outline-color: ${({ theme }) => theme.colors.text};
+
+    & > h3 {
+      text-decoration: underline;
+    }
+  }
+`
+
+const Link = styled.a`
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 `
 
 const Image = styled.img`
@@ -26,7 +54,7 @@ const TagList = styled.ul`
   gap: 0.5rem;
 `
 
-const Tag = styled.a`
+const Tag = styled.li`
   font-size: 0.8rem;
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
@@ -55,4 +83,4 @@ const Footer = styled.footer`
   }
 `
 
-export { Card, Footer, Image, Tag, TagList, Title }
+export { Card, Footer, Image, Link, Tag, TagList, Title }

@@ -22,7 +22,7 @@ const _Subscribe = () => {
   const theme = useStore(colorSchemeModel.$currentColorScheme)
 
   return (
-    <Section aria-aria-labelledby={'brands-heading'}>
+    <Section aria-labelledby={'brands-heading'}>
       <h2 id={'brands-heading'}>Brands</h2>
       <Marquee
         items={[...Array(5).fill(BEATSAUDIO_SRC[getColorScheme(theme)])].map((src, index) => (

@@ -6,6 +6,7 @@ type Tag = {
 }
 
 type Post = {
+  id: string
   title: string
   date: Date
   views: number

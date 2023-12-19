@@ -9,7 +9,12 @@ const CitySelectorTrigger = () => {
   const currentCity = useStore($currentCity)
 
   return (
-    <S.Trigger>
+    <S.Trigger
+      aria-controls={'id'}
+      aria-expanded={false}
+      aria-haspopup={'listbox'}
+      aria-label={'current-city-selector-trigger'}
+    >
       {currentCity} <Icon id={arrowIconId} />
     </S.Trigger>
   )

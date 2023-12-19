@@ -26,13 +26,20 @@ const _Header = () => {
 
   return (
     <S.Header data-is-inverted={isInverted ? '' : undefined}>
+      <S.Heading>Headphones store</S.Heading>
       <ColorSchemeSelector />
       <LanguageSelector />
       <CitySelector />
 
       <Navigation />
 
-      <button style={{ marginLeft: 'auto' }}>
+      <button
+        aria-controls={'id'}
+        aria-expanded={false}
+        aria-haspopup={'dialog'}
+        aria-label={'search-dialog-trigger'}
+        style={{ marginLeft: 'auto' }}
+      >
         <Icon height={18} id={searchIconId} width={18} />
       </button>
 

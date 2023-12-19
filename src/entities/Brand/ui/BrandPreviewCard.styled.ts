@@ -6,7 +6,6 @@ const Card = styled(BaseCard)`
   min-width: 18.75rem;
   padding: 3rem 1.5rem;
 `
-
 const Image = styled.img`
   width: 100%;
 `

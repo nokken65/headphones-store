@@ -7,9 +7,9 @@ import * as S from './ProfileIconLink.styled'
 
 const _ProfileIconLink = () => {
   return (
-    <S.Link href={'#'}>
+    <S.ButtonLink $variant={'subtle'} aria-label={'profile'} as={'a'} href={'#'}>
       <Icon height={18} id={profileIconId} width={18} />
-    </S.Link>
+    </S.ButtonLink>
   )
 }
 

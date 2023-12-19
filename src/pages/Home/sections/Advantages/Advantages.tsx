@@ -8,7 +8,7 @@ import * as S from './Advantages.styled'
 
 const _Advantages = () => {
   return (
-    <Section>
+    <Section aria-label={'Advantages'} title={'Advantages'}>
       <Marquee
         items={Object.entries(ADVANTAGES_MAP).map(([id, { icon, text }]) => (
           <S.Item as={'li'} key={id}>

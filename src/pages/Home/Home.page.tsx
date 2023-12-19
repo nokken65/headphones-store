@@ -1,8 +1,5 @@
 import React from 'react'
 
-import { Header } from '@/widgets/Header'
-import { Logo } from '@/widgets/Logo'
-
 import { DefaultLayout } from '../layouts/Default'
 import { Advantages } from './sections/Advantages'
 import { BestDeals } from './sections/BestDeals'
@@ -17,9 +14,7 @@ import { UsefulInformation } from './sections/UsefulInformation'
 const _Home = () => {
   return (
     <DefaultLayout>
-      <Logo />
       <Hero />
-      <Header />
       <PopularProducts />
       <Advantages />
       <Stores />

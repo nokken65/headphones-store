@@ -1,17 +1,11 @@
 import React from 'react'
 
-import { Section } from '@/shared/components/Section'
-
 import * as S from './Subscribe.styled'
 
 const _Subscribe = () => {
   return (
-    <Section
-      css={`
-        text-align: center;
-      `}
-    >
-      <h3>Subscribe to our newsletters</h3>
+    <S.Section aria-labelledby={'subscribe-heading'}>
+      <h2 id={'subscribe-heading'}>Subscribe to our newsletters</h2>
       <S.Description>
         Join our mailing list to receive exclusive offers, promotions & product updates!
       </S.Description>
@@ -21,7 +15,7 @@ const _Subscribe = () => {
         </label>
         <button type={'submit'}>Subscribe</button>
       </form>
-    </Section>
+    </S.Section>
   )
 }
 

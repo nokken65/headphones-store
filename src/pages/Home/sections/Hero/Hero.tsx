@@ -14,7 +14,7 @@ const _Hero = () => {
         <source srcSet={`${headphonesAvif} 1x`} type={'image/avif'} />
         <source srcSet={`${headphonesWebp} 1x`} type={'image/webp'} />
         <source srcSet={`${headphonesPng} 1x`} type={'image/png'} />
-        <img loading={'lazy'} src={headphonesPng} />
+        <img alt={'headphones name'} loading={'lazy'} src={headphonesPng} />
       </S.Image>
 
       <S.Small>Hear it. feel it</S.Small>

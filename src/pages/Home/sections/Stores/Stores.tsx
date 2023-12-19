@@ -12,10 +12,12 @@ import * as S from './Stores.styled'
 
 const _Stores = () => {
   return (
-    <S.Section>
-      <h2>Store</h2>
-      <S.Store>
-        <S.StoreAddress>Uest-sentral-strit, London</S.StoreAddress>
+    <S.Section aria-labelledby={'stores-heading'}>
+      <h2 id={'stores-heading'}>Store</h2>
+      <S.StoreArticle aria-labelledby={'stores-current-store-heading'}>
+        <S.StoreAddress id={'stores-current-store-heading'}>
+          Uest-sentral-strit, London
+        </S.StoreAddress>
         <table>
           <thead>
             <tr>
@@ -38,17 +40,17 @@ const _Stores = () => {
               <td>
                 <ul key={'social contacts'} style={{ display: 'flex', gap: '1rem' }}>
                   <li>
-                    <a href={'#'}>
+                    <a aria-label={'telegram contact'} href={'#'}>
                       <Icon height={32} id={telegramIconId} width={32} />
                     </a>
                   </li>
                   <li>
-                    <a href={'#'}>
+                    <a aria-label={'whatsapp contact'} href={'#'}>
                       <Icon height={32} id={whatsappIconId} width={32} />
                     </a>
                   </li>
                   <li>
-                    <a href={'#'}>
+                    <a aria-label={'email contact'} href={'#'}>
                       <Icon height={32} id={emailIconId} width={32} />
                     </a>
                   </li>
@@ -58,12 +60,12 @@ const _Stores = () => {
           </tbody>
         </table>
         <button>Learn more about store</button>
-      </S.Store>
+      </S.StoreArticle>
       <S.Map>
         <source srcSet={`${mapAvif} 1x`} type={'image/avif'} />
         <source srcSet={`${mapWebp} 1x`} type={'image/webp'} />
         <source srcSet={`${mapPng} 1x`} type={'image/png'} />
-        <img loading={'lazy'} src={mapPng} />
+        <img alt={'map of selected store image'} loading={'lazy'} src={mapPng} />
       </S.Map>
     </S.Section>
   )

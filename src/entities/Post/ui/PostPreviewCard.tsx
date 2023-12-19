@@ -10,12 +10,12 @@ type PostPreviewCardProps = Post
 
 const PostPreviewCard = ({ title, date, views, cover, tags }: PostPreviewCardProps) => {
   return (
-    <S.Card>
+    <S.Card aria-label={`${title} post`}>
       <picture>
         <source srcSet={`${cover.avif} 1x`} type={'image/avif'} />
         <source srcSet={`${cover.webp} 1x`} type={'image/webp'} />
         <source srcSet={`${cover.original} 1x`} type={'image/png'} />
-        <S.Image loading={'lazy'} src={cover.original} />
+        <S.Image alt={`${title} post image cover`} loading={'lazy'} src={cover.original} />
       </picture>
       <S.TagList>
         {tags.map(tag => (

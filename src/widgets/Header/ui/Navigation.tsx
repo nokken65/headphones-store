@@ -33,11 +33,18 @@ const ITEMS = [
 ]
 
 const _Navigation = () => {
+  const [currentPage, setCurrentPage] = React.useState('Home')
+
   return (
     <S.List>
       {ITEMS.map(({ label, iconId }) => (
         <li key={label}>
-          <S.Link $isSelected={label === 'Home'} href={'#'}>
+          <S.Link
+            $isSelected={label === 'Home'}
+            aria-current={currentPage === label ? true : undefined}
+            href={'/'}
+            onClick={() => setCurrentPage(label)}
+          >
             <Icon height={18} id={iconId} width={18} /> {label}
           </S.Link>
         </li>

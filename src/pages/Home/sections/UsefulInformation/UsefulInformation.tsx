@@ -4,9 +4,9 @@ import * as S from './UsefulInformation.styled'
 
 const _UsefulInformation = () => {
   return (
-    <S.Section>
-      <h2>Useful information</h2>
-      <nav>
+    <S.Section aria-labelledby={'useful-information-heading'}>
+      <h2 id={'useful-information-heading'}>Useful information</h2>
+      <nav aria-label={'useful-information-links'}>
         <S.List>
           <li>
             <S.Link href={'#'}>Headphones</S.Link>

@@ -8,7 +8,6 @@ import beatsaudioLightPngSrc from '@/assets/images/brands/beatsaudio/beatsaudio_
 import beatsaudioLightWebpSrc from '@/assets/images/brands/beatsaudio/beatsaudio_light@1x.webp'
 import { BrandPreviewCard } from '@/entities/Brand'
 import { colorSchemeModel } from '@/entities/ColorScheme'
-import { selectColorThemeModel } from '@/features/select-color-scheme'
 import { Marquee } from '@/shared/components/Marquee'
 import { Section } from '@/shared/components/Section'
 import { getColorScheme } from '@/shared/utils/getColorScheme'
@@ -23,12 +22,12 @@ const _Subscribe = () => {
   const theme = useStore(colorSchemeModel.$currentColorScheme)
 
   return (
-    <Section>
-      <h2>Brands</h2>
+    <Section aria-aria-labelledby={'brands-heading'}>
+      <h2 id={'brands-heading'}>Brands</h2>
       <Marquee
         items={[...Array(5).fill(BEATSAUDIO_SRC[getColorScheme(theme)])].map((src, index) => (
           <li key={index}>
-            <BrandPreviewCard src={src} />
+            <BrandPreviewCard name={'beatsaudio'} src={src} />
           </li>
         ))}
       />

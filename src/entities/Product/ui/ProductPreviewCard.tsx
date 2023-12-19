@@ -16,7 +16,7 @@ const ProductPreviewCard = ({ name, category, rating, price, image }: ProductPre
         <source srcSet={`${image.avif} 1x`} type={'image/avif'} />
         <source srcSet={`${image.webp} 1x`} type={'image/webp'} />
         <source srcSet={`${image.original} 1x`} type={'image/png'} />
-        <img loading={'lazy'} src={image.original} />
+        <img alt={`${name} image`} loading={'lazy'} src={image.original} />
       </S.Image>
       <S.Category>{category}</S.Category>
       <S.Name>{name}</S.Name>

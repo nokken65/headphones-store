@@ -4,10 +4,11 @@ import headphonesAvifSrc from '@/assets/images/headphones/headphones_1@1x.avif'
 import headphonesPngSrc from '@/assets/images/headphones/headphones_1@1x.png'
 import headphonesWebpSrc from '@/assets/images/headphones/headphones_1@1x.webp'
 import { Product, ProductPreviewCard } from '@/entities/Product'
-import { Section } from '@/shared/components/Section'
 
 import * as S from './PopularProducts.styled'
-import { PopularProductsSelectTime } from './PopularProductsSelectTime'
+import { PopularProductsTimeTabs } from './PopularProductsTimeTabs'
+
+export const TIME = ['for-yesterday', 'for-3-days', 'per-week', 'per-month']
 
 const genProducts = () => {
   return [...Array(5)].map<Product>((_, index) => ({
@@ -30,20 +31,34 @@ const genProducts = () => {
 }
 
 const _PopularProducts = () => {
+  const [activeTab, setActiveTab] = React.useState(0)
+
   return (
-    <Section>
-      <S.Header>
-        <h2>Popular products</h2>
-        <PopularProductsSelectTime />
+    <S.Section aria-labelledby={'popular-products-heading'}>
+      <S.Header aria-labelledby={'popular-products-heading'}>
+        <h2 id={'popular-products-heading'}>Popular products</h2>
+        <PopularProductsTimeTabs active={activeTab} onChange={setActiveTab} />
       </S.Header>
-      <S.Grid>
-        {genProducts().map((product, index) => (
-          <li key={index}>
-            <ProductPreviewCard {...product} />
-          </li>
-        ))}
-      </S.Grid>
-    </Section>
+      {/* Simulate multiple tabpanel content  */}
+      {[...new Array(4)].map((_, index) => (
+        <div
+          aria-labelledby={`${TIME[index]}-tab`}
+          hidden={activeTab !== index}
+          id={`popular-products-tabpanel-${index}`}
+          key={index}
+          role={'tabpanel'}
+          tabIndex={0}
+        >
+          <S.Grid>
+            {genProducts().map((product, index) => (
+              <li key={index}>
+                <ProductPreviewCard {...product} />
+              </li>
+            ))}
+          </S.Grid>
+        </div>
+      ))}
+    </S.Section>
   )
 }
 

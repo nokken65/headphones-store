@@ -1,5 +1,14 @@
 import { styled } from 'styled-components'
 
+const Section = styled.section`
+  padding: 3rem;
+  background-color: ${({ theme }) => theme.colors.background};
+
+  & > h2 {
+    margin-bottom: 3rem;
+  }
+`
+
 const Grid = styled.ul`
   width: 100%;
   display: grid;
@@ -29,4 +38,4 @@ const Header = styled.header`
   }
 `
 
-export { Grid, Header }
+export { Grid, Header, Section }

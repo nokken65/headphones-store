@@ -1,6 +1,6 @@
 import { css, styled } from 'styled-components'
 
-const List = styled.ol`
+const List = styled.div`
   display: flex;
   gap: 1rem;
 `
@@ -12,6 +12,12 @@ const Action = styled.button<{ $isSelected: boolean }>`
   text-transform: uppercase;
   padding: 0.625rem 1.5rem;
   border-radius: 1rem;
+
+  &:focus-visible {
+    outline-offset: 0.2rem;
+    outline: 2px solid orange;
+  }
+
   ${({ $isSelected, theme }) =>
     $isSelected
       ? css`

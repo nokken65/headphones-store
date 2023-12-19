@@ -9,6 +9,10 @@ const ColorSchemeSelectorTrigger = () => {
 
   return (
     <S.Trigger
+      aria-controls={'id'}
+      aria-expanded={false}
+      aria-haspopup={'listbox'}
+      aria-label={'color-scheme-selector-trigger'}
       onClick={() => setCurrentColorScheme(currentColorScheme === 'dark' ? 'light' : 'dark')}
     >
       {THEME_ICON_MAP[currentColorScheme]}

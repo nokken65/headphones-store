@@ -9,7 +9,12 @@ const LanguageSelectorTrigger = () => {
   const currentLanguage = useStore($currentLanguage)
 
   return (
-    <S.Trigger>
+    <S.Trigger
+      aria-controls={'id'}
+      aria-expanded={false}
+      aria-haspopup={'listbox'}
+      aria-label={'current-language-selector-trigger'}
+    >
       {currentLanguage} <Icon id={arrowIconId} />
     </S.Trigger>
   )

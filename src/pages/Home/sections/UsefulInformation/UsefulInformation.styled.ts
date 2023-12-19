@@ -1,14 +1,15 @@
-import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
-const Section = styled(BaseSection)`
+const Section = styled.section`
   background-color: ${({ theme }) => theme.colors.backgroundPale};
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: 1fr 1fr;
   column-gap: 0;
+  padding: 3rem;
 
   & > h2 {
+    margin-bottom: 3rem;
     grid-column: 1 / 3;
   }
 `

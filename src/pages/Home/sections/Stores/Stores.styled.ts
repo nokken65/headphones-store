@@ -1,9 +1,10 @@
-import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
-const Section = styled(BaseSection)`
+const Section = styled.section`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.textContrast};
+
+  padding: 3rem;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,7 +24,7 @@ const Map = styled.picture`
   }
 `
 
-const Store = styled.article`
+const StoreArticle = styled.article`
   & > button {
     margin-top: 3rem;
   }
@@ -37,9 +38,8 @@ const Store = styled.article`
   }
 `
 
-const StoreAddress = styled.article`
-  /* height: 100%; */
+const StoreAddress = styled.h3`
   margin-bottom: 3rem;
 `
 
-export { Map, Section, Store, StoreAddress }
+export { Map, Section, StoreAddress, StoreArticle }

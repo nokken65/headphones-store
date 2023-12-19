@@ -1,5 +1,14 @@
+import { Button } from '@/shared/components/Button'
 import { styled } from 'styled-components'
 
-const Link = styled.a``
+const ButtonLink = styled(Button)`
+  border-radius: 0;
+  padding: 1rem;
 
-export { Link }
+  &:hover {
+    background-color: unset;
+    color: ${({ theme }) => theme.colors.accent};
+  }
+`
+
+export { ButtonLink }

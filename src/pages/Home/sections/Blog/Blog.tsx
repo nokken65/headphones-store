@@ -21,9 +21,9 @@ const POST: Post = {
 
 const _Blog = () => {
   return (
-    <Section>
-      <S.Header>
-        <h2>Blog</h2>
+    <S.Section aria-labelledby={'blog-heading'}>
+      <S.Header aria-labelledby={'blog-heading'}>
+        <h2 id={'blog-heading'}>Blog</h2>
         <a href={'#'}>view all</a>
       </S.Header>
       <S.Grid>
@@ -33,7 +33,7 @@ const _Blog = () => {
           </li>
         ))}
       </S.Grid>
-    </Section>
+    </S.Section>
   )
 }
 

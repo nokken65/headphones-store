@@ -35,17 +35,17 @@ const CONTACTS_LIST = {
     '+44 20 7234 3456',
     <ul key={'social contacts'} style={{ display: 'flex', gap: '1rem' }}>
       <li>
-        <a href={'#'}>
+        <a aria-label={'telegram contact'} href={'#'}>
           <Icon height={32} id={telegramIconId} width={32} />
         </a>
       </li>
       <li>
-        <a href={'#'}>
+        <a aria-label={'whatsapp contact'} href={'#'}>
           <Icon height={32} id={whatsappIconId} width={32} />
         </a>
       </li>
       <li>
-        <a href={'#'}>
+        <a aria-label={'email contact'} href={'#'}>
           <Icon height={32} id={emailIconId} width={32} />
         </a>
       </li>
@@ -70,27 +70,27 @@ const _Footer = () => {
       </NavigationSection>
       <S.SocialsList>
         <li>
-          <a href={'#'}>
+          <a aria-label={'telegram'} href={'#'}>
             <Icon height={32} id={telegramIconId} width={32} />
           </a>
         </li>
         <li>
-          <a href={'#'}>
+          <a aria-label={'youtube'} href={'#'}>
             <Icon height={32} id={youtubeIconId} width={32} />
           </a>
         </li>
         <li>
-          <a href={'#'}>
+          <a aria-label={'facebook'} href={'#'}>
             <Icon height={32} id={facebookIconId} width={32} />
           </a>
         </li>
         <li>
-          <a href={'#'}>
+          <a aria-label={'twitter'} href={'#'}>
             <Icon height={32} id={twitterIconId} width={32} />
           </a>
         </li>
         <li>
-          <a href={'#'}>
+          <a aria-label={'instagram'} href={'#'}>
             <Icon height={32} id={instagramIconId} width={32} />
           </a>
         </li>

@@ -11,7 +11,7 @@ type NavigationSectionProps<Item> = {
 const NavigationSection = <Item,>({ children, heading, items }: NavigationSectionProps<Item>) => {
   return (
     <nav aria-label={heading}>
-      <h4>{heading}</h4>
+      <h2>{heading}</h2>
       <S.List>
         {items.map((item, index) => (
           <li key={index}>{children(item)}</li>

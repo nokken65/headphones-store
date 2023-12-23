@@ -1,8 +1,7 @@
+import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
-const Section = styled.section`
-  padding: 3rem;
-  background-color: ${({ theme }) => theme.colors.background};
+const Section = styled(BaseSection)`
   text-align: center;
 
   & > h2 {

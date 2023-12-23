@@ -1,20 +1,32 @@
+import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
-const Section = styled.section`
+const Section = styled(BaseSection)`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.textContrast};
 
-  padding: 3rem;
-
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  grid-column-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-row-gap: 2rem;
+
+  & > h2 {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-column-gap: 1rem;
+  }
 `
 
 const Map = styled.picture`
-  grid-column: 2;
-  grid-row: 1 / 3;
+  @media screen and (min-width: 992px) {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+  grid-column: 1;
 
   & img {
     object-fit: cover;
@@ -25,11 +37,13 @@ const Map = styled.picture`
 `
 
 const StoreArticle = styled.article`
-  & > button {
-    margin-top: 3rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
 
   & > table {
+    width: 100%;
     & th,
     td {
       padding-bottom: 1.5rem;

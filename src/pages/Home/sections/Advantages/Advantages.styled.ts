@@ -1,12 +1,10 @@
 import { Card } from '@/shared/components/Card'
+import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
-const Section = styled.section`
-  padding: 3rem;
-  background-color: ${({ theme }) => theme.colors.background};
-
-  & > h2 {
-    margin-bottom: 3rem;
+const Section = styled(BaseSection)`
+  @media screen and (min-width: 1366px) {
+    padding: 3rem;
   }
 `
 

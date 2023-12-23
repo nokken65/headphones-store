@@ -16,15 +16,18 @@ const _Hero = () => {
         <img alt={'headphones name'} loading={'lazy'} src={headphonesPng} />
       </S.Image>
 
-      <S.Small>Hear it. feel it</S.Small>
-      <S.Slogan>move with the music</S.Slogan>
+      <S.TextContent>
+        <S.Small>Hear it. feel it</S.Small>
+        <S.Slogan>move with the music</S.Slogan>
 
-      <S.Category>Wireless headphones</S.Category>
-      <S.Name>Headphones name</S.Name>
-      <S.Price>
-        $ 435 | <sup>$ 465</sup>
-      </S.Price>
-      <S.Action>buy now</S.Action>
+        <S.Category>Wireless headphones</S.Category>
+        <S.Name>Headphones name</S.Name>
+        <S.Price>
+          $ 435 | <sup>$ 465</sup>
+        </S.Price>
+
+        <S.Action>buy now</S.Action>
+      </S.TextContent>
     </S.Section>
   )
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Disclosure } from '@/shared/components/Disclosure'
+
 import * as S from './Subscribe.styled'
 
 const _Subscribe = () => {
@@ -15,6 +17,13 @@ const _Subscribe = () => {
         </label>
         <button type={'submit'}>Subscribe</button>
       </form>
+
+      <Disclosure label={'Accordion first'}>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus, magni.
+      </Disclosure>
+      <Disclosure label={'second'}>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus, magni.
+      </Disclosure>
     </S.Section>
   )
 }

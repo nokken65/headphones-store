@@ -20,6 +20,11 @@ const GlobalStyles = createGlobalStyle`
     visibility: hidden !important;
   }
 
+  
+main,footer,header {
+  overflow-x: hidden;
+}
+
   button {
     border:none;
     background-color: transparent;
@@ -53,6 +58,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    --scrollbar-width: calc(100vw - 100%);
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     font-family: ${({ theme }) => theme.fontFamily};

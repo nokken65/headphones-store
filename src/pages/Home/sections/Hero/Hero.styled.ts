@@ -1,44 +1,58 @@
-import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
-const Section = styled(BaseSection)`
+const Image = styled.picture`
+  flex: 0 1 50vw;
+  justify-self: flex-end;
+
+  & img {
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    width: calc(32dvw + 2dvh);
+    display: block;
+    margin: 0 auto;
+  }
+`
+
+const Section = styled.section`
+  @media screen and (max-width: 576px) {
+    & {
+      flex-direction: column;
+      padding: 10dvh 4dvh;
+    }
+
+    & ${Image} {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      /* height: 100%;
+      flex-basis: auto; */
+      /* margin-bottom: auto; */
+    }
+  }
+
   color: ${({ theme }) => theme.colors.textContrast};
   background-color: transparent;
   min-height: 100dvh;
   height: 100dvh;
   padding: 10dvw 4dvw;
 
-  display: grid;
-  grid-template-areas:
-    'image small'
-    'image slogan'
-    'image category'
-    'image name'
-    'image price'
-    'image action';
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: fit-content(40%) 1fr;
-  grid-column-gap: 3rem;
-  grid-row-gap: 1rem;
-
-  & > * {
-    align-self: center;
-  }
+  display: flex;
+  gap: 3rem;
+  align-items: center;
 `
 
-const Image = styled.picture`
-  grid-area: image;
-
-  & img {
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    height: 100%;
-  }
+const TextContent = styled.div`
+  flex: 0 1 50vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `
 
 const Small = styled.small`
-  grid-area: small;
   font-size: 1.375dvw;
   font-weight: 500;
   letter-spacing: 0.1375rem;
@@ -46,34 +60,26 @@ const Small = styled.small`
 `
 
 const Slogan = styled.p`
-  grid-area: slogan;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 6.25dvw;
+  font-size: clamp(1rem, 0.5rem + 6vw, 8rem);
   font-weight: 700;
   text-transform: uppercase;
 `
 
 const Category = styled.p`
-  grid-area: category;
   font-size: 1dvw;
   opacity: 0.8;
 `
 
 const Name = styled.h2`
-  grid-area: name;
   font-size: 2dvw;
   font-weight: 500;
   line-height: 1;
-  margin-bottom: 0 !important;
 `
 
 const Price = styled.p`
-  grid-area: price;
-
   font-size: 2.75dvw;
   font-weight: 700;
-
-  margin-bottom: 1rem;
 
   & > sup {
     opacity: 0.5;
@@ -85,7 +91,6 @@ const Price = styled.p`
 `
 
 const Action = styled.button`
-  grid-area: action;
   background-color: transparent;
   color: inherit;
   font-size: 1.375rem;
@@ -100,4 +105,4 @@ const Action = styled.button`
   width: fit-content;
 `
 
-export { Action, Category, Image, Name, Price, Section, Slogan, Small }
+export { Action, Category, Image, Name, Price, Section, Slogan, Small, TextContent }

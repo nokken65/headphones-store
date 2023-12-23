@@ -1,14 +1,15 @@
-import { Card } from '@/shared/components/Card'
+import { Section as BaseSection } from '@/shared/components/Section'
 import { styled } from 'styled-components'
 
-const Item = styled(Card)(({ theme }) => ({
-  width: '18.75rem',
-  minWidth: '18.75rem',
-  padding: '48px 24px',
+const Section = styled(BaseSection)`
+  padding: 3rem;
 
-  '& img': {
-    width: '100%',
-  },
-}))
+  @media screen and (min-width: 1366px) {
+    & > h2 {
+      max-width: 1366px;
+      margin: 0 auto 3rem;
+    }
+  }
+`
 
-export { Item }
+export { Section }

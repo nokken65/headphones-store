@@ -12,88 +12,114 @@ import { Icon } from '@/shared/components/Icon'
 import * as S from './Footer.styled'
 import { NavigationSection } from './NavigationSection'
 
-const ACCOUNT_LIST = {
+type TNavigationSectionItem = { href: string; content: string }
+
+type TNavigationSection<Item = TNavigationSectionItem> = {
+  heading?: string
+  items: Item[]
+}
+
+const ACCOUNT_LIST: TNavigationSection = {
   heading: 'Account',
-  items: ['Wishlist', 'Cart', 'Track order', 'Shipping details'],
+  items: [
+    { content: 'Wishlist', href: '#' },
+    { content: 'Cart', href: '#' },
+    { content: 'Track order', href: '#' },
+    { content: 'Shipping details', href: '#' },
+  ],
 }
 
-const LINKS_LIST = {
+const LINKS_LIST: TNavigationSection = {
   heading: 'Links',
-  items: ['About Us', 'Contacts', 'Hot deals', 'Promotions', 'New products'],
+  items: [
+    { content: 'About us', href: '#' },
+    { content: 'Contacts', href: '#' },
+    { content: 'Hot deals', href: '#' },
+    { content: 'Promotions', href: '#' },
+    { content: 'New products', href: '#' },
+  ],
 }
-
-const HELP_LIST = {
+const HELP_LIST: TNavigationSection = {
   heading: 'Help',
-  items: ['Payments', 'Refund', 'Checkout', 'Shipping', 'Q&A', 'Privacy Policy'],
+  items: [
+    { content: 'Payments', href: '#' },
+    { content: 'Refund', href: '#' },
+    { content: 'Checkout', href: '#' },
+    { content: 'Shipping', href: '#' },
+    { content: 'Q&A', href: '#' },
+    { content: 'Privacy Policy', href: '#' },
+  ],
 }
 
-const CONTACTS_LIST = {
+const CONTACTS_LIST: TNavigationSection<
+  { href: string; content: string } | { href: string; content: string }[]
+> = {
   heading: 'Contacts',
   items: [
-    '+44 20 7234 3456',
-    '+44 20 7234 3456',
-    '+44 20 7234 3456',
-    <ul key={'social contacts'} style={{ display: 'flex', gap: '1rem' }}>
-      <li>
-        <a aria-label={'telegram contact'} href={'#'}>
-          <Icon height={32} id={telegramIconId} width={32} />
-        </a>
-      </li>
-      <li>
-        <a aria-label={'whatsapp contact'} href={'#'}>
-          <Icon height={32} id={whatsappIconId} width={32} />
-        </a>
-      </li>
-      <li>
-        <a aria-label={'email contact'} href={'#'}>
-          <Icon height={32} id={emailIconId} width={32} />
-        </a>
-      </li>
-    </ul>,
+    { href: '#', content: '+44 20 7234 3456' },
+    { href: '#', content: '+44 20 7234 3456' },
+    { href: '#', content: '+44 20 7234 3456' },
+    [
+      { href: '#', content: telegramIconId },
+      { href: '#', content: whatsappIconId },
+      { href: '#', content: emailIconId },
+    ],
+  ],
+}
+
+const SOCIALS_LIST: TNavigationSection = {
+  items: [
+    { href: '#', content: telegramIconId },
+    { href: '#', content: youtubeIconId },
+    { href: '#', content: facebookIconId },
+    { href: '#', content: twitterIconId },
+    { href: '#', content: instagramIconId },
   ],
 }
 
 const _Footer = () => {
   return (
     <S.Footer>
-      <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items}>
-        {item => <a href={'#'}>{item}</a>}
-      </NavigationSection>
-      <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items}>
-        {item => <a href={'#'}>{item}</a>}
-      </NavigationSection>
-      <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items}>
-        {item => <a href={'#'}>{item}</a>}
-      </NavigationSection>
-      <NavigationSection heading={CONTACTS_LIST.heading} items={CONTACTS_LIST.items}>
-        {item => (typeof item === 'string' ? <a href={'tel:#'}>{item}</a> : item)}
-      </NavigationSection>
-      <S.SocialsList>
-        <li>
-          <a aria-label={'telegram'} href={'#'}>
-            <Icon height={32} id={telegramIconId} width={32} />
+      <S.NavWrapper>
+        <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items}>
+          {item => <a href={item.href}>{item.content}</a>}
+        </NavigationSection>
+        <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items}>
+          {item => <a href={item.href}>{item.content}</a>}
+        </NavigationSection>
+        <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items}>
+          {item => <a href={item.href}>{item.content}</a>}
+        </NavigationSection>
+        <NavigationSection heading={CONTACTS_LIST.heading} items={CONTACTS_LIST.items}>
+          {item =>
+            Array.isArray(item) ? (
+              <NavigationSection
+                css={`
+                  & > ul {
+                    display: flex;
+                    gap: 1rem;
+                  }
+                `}
+                items={item}
+              >
+                {i => (
+                  <a href={i.href}>
+                    <Icon height={32} id={i.content} width={32} />
+                  </a>
+                )}
+              </NavigationSection>
+            ) : (
+              <a href={'tel:#'}>{item.content}</a>
+            )
+          }
+        </NavigationSection>
+      </S.NavWrapper>
+      <S.SocialsList items={SOCIALS_LIST.items}>
+        {item => (
+          <a href={(item as TNavigationSectionItem).href}>
+            <Icon height={32} id={(item as TNavigationSectionItem).content} width={32} />
           </a>
-        </li>
-        <li>
-          <a aria-label={'youtube'} href={'#'}>
-            <Icon height={32} id={youtubeIconId} width={32} />
-          </a>
-        </li>
-        <li>
-          <a aria-label={'facebook'} href={'#'}>
-            <Icon height={32} id={facebookIconId} width={32} />
-          </a>
-        </li>
-        <li>
-          <a aria-label={'twitter'} href={'#'}>
-            <Icon height={32} id={twitterIconId} width={32} />
-          </a>
-        </li>
-        <li>
-          <a aria-label={'instagram'} href={'#'}>
-            <Icon height={32} id={instagramIconId} width={32} />
-          </a>
-        </li>
+        )}
       </S.SocialsList>
       <S.Copyright>© 2022, All rights reserved</S.Copyright>
     </S.Footer>

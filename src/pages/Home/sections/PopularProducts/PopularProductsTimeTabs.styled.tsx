@@ -3,6 +3,8 @@ import { css, styled } from 'styled-components'
 const List = styled.div`
   display: flex;
   gap: 1rem;
+  align-self: flex-end;
+  flex-wrap: wrap;
 `
 
 const Action = styled.button<{ $isSelected: boolean }>`

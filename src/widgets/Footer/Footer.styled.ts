@@ -1,34 +1,45 @@
+import { container } from '@/shared/theme/mixins/container'
 import { styled } from 'styled-components'
 
-const Footer = styled.footer`
-  padding: 4rem 4rem 1.5rem;
-  color: ${({ theme }) => theme.colors.textContrast};
-  display: grid;
-  grid-auto-rows: auto;
-  grid-template-columns: repeat(4, max-content);
-  gap: 3rem 4rem;
+import { NavigationSection } from './NavigationSection'
 
-  overflow-x: hidden;
+const Footer = styled.footer`
+  padding: 3rem 3rem 1.5rem;
+  color: ${({ theme }) => theme.colors.textContrast};
+
+  ${container({ padding: '3rem 3rem 1.5rem' })}/* & > div > nav {
+    width: max-content;
+  } */
 `
 
-const Content = styled.div(() => ({
-  width: '100%',
-  display: 'flex',
-  gap: '4rem',
-}))
+const NavWrapper = styled.div`
+  display: flex;
+  gap: 3rem;
 
-const SocialsList = styled.ul(() => ({
-  marginLeft: 'auto',
+  flex-direction: column;
 
-  '& li:not(:last-of-type)': {
-    marginBottom: '1rem',
-  },
-}))
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+`
+
+const SocialsList = styled(NavigationSection)`
+  margin-top: 3rem;
+  & > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-left: 0 auto;
+  }
+`
 
 const Copyright = styled.small`
   text-align: center;
   font-weight: 500;
-  grid-column: 1 / 6;
+  margin: 3rem auto 0;
+  display: block;
 `
 
-export { Content, Copyright, Footer, SocialsList }
+export { Copyright, Footer, NavWrapper, SocialsList }

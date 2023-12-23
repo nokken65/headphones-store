@@ -9,9 +9,10 @@ import beatsaudioLightWebpSrc from '@/assets/images/brands/beatsaudio/beatsaudio
 import { BrandPreviewCard } from '@/entities/Brand'
 import { colorSchemeModel } from '@/entities/ColorScheme'
 import { Marquee } from '@/shared/components/Marquee'
-import { Section } from '@/shared/components/Section'
 import { getColorScheme } from '@/shared/utils/getColorScheme'
 import { useStore } from '@nanostores/react'
+
+import * as S from './Brands.styled'
 
 const BEATSAUDIO_SRC = {
   light: { png: beatsaudioLightPngSrc, webp: beatsaudioLightWebpSrc, avif: beatsaudioLightAvifSrc },
@@ -22,16 +23,16 @@ const _Subscribe = () => {
   const theme = useStore(colorSchemeModel.$currentColorScheme)
 
   return (
-    <Section aria-labelledby={'brands-heading'}>
+    <S.Section aria-labelledby={'brands-heading'}>
       <h2 id={'brands-heading'}>Brands</h2>
       <Marquee
-        items={[...Array(5).fill(BEATSAUDIO_SRC[getColorScheme(theme)])].map((src, index) => (
+        items={[...Array(10).fill(BEATSAUDIO_SRC[getColorScheme(theme)])].map((src, index) => (
           <li key={index}>
             <BrandPreviewCard name={'beatsaudio'} src={src} />
           </li>
         ))}
       />
-    </Section>
+    </S.Section>
   )
 }
 

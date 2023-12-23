@@ -51,6 +51,7 @@ const Image = styled.img`
 
 const TagList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 `
 

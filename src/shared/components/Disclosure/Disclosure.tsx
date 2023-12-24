@@ -1,7 +1,7 @@
 import React from 'react'
 
 import plusIconId from '@/assets/images/svg/plus.svg'
-import { HTMLMotionProps, motion } from 'framer-motion'
+import { HTMLMotionProps, m } from 'framer-motion'
 
 import * as S from './Disclosure.styled'
 
@@ -25,7 +25,7 @@ const DisclosureTrigger = ({
       {children}
       <S.DisclosureTriggerIcon
         animate={isExpanded ? 'show' : 'hide'}
-        as={motion.svg}
+        as={m.svg}
         exit={'hide'}
         initial={'hide'}
         transition={{
@@ -49,7 +49,7 @@ const DisclosureContent = ({ children, isExpanded, ...props }: DisclosureContent
   return (
     <S.DisclosureContent
       animate={isExpanded ? 'show' : 'hide'}
-      as={motion.div}
+      as={m.div}
       exit={'hide'}
       initial={'hide'}
       transition={{

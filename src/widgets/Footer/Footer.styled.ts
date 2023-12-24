@@ -1,29 +1,30 @@
 import { container } from '@/shared/theme/mixins/container'
 import { styled } from 'styled-components'
 
-import { NavigationSection } from './NavigationSection'
-
 const Footer = styled.footer`
-  padding: 3rem 3rem 1.5rem;
+  padding: 3rem 1rem 1.5rem;
   color: ${({ theme }) => theme.colors.textContrast};
 
-  ${container({ padding: '3rem 3rem 1.5rem' })}/* & > div > nav {
-    width: max-content;
-  } */
+  ${container({ padding: '3rem 1rem 1.5rem' })}
+
+  @media screen and (min-width: 576px) {
+    padding: 3rem 3rem 1.5rem;
+  }
 `
 
 const NavWrapper = styled.div`
   display: flex;
-  gap: 3rem;
 
+  gap: 2rem;
   flex-direction: column;
 
   @media screen and (min-width: 768px) {
+    gap: 3rem;
     flex-direction: row;
   }
 `
 
-const SocialsList = styled(NavigationSection)`
+const SocialsList = styled.nav`
   margin-top: 3rem;
   & > ul {
     display: flex;
@@ -31,7 +32,6 @@ const SocialsList = styled(NavigationSection)`
     justify-content: center;
     gap: 2rem;
     width: 100%;
-    margin-left: 0 auto;
   }
 `
 

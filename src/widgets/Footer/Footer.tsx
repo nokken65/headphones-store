@@ -7,73 +7,70 @@ import telegramIconId from '@/assets/images/svg/telegram.svg'
 import twitterIconId from '@/assets/images/svg/twitter.svg'
 import whatsappIconId from '@/assets/images/svg/whatsapp.svg'
 import youtubeIconId from '@/assets/images/svg/youtube.svg'
-import { Icon } from '@/shared/components/Icon'
 
 import * as S from './Footer.styled'
+import { LinksListIcon } from './LinksList'
 import { NavigationSection } from './NavigationSection'
+import { LinkIcon, LinkText } from './model/models'
 
-type TNavigationSectionItem = { href: string; content: string }
-
-type TNavigationSection<Item = TNavigationSectionItem> = {
-  heading?: string
+type TNavigationSection<Item = LinkText> = {
+  heading: string
   items: Item[]
 }
 
 const ACCOUNT_LIST: TNavigationSection = {
   heading: 'Account',
   items: [
-    { content: 'Wishlist', href: '#' },
-    { content: 'Cart', href: '#' },
-    { content: 'Track order', href: '#' },
-    { content: 'Shipping details', href: '#' },
+    { text: 'Wishlist', href: '#' },
+    { text: 'Cart', href: '#' },
+    { text: 'Track order', href: '#' },
+    { text: 'Shipping details', href: '#' },
   ],
 }
 
 const LINKS_LIST: TNavigationSection = {
   heading: 'Links',
   items: [
-    { content: 'About us', href: '#' },
-    { content: 'Contacts', href: '#' },
-    { content: 'Hot deals', href: '#' },
-    { content: 'Promotions', href: '#' },
-    { content: 'New products', href: '#' },
+    { text: 'About us', href: '#' },
+    { text: 'Contacts', href: '#' },
+    { text: 'Hot deals', href: '#' },
+    { text: 'Promotions', href: '#' },
+    { text: 'New products', href: '#' },
   ],
 }
 const HELP_LIST: TNavigationSection = {
   heading: 'Help',
   items: [
-    { content: 'Payments', href: '#' },
-    { content: 'Refund', href: '#' },
-    { content: 'Checkout', href: '#' },
-    { content: 'Shipping', href: '#' },
-    { content: 'Q&A', href: '#' },
-    { content: 'Privacy Policy', href: '#' },
+    { text: 'Payments', href: '#' },
+    { text: 'Refund', href: '#' },
+    { text: 'Checkout', href: '#' },
+    { text: 'Shipping', href: '#' },
+    { text: 'Q&A', href: '#' },
+    { text: 'Privacy Policy', href: '#' },
   ],
 }
 
-const CONTACTS_LIST: TNavigationSection<
-  { href: string; content: string } | { href: string; content: string }[]
-> = {
+const CONTACTS_LIST: TNavigationSection<LinkIcon[] | LinkText> = {
   heading: 'Contacts',
   items: [
-    { href: '#', content: '+44 20 7234 3456' },
-    { href: '#', content: '+44 20 7234 3456' },
-    { href: '#', content: '+44 20 7234 3456' },
+    { href: '#', text: '+44 20 7234 3456' },
+    { href: '#', text: '+44 20 7234 3456' },
+    { href: '#', text: '+44 20 7234 3456' },
     [
-      { href: '#', content: telegramIconId },
-      { href: '#', content: whatsappIconId },
-      { href: '#', content: emailIconId },
+      { href: '#', label: 'telegram', id: telegramIconId },
+      { href: '#', label: 'whatsapp', id: whatsappIconId },
+      { href: '#', label: 'email', id: emailIconId },
     ],
   ],
 }
 
-const SOCIALS_LIST: TNavigationSection = {
+const SOCIALS_LIST: Omit<TNavigationSection<LinkIcon>, 'heading'> = {
   items: [
-    { href: '#', content: telegramIconId },
-    { href: '#', content: youtubeIconId },
-    { href: '#', content: facebookIconId },
-    { href: '#', content: twitterIconId },
-    { href: '#', content: instagramIconId },
+    { href: '#', label: 'telegram', id: telegramIconId },
+    { href: '#', label: 'youtube', id: youtubeIconId },
+    { href: '#', label: 'facebook', id: facebookIconId },
+    { href: '#', label: 'twitter', id: twitterIconId },
+    { href: '#', label: 'instagram', id: instagramIconId },
   ],
 }
 
@@ -81,45 +78,13 @@ const _Footer = () => {
   return (
     <S.Footer>
       <S.NavWrapper>
-        <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items}>
-          {item => <a href={item.href}>{item.content}</a>}
-        </NavigationSection>
-        <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items}>
-          {item => <a href={item.href}>{item.content}</a>}
-        </NavigationSection>
-        <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items}>
-          {item => <a href={item.href}>{item.content}</a>}
-        </NavigationSection>
-        <NavigationSection heading={CONTACTS_LIST.heading} items={CONTACTS_LIST.items}>
-          {item =>
-            Array.isArray(item) ? (
-              <NavigationSection
-                css={`
-                  & > ul {
-                    display: flex;
-                    gap: 1rem;
-                  }
-                `}
-                items={item}
-              >
-                {i => (
-                  <a href={i.href}>
-                    <Icon height={32} id={i.content} width={32} />
-                  </a>
-                )}
-              </NavigationSection>
-            ) : (
-              <a href={'tel:#'}>{item.content}</a>
-            )
-          }
-        </NavigationSection>
+        <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items} />{' '}
+        <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items} />
+        <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items} />
+        <NavigationSection heading={CONTACTS_LIST.heading} items={CONTACTS_LIST.items} />
       </S.NavWrapper>
-      <S.SocialsList items={SOCIALS_LIST.items}>
-        {item => (
-          <a href={(item as TNavigationSectionItem).href}>
-            <Icon height={32} id={(item as TNavigationSectionItem).content} width={32} />
-          </a>
-        )}
+      <S.SocialsList aria-label={'socials'}>
+        <LinksListIcon items={SOCIALS_LIST.items} />
       </S.SocialsList>
       <S.Copyright>© 2022, All rights reserved</S.Copyright>
     </S.Footer>

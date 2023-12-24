@@ -3,9 +3,9 @@ import { Icon } from '@/shared/components/Icon'
 import * as S from './LinksList.styled'
 import { LinkIcon, LinkText } from './model/models'
 
-type LinksListProps = { items: (LinkIcon[] | LinkText)[] }
+type LinksListProps = { items: (LinkIcon[] | LinkText)[]; tabIndex?: number }
 
-export const LinksList = ({ items }: LinksListProps) => {
+export const LinksList = ({ items, tabIndex = 0 }: LinksListProps) => {
   return (
     <S.List>
       {items.map((item, index) => (
@@ -13,7 +13,9 @@ export const LinksList = ({ items }: LinksListProps) => {
           {Array.isArray(item) ? (
             <LinksListIcon items={item} />
           ) : (
-            <a href={item.href}>{item.text}</a>
+            <a href={item.href} tabIndex={tabIndex}>
+              {item.text}
+            </a>
           )}
         </li>
       ))}
@@ -21,14 +23,14 @@ export const LinksList = ({ items }: LinksListProps) => {
   )
 }
 
-type LinksListIconProps = { items: LinkIcon[] }
+type LinksListIconProps = { items: LinkIcon[]; tabIndex?: number }
 
-export const LinksListIcon = ({ items }: LinksListIconProps) => {
+export const LinksListIcon = ({ items, tabIndex = 0 }: LinksListIconProps) => {
   return (
     <S.ListIcon>
       {items.map((item, index) => (
         <li key={index}>
-          <a aria-label={item.label} href={item.href}>
+          <a aria-label={item.label} href={item.href} tabIndex={tabIndex}>
             <Icon height={32} id={item.id} width={32} />
           </a>
         </li>

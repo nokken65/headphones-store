@@ -28,7 +28,7 @@ const NavigationSectionDisclosure = ({
   items,
   id,
 }: NavigationSectionProps & { id: string }) => {
-  const [_, { triggerProps, contentProps }] = useDisclosure()
+  const [isExpanded, { triggerProps, contentProps }] = useDisclosure()
 
   return (
     <nav aria-labelledby={id}>
@@ -37,7 +37,7 @@ const NavigationSectionDisclosure = ({
       </S.Heading>
 
       <DisclosureContent {...contentProps}>
-        <LinksList items={items} />
+        <LinksList items={items} tabIndex={isExpanded ? 0 : -1} />
       </DisclosureContent>
     </nav>
   )

@@ -17,7 +17,6 @@ export default defineConfig({
   },
   preview: { port: 3000 },
   build: {
-    minify: false,
     cssMinify: 'lightningcss',
     rollupOptions: {
       output: {

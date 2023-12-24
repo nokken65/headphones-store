@@ -5,11 +5,11 @@ const Footer = styled.footer`
   padding: 3rem 1rem 1.5rem;
   color: ${({ theme }) => theme.colors.textContrast};
 
-  ${container({ padding: '3rem 1rem 1.5rem' })}
-
   @media screen and (min-width: 576px) {
     padding: 3rem 3rem 1.5rem;
   }
+
+  ${container({ padding: '3rem 1rem 1.5rem' })}
 `
 
 const NavWrapper = styled.div`
@@ -19,7 +19,7 @@ const NavWrapper = styled.div`
   flex-direction: column;
 
   @media screen and (min-width: 768px) {
-    gap: 3rem;
+    gap: 5rem;
     flex-direction: row;
   }
 `

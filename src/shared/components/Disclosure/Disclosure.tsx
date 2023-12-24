@@ -1,56 +1,108 @@
 import React from 'react'
 
-import { AnimatePresence, motion } from 'framer-motion'
-import { styled } from 'styled-components'
+import plusIconId from '@/assets/images/svg/plus.svg'
+import { HTMLMotionProps, motion } from 'framer-motion'
 
-type DisclosureProps = {
-  label?: string
-} & React.PropsWithChildren
+import * as S from './Disclosure.styled'
 
-const S = {
-  Disclosure: styled.div`
-    overflow: hidden;
-  `,
-  Label: styled.button``,
-  Body: styled.div`
-    padding: 2rem;
-    border: 2px solid blue;
-  `,
+type DisclosureTriggerProps = React.ComponentPropsWithoutRef<'button'> & {
+  isExpanded: boolean
+  toggle: () => void
+  show: () => void
+  hide: () => void
 }
 
-const Disclosure = ({ children, label }: DisclosureProps) => {
-  const [isExpanded, setIsExpanded] = React.useState(true)
-
-  const id = React.useId()
-
+const DisclosureTrigger = ({
+  children,
+  isExpanded,
+  toggle,
+  show,
+  hide,
+  ...props
+}: DisclosureTriggerProps) => {
   return (
-    <S.Disclosure>
-      <S.Label
-        aria-controls={id}
-        aria-expanded={isExpanded}
-        onClick={() => setIsExpanded(prev => !prev)}
+    <S.DisclosureTrigger onClick={() => toggle()} {...props}>
+      {children}
+      <S.DisclosureTriggerIcon
+        animate={isExpanded ? 'show' : 'hide'}
+        as={motion.svg}
+        exit={'hide'}
+        initial={'hide'}
+        transition={{
+          duration: 0.2,
+          ease: 'linear',
+        }}
+        variants={{
+          show: { rotateZ: '45deg' },
+          hide: { rotateZ: '0deg' },
+        }}
       >
-        {label}
-      </S.Label>
-      <AnimatePresence>
-        {isExpanded && (
-          <S.Body
-            animate={{ y: 0 }}
-            as={motion.div}
-            exit={{ y: '-100%' }}
-            id={id}
-            initial={{ y: '-100%' }}
-            transition={{
-              duration: 0.2,
-              type: 'keyframes',
-            }}
-          >
-            {children}
-          </S.Body>
-        )}
-      </AnimatePresence>
-    </S.Disclosure>
+        <use xlinkHref={`#${plusIconId}`} />
+      </S.DisclosureTriggerIcon>
+    </S.DisclosureTrigger>
   )
 }
 
-export { Disclosure }
+type DisclosureContentProps = HTMLMotionProps<'div'> & { isExpanded: boolean }
+
+const DisclosureContent = ({ children, isExpanded, ...props }: DisclosureContentProps) => {
+  return (
+    <S.DisclosureContent
+      animate={isExpanded ? 'show' : 'hide'}
+      as={motion.div}
+      exit={'hide'}
+      initial={'hide'}
+      transition={{
+        duration: 0.2,
+        ease: 'linear',
+      }}
+      variants={{
+        show: { height: 'auto' },
+        hide: { height: '0px' },
+      }}
+      {...props}
+    >
+      {children}
+    </S.DisclosureContent>
+  )
+}
+
+const useDisclosure = () => {
+  const [isExpanded, setIsExpanded] = React.useState(false)
+  const triggerId = React.useId()
+  const contentId = React.useId()
+
+  const toggle = () => setIsExpanded(prev => !prev)
+  const show = () => setIsExpanded(true)
+  const hide = () => setIsExpanded(false)
+
+  const triggerProps = React.useMemo(
+    () => ({
+      key: `header-${triggerId}`,
+      'aria-controls': contentId,
+      'aria-expanded': isExpanded,
+      type: 'button' as const,
+      id: triggerId,
+      isExpanded,
+      toggle,
+      show,
+      hide,
+    }),
+    [triggerId, contentId, isExpanded]
+  )
+
+  const contentProps = React.useMemo(
+    () => ({
+      'aria-labelledby': triggerId,
+      role: 'region',
+      id: contentId,
+      key: `content-${contentId}`,
+      isExpanded,
+    }),
+    [triggerId, isExpanded, contentId]
+  )
+
+  return [isExpanded, { triggerProps, contentProps }] as const
+}
+
+export { DisclosureContent, DisclosureTrigger, useDisclosure }

@@ -13,7 +13,7 @@ const _Hero = () => {
         <source srcSet={`${headphonesAvif} 1x`} type={'image/avif'} />
         <source srcSet={`${headphonesWebp} 1x`} type={'image/webp'} />
         <source srcSet={`${headphonesPng} 1x`} type={'image/png'} />
-        <img alt={'headphones name'} loading={'lazy'} src={headphonesPng} />
+        <img alt={'headphones name'} src={headphonesPng} />
       </S.Image>
 
       <S.TextContent>

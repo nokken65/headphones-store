@@ -1,15 +1,9 @@
 import { Section as BaseSection } from '@/shared/components/Section'
+import { container } from '@/shared/theme/mixins/container'
 import { styled } from 'styled-components'
 
 const Section = styled(BaseSection)`
-  padding: 3rem;
-
-  @media screen and (min-width: 1366px) {
-    & > h2 {
-      max-width: 1366px;
-      margin: 0 auto 3rem;
-    }
-  }
+  ${container({ padding: '0 3rem 0 0' })}
 `
 
 export { Section }

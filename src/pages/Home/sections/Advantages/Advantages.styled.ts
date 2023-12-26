@@ -1,11 +1,10 @@
 import { Card } from '@/shared/components/Card'
 import { Section as BaseSection } from '@/shared/components/Section'
+import { container } from '@/shared/theme/mixins/container'
 import { styled } from 'styled-components'
 
 const Section = styled(BaseSection)`
-  @media screen and (min-width: 1366px) {
-    padding: 3rem;
-  }
+  ${container({ padding: '0 3rem 0 0' })}
 `
 
 const Item = styled(Card)(({ theme }) => ({

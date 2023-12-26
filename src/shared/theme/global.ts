@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 import { backgroundImage } from './mixins/backgroundImage'
-import { headings } from './mixins/headings'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -9,8 +8,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-
-  ${headings}
 
   *[data-invisible] {
     width:0 !important;
@@ -20,10 +17,6 @@ const GlobalStyles = createGlobalStyle`
     visibility: hidden !important;
   }
 
-  
-main,footer,header {
-  overflow-x: hidden;
-}
 
   button {
     border:none;
@@ -66,7 +59,9 @@ main,footer,header {
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
+    -moz-osx-font-smoothing: grayscale;
+
+    overflow-x:hidden;
   }
 
   #app-root {

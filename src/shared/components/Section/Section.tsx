@@ -5,8 +5,9 @@ const Section = styled.section`
   background-color: ${({ theme }) => theme.colors.background};
 
   & > h2,
-  header {
+  & > header > h2 {
     margin-bottom: 2rem;
+    font-size: 2.5rem;
   }
 
   padding: 3rem 1rem;

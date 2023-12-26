@@ -21,19 +21,6 @@ const DisclosureTrigger = styled.button<{ $isExpanded: boolean }>`
   }
 `
 
-const DisclosureContent = styled.div<{ $isExpanded: boolean }>`
-  display: grid;
-  grid-template-rows: ${({ $isExpanded }) => ($isExpanded ? 1 : 0)}fr;
-  transition:
-    grid-template-rows 0.2s linear,
-    margin-bottom 0.2s linear;
-  margin-bottom: ${({ $isExpanded }) => ($isExpanded ? 1 : 0)}rem;
-
-  & > div {
-    overflow: hidden;
-  }
-`
-
 const DisclosureTriggerIcon = styled.svg<{ $isExpanded: boolean }>`
   width: 1.5rem;
   height: 1.5rem;
@@ -43,4 +30,4 @@ const DisclosureTriggerIcon = styled.svg<{ $isExpanded: boolean }>`
   transition: transform 0.2s linear;
 `
 
-export { DisclosureContent, DisclosureTrigger, DisclosureTriggerIcon }
+export { DisclosureTrigger, DisclosureTriggerIcon }

@@ -1,7 +1,6 @@
 import React from 'react'
 
 import plusIconId from '@/assets/images/svg/plus.svg'
-import { HTMLMotionProps, m } from 'framer-motion'
 
 import * as S from './Disclosure.styled'
 
@@ -21,48 +20,21 @@ const DisclosureTrigger = ({
   ...props
 }: DisclosureTriggerProps) => {
   return (
-    <S.DisclosureTrigger onClick={() => toggle()} {...props}>
+    <S.DisclosureTrigger $isExpanded={isExpanded} onClick={() => toggle()} {...props}>
       {children}
-      <S.DisclosureTriggerIcon
-        animate={isExpanded ? 'show' : 'hide'}
-        as={m.svg}
-        exit={'hide'}
-        initial={'hide'}
-        transition={{
-          duration: 0.2,
-          ease: 'linear',
-        }}
-        variants={{
-          show: { rotateZ: '45deg' },
-          hide: { rotateZ: '0deg' },
-        }}
-      >
+      <S.DisclosureTriggerIcon $isExpanded={isExpanded}>
         <use xlinkHref={`#${plusIconId}`} />
       </S.DisclosureTriggerIcon>
     </S.DisclosureTrigger>
   )
 }
 
-type DisclosureContentProps = HTMLMotionProps<'div'> & { isExpanded: boolean }
+type DisclosureContentProps = React.ComponentPropsWithoutRef<'div'> & { isExpanded: boolean }
 
 const DisclosureContent = ({ children, isExpanded, ...props }: DisclosureContentProps) => {
   return (
-    <S.DisclosureContent
-      animate={isExpanded ? 'show' : 'hide'}
-      as={m.div}
-      exit={'hide'}
-      initial={'hide'}
-      transition={{
-        duration: 0.2,
-        ease: 'linear',
-      }}
-      variants={{
-        show: { height: 'auto' },
-        hide: { height: '0px' },
-      }}
-      {...props}
-    >
-      {children}
+    <S.DisclosureContent {...props} $isExpanded={isExpanded}>
+      <div>{children}</div>
     </S.DisclosureContent>
   )
 }

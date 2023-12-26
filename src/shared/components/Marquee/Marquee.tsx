@@ -7,7 +7,16 @@ type MarqueeProps = {
 }
 
 const _Marquee = ({ items }: MarqueeProps) => {
-  return <S.List>{items}</S.List>
+  const [isPause, setIsPause] = React.useState(false)
+
+  return (
+    <S.Wrapper onPointerEnter={() => setIsPause(true)} onPointerLeave={() => setIsPause(false)}>
+      <div style={{ animationPlayState: isPause ? 'paused' : 'running' }}>
+        <S.List>{items}</S.List>
+        <S.List aria-hidden>{items}</S.List>
+      </div>
+    </S.Wrapper>
+  )
 }
 
 export const Marquee = React.memo(_Marquee)

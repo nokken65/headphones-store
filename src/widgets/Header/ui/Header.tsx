@@ -9,20 +9,20 @@ import { ColorSchemeSelector } from '@/features/select-color-scheme'
 import { LanguageSelector } from '@/features/select-language'
 import { Icon } from '@/shared/components/Icon'
 import { HEADER_HEIGHT } from '@/shared/constants'
-import { useMotionValueEvent, useScroll } from 'framer-motion'
+import { useScroll } from '@/shared/hooks/useScroll'
 
 import * as S from './Header.styled'
 import { Navigation } from './Navigation'
 
 const _Header = () => {
+  const { scrollY } = useScroll()
   const [isInverted, setIsInverted] = React.useState(
     window.scrollY >= document.documentElement.clientHeight - HEADER_HEIGHT
   )
-  const { scrollY } = useScroll({ axis: 'y' })
 
-  useMotionValueEvent(scrollY, 'change', latest =>
-    setIsInverted(latest >= document.documentElement.clientHeight - HEADER_HEIGHT)
-  )
+  React.useEffect(() => {
+    setIsInverted(scrollY >= document.documentElement.clientHeight - HEADER_HEIGHT)
+  }, [scrollY])
 
   return (
     <S.Header data-is-inverted={isInverted ? '' : undefined}>

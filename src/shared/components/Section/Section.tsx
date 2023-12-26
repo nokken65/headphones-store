@@ -5,8 +5,12 @@ const Section = styled.section`
   background-color: ${({ theme }) => theme.colors.background};
 
   & > h2,
-  & > header > h2 {
+  & > header {
     margin-bottom: 2rem;
+  }
+
+  & > h2,
+  & > header > h2 {
     font-size: 2.5rem;
   }
 

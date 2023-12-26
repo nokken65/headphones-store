@@ -3,7 +3,9 @@ import React from 'react'
 import coverAvifSrc from '@/assets/images/blog/cover_1@1x.avif'
 import coverPngSrc from '@/assets/images/blog/cover_1@1x.png'
 import coverWebpSrc from '@/assets/images/blog/cover_1@1x.webp'
+import arrowIconId from '@/assets/images/svg/arrow_alternative.svg'
 import { Post, PostPreviewCard } from '@/entities/Post'
+import { Icon } from '@/shared/components/Icon'
 
 import * as S from './Blog.styled'
 
@@ -26,7 +28,9 @@ const _Blog = () => {
     <S.Section aria-labelledby={'blog-heading'}>
       <S.Header aria-labelledby={'blog-heading'}>
         <h2 id={'blog-heading'}>Blog</h2>
-        <a href={'#'}>view all</a>
+        <S.Link href={'#'}>
+          view all <Icon id={arrowIconId} />
+        </S.Link>
       </S.Header>
       <S.Grid>
         {generatePosts().map(post => (

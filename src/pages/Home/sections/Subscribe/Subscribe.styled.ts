@@ -6,6 +6,7 @@ const Section = styled(BaseSection)`
 
   & > h2 {
     font-size: 2.5rem;
+    margin-bottom: 0;
   }
 `
 

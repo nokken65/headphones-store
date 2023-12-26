@@ -29,11 +29,19 @@ const Header = styled.header`
   & > h2 {
     margin: 0;
   }
+`
 
-  & > a {
-    font-size: 1.5rem;
-    opacity: 0.7;
+const Link = styled.a`
+  font-size: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > svg {
+    width: 2rem;
+    height: 1rem;
   }
 `
 
-export { Grid, Header, Section }
+export { Grid, Header, Link, Section }

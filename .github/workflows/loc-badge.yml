@@ -1,5 +1,6 @@
-on: [push]
 name: Line of code badge generator
+
+on: [push]
 
 jobs:
   hello_world_job:
@@ -7,7 +8,7 @@ jobs:
     name: Line of code badge generator
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Launch the local action
         uses: ./ # Uses an action in the root directory

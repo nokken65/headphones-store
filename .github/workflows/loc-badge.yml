@@ -1,17 +1,23 @@
-name: Line of code badge generator
+name: line of code badge generator
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  hello_world_job:
+  loc_badge_job:
     runs-on: ubuntu-latest
     name: Line of code badge generator
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Launch the local action
-        uses: ./ # Uses an action in the root directory
+      - name: Make Code Badge
+        uses: shadowmoose/GHA-LoC-Badge@1.0.0
         id: badge
         with:
           debug: true
@@ -24,11 +30,11 @@ jobs:
           echo "Scanned: ${{ steps.badge.outputs.counted_files }}";
           echo "Line Count: ${{ steps.badge.outputs.total_lines }}";
 
-      - name: Deploy to image-data branch
+      - name: Deploy to loc-badge branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./output
-          publish_branch: image-data
+          publish_branch: loc-badge
           github_token: ${{ secrets.GITHUB_TOKEN }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'

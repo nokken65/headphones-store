@@ -1,21 +1,26 @@
+import type { Theme } from '.'
+
+import { createTheme } from '@vanilla-extract/css'
+
+import { vars } from './contract.css'
+
 import { base } from './base'
 import { colors } from './colors'
-import { Theme } from './types'
 
-const dark: Theme = {
+const darkClassName = createTheme(vars, {
   ...base,
   colors: {
-    accent: colors.red.DEFAULT,
+    accent: colors.red[400],
     background: colors.grey[800],
     backgroundPale: colors.grey[700],
     text: colors.grey[50],
     textInvert: colors.grey[900],
     textContrast: colors.grey[50],
     backgroundImageFallback: '#282536',
-    link: colors.red.DEFAULT,
+    link: colors.red[400],
     cardBackground: colors.grey[700],
     cardBorder: colors.grey[600],
   },
-}
+} as Theme)
 
-export { dark }
+export { darkClassName }

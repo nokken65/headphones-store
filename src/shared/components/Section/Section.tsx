@@ -1,35 +1,13 @@
-import { container } from '@/shared/theme/mixins/container'
-import { styled } from 'styled-components'
+import React from 'react'
 
-const Section = styled.section`
-  background-color: ${({ theme }) => theme.colors.background};
+import { clsx } from 'clsx'
 
-  & > h2,
-  & > header {
-    margin-bottom: 2rem;
-  }
+import * as styles from './Section.css'
 
-  & > h2,
-  & > header > h2 {
-    font-size: 2.5rem;
-  }
-
-  padding: 3rem 1rem;
-
-  @media screen and (min-width: 576px) {
-    padding: 3rem 2rem;
-  }
-
-  @media screen and (min-width: 768px) {
-    padding: 3rem;
-
-    & > h2,
-    header {
-      margin-bottom: 3rem;
-    }
-  }
-
-  ${container()}
-`
+const Section = ({ children, className, ...props }: React.ComponentPropsWithoutRef<'section'>) => (
+  <section {...props} className={clsx(styles.section, className)}>
+    {children}
+  </section>
+)
 
 export { Section }

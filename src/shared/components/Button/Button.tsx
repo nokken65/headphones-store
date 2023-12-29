@@ -2,6 +2,7 @@ import { css, styled } from 'styled-components'
 
 type ButtonProps = {
   $variant?: 'filled' | 'outline' | 'subtle'
+  $padding?: string
   $iconId?: string
 }
 
@@ -9,9 +10,10 @@ const _Button = styled.button.attrs<ButtonProps>(props => ({
   ...props,
   type: props.type ?? 'button',
   $variant: props.$variant ?? 'filled',
+  $padding: props.$padding ?? '1rem 1.5rem',
 }))`
   appearance: none;
-  padding: 1rem 1.5rem;
+  padding: ${({ $padding }) => $padding};
   border-radius: 1rem;
   cursor: pointer;
 

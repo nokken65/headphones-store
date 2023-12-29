@@ -1,16 +1,16 @@
 import React from 'react'
 
-import { Footer } from '@/widgets/Footer'
-import { Header } from '@/widgets/Header'
+// import { Footer } from '@/widgets/Footer'
+// import { Header } from '@/widgets/Header'
 
 type DefaultLayoutProps = React.PropsWithChildren
 
 const _DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

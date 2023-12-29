@@ -1,7 +1,9 @@
-import { Theme } from './types'
+import type { Theme } from './types'
+
+import { rubikFontFace } from './fonts.css'
 
 const base: Omit<Theme, 'colors'> = {
-  fontFamily: `Rubik,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif`,
+  fontFamily: `${rubikFontFace},-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif`,
   fontSize: '16px',
   radius: {
     xs: '8px',

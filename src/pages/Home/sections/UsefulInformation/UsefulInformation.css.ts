@@ -1,0 +1,63 @@
+import { linkStyles } from '@/shared/components/Link'
+import { sectionStyles } from '@/shared/components/Section'
+import { breakpoints } from '@/shared/theme'
+import { style } from '@vanilla-extract/css'
+
+const section = style([
+  sectionStyles.section,
+  {
+    display: 'grid',
+    gridAutoRows: 'auto',
+    gridTemplateColumns: '1fr',
+    columnGap: '3rem',
+    rowGap: '2rem',
+    lineHeight: 1.4,
+
+    '@media': {
+      [breakpoints.md]: {
+        gridTemplateColumns: '1fr 1fr',
+        rowGap: '3rem',
+      },
+    },
+  },
+])
+
+const list = style({
+  lineHeight: 1.4,
+})
+
+const listItem = style({
+  selectors: {
+    '&:not(:last-of-type)': {
+      marginRight: '1.5rem',
+    },
+  },
+})
+
+const heading = style([
+  sectionStyles.heading,
+  {
+    marginBottom: 0,
+
+    '@media': {
+      [breakpoints.md]: {
+        gridColumn: '1 / 3',
+      },
+    },
+  },
+])
+
+const link = style([
+  linkStyles.link,
+  {
+    textDecoration: 'underline',
+  },
+])
+
+const description = style({
+  fontSize: '1.25rem',
+  lineHeight: 1.4,
+  opacity: 0.7,
+})
+
+export { description, heading, link, list, listItem, section }

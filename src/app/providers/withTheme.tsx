@@ -1,17 +1,19 @@
-import { ReactNode } from 'react'
+import React from 'react'
 
 import { selectColorSchemeModel } from '@/features/select-color-scheme'
-import { GlobalStyles } from '@/shared/theme/global'
+import { usePrevious } from '@/shared/hooks/usePrevious'
 import { useStore } from '@nanostores/react'
-import { ThemeProvider } from 'styled-components'
 
-export const withTheme = (children: () => ReactNode) => () => {
+export const withTheme = (children: () => React.ReactNode) => () => {
   const theme = useStore(selectColorSchemeModel.$theme)
+  const prevTheme = usePrevious(theme)
 
-  return (
-    <ThemeProvider theme={theme}>
-      {children()}
-      <GlobalStyles />
-    </ThemeProvider>
-  )
+  React.useEffect(() => {
+    if (prevTheme !== null) {
+      document.body.classList.remove(prevTheme)
+    }
+    document.body.classList.add(theme)
+  }, [prevTheme, theme])
+
+  return <>{children()}</>
 }

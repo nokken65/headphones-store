@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 import createSvgSpritePlugin from 'vite-plugin-svg-sprite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     tsconfigPaths(),
     react({ babel: { babelrc: true } }),
@@ -13,7 +13,7 @@ export default defineConfig({
       symbolId: 'icon-[name]-[hash]',
     }),
     vanillaExtractPlugin({
-      identifiers: 'debug',
+      identifiers: mode === 'production' ? 'short' : 'debug',
       esbuildOptions: {
         // @ts-ignore
         plugins: [ImageLoader({ filter: /\.(gif|jpe?g|tiff?|png|webp|avif|bmp|svg)$/ })],
@@ -38,4 +38,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))

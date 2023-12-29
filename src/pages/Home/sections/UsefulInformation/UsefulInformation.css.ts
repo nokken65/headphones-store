@@ -9,7 +9,7 @@ const section = style([
     display: 'grid',
     gridAutoRows: 'auto',
     gridTemplateColumns: '1fr',
-    columnGap: '3rem',
+    columnGap: '1rem',
     rowGap: '2rem',
     lineHeight: 1.4,
 
@@ -27,6 +27,7 @@ const list = style({
 })
 
 const listItem = style({
+  display: 'inline-block',
   selectors: {
     '&:not(:last-of-type)': {
       marginRight: '1.5rem',

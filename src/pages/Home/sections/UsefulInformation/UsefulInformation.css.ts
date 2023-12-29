@@ -51,6 +51,7 @@ const heading = style([
 const link = style([
   linkStyles.link,
   {
+    fontSize: '1.25rem',
     textDecoration: 'underline',
   },
 ])

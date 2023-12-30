@@ -1,1 +1,1 @@
-export * from './PostPreviewCard'
+export * from './PostCard'

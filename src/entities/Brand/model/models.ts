@@ -1,4 +1,4 @@
-import { ImageLinks } from '@/shared/types'
+import type { ImageLinks } from '@/shared/types'
 
 type Brand = {
   id: string

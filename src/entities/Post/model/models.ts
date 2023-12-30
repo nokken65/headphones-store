@@ -1,6 +1,6 @@
 import type { ImageLinks } from '@/shared/types'
 
-type Tag = {
+type PostTag = {
   label: string
   href: string
 }
@@ -10,8 +10,8 @@ type Post = {
   title: string
   date: Date
   views: number
-  tags: Tag[]
+  tags: PostTag[]
   cover: ImageLinks
 }
 
-export type { Post, Tag }
+export type { Post, PostTag }

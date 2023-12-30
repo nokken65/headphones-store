@@ -1,8 +1,8 @@
+import type { Advantage } from '../model/models'
+
 import { Icon } from '@/shared/components/Icon'
 
 import * as styles from './AdvantageCard.css'
-
-import { Advantage } from '../model/models'
 
 type AdvantageCardProps = Advantage
 

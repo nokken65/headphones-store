@@ -1,8 +1,8 @@
+import type { Brand } from '../model/models'
+
 import clsx from 'clsx'
 
 import * as styles from './BrandCard.css'
-
-import { Brand } from '../model/models'
 
 // FIXME: isDarkMode flag
 type BrandProps = Brand & { isDarkMode: boolean }

@@ -1,3 +1,5 @@
+import type { Advantage } from '../model/models'
+
 import clockIconId, { size as clockSize } from '@/assets/images/svg/clock.svg'
 import courierIconId, { size as courierSize } from '@/assets/images/svg/courier.svg'
 import deliveryIconId, { size as deliverySize } from '@/assets/images/svg/delivery.svg'
@@ -7,8 +9,6 @@ import microphoneIconId, { size as microphoneSize } from '@/assets/images/svg/mi
 import officialIconId, { size as officialSize } from '@/assets/images/svg/official.svg'
 import starIconId, { size as starSize } from '@/assets/images/svg/star.svg'
 import walletIconId, { size as walletSize } from '@/assets/images/svg/wallet.svg'
-
-import { Advantage } from '../model/models'
 
 const ADVANTAGES: Advantage[] = [
   {
@@ -86,11 +86,3 @@ const ADVANTAGES: Advantage[] = [
 ]
 
 export { ADVANTAGES }
-
-// function calcW({ width, height }: { width?: number | string; height?: number | string }) {
-//   if (width && height) {
-//     return (48 * +width) / +height
-//   }
-
-//   return 0
-// }

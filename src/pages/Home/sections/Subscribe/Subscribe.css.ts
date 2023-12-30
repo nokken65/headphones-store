@@ -1,9 +1,12 @@
 import { sectionStyles } from '@/shared/components/Section'
 import { style } from '@vanilla-extract/css'
 
-const section = style({
-  textAlign: 'center',
-})
+const section = style([
+  sectionStyles.section,
+  {
+    textAlign: 'center',
+  },
+])
 
 const heading = style([
   sectionStyles.heading,

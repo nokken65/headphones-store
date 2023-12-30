@@ -1,1 +1,1 @@
-export * from './Card'
+export * as cardStyles from './Card.css'

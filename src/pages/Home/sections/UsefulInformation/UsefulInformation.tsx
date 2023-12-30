@@ -1,8 +1,5 @@
 import React from 'react'
 
-import { Link } from '@/shared/components/Link'
-import { Section } from '@/shared/components/Section'
-
 import * as styles from './UsefulInformation.css'
 
 const LINKS = [
@@ -27,7 +24,7 @@ const _UsefulInformation = () => {
         <ul className={styles.list} role={'list'}>
           {LINKS.map((link, index) => (
             <li className={styles.listItem} key={index}>
-              <Link className={styles.link}>{link}</Link>
+              <a className={styles.link}>{link}</a>
             </li>
           ))}
         </ul>

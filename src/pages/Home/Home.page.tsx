@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { DefaultLayout } from '../layouts/Default'
-// import { Advantages } from './sections/Advantages'
+import { Advantages } from './sections/Advantages'
 // import { Blog } from './sections/Blog'
 // import { Brands } from './sections/Brands'
 // import { Hero } from './sections/Hero'
@@ -15,7 +15,7 @@ const _Home = () => {
     <DefaultLayout>
       {/* <Hero /> */}
       {/* <PopularProducts /> */}
-      {/* <Advantages /> */}
+      <Advantages />
       {/* <Stores /> */}
       {/* <Blog /> */}
       {/* <Brands /> */}

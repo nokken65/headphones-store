@@ -1,22 +1,22 @@
 import React from 'react'
 
+import { AdvantageCard } from '@/entities/Advantage'
+import { ADVANTAGES } from '@/entities/Advantage/mocks/advantages'
 import { Marquee } from '@/shared/components/Marquee'
-import { ADVANTAGES_MAP } from '@/shared/constants'
 
-import * as S from './Advantages.styled'
+import * as styles from './Advantages.css'
 
 const _Advantages = () => {
   return (
-    <S.Section aria-label={'Advantages'}>
+    <section aria-label={'Advantages'} className={styles.section}>
       <Marquee
-        items={Object.entries(ADVANTAGES_MAP).map(([id, { icon, text }]) => (
-          <S.Item as={'li'} key={id}>
-            {icon}
-            <p>{text}</p>
-          </S.Item>
+        items={ADVANTAGES.map(item => (
+          <li key={item.id}>
+            <AdvantageCard {...item} />
+          </li>
         ))}
       />
-    </S.Section>
+    </section>
   )
 }
 

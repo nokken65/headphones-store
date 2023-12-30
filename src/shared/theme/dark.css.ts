@@ -17,7 +17,7 @@ const darkClassName = createTheme(vars, {
     textInvert: colors.grey[900],
     textContrast: colors.grey[50],
     backgroundImageFallback: '#282536',
-    link: colors.red[400],
+    link: colors.red[600],
     cardBackground: colors.grey[700],
     cardBorder: colors.grey[600],
   },

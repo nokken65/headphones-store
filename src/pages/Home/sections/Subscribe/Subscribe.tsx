@@ -8,13 +8,15 @@ import { description } from './Subscribe.css'
 const _Subscribe = () => {
   return (
     <section aria-labelledby={'subscribe-heading'} className={styles.section}>
-      <h2 className={styles.heading} id={'subscribe-heading'}>
-        Subscribe to our newsletters
-      </h2>
-      <p className={description}>
-        Join our mailing list to receive exclusive offers, promotions & product updates!
-      </p>
-      <SubscribeToNewslettersForm />
+      <div className={styles.container}>
+        <h2 className={styles.heading} id={'subscribe-heading'}>
+          Subscribe to our newsletters
+        </h2>
+        <p className={description}>
+          Join our mailing list to receive exclusive offers, promotions & product updates!
+        </p>
+        <SubscribeToNewslettersForm />
+      </div>
     </section>
   )
 }

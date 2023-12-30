@@ -1,3 +1,4 @@
+import { containerStyles } from '@/shared/components/Container'
 import { sectionStyles } from '@/shared/components/Section'
 import { style } from '@vanilla-extract/css'
 
@@ -7,6 +8,8 @@ const section = style([
     textAlign: 'center',
   },
 ])
+
+const container = style([containerStyles.container, {}])
 
 const heading = style([
   sectionStyles.heading,
@@ -22,4 +25,4 @@ const description = style({
   marginBottom: '3rem',
 })
 
-export { description, heading, section }
+export { container, description, heading, section }

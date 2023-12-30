@@ -1,1 +1,1 @@
-export * from './BrandPreviewCard'
+export * from './BrandCard'

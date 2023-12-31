@@ -4,10 +4,7 @@ import { sectionStyles } from '@/shared/components/Section'
 import { breakpoints } from '@/shared/theme'
 import { style } from '@vanilla-extract/css'
 
-const section = style([
-  sectionStyles.section,
-  { },
-])
+const section = style([sectionStyles.section])
 
 const container = style([
   containerStyles.container,
@@ -68,4 +65,4 @@ const description = style({
   opacity: 0.7,
 })
 
-export { container,description, heading, link, list, listItem, section }
+export { container, description, heading, link, list, listItem, section }

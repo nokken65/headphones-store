@@ -1,11 +1,13 @@
+import type { LinkIcon, LinkText } from './model/models'
+
 import React from 'react'
 
 import { DisclosureContent, DisclosureTrigger, useDisclosure } from '@/shared/components/Disclosure'
 import { useWindowWidth } from '@/shared/hooks/useWindowWidth'
 
+import * as styles from './NavigationSection.css'
+
 import { LinksList } from './LinksList'
-import * as S from './NavigationSection.styled'
-import { LinkIcon, LinkText } from './model/models'
 
 type NavigationSectionProps = {
   heading: string
@@ -31,10 +33,10 @@ const NavigationSectionDisclosure = ({
   const [isExpanded, { triggerProps, contentProps }] = useDisclosure()
 
   return (
-    <nav aria-labelledby={id}>
-      <S.Heading id={id}>
+    <nav aria-labelledby={id} className={styles.navigation}>
+      <h3 className={styles.heading} id={id}>
         <DisclosureTrigger {...triggerProps}>{heading}</DisclosureTrigger>
-      </S.Heading>
+      </h3>
 
       <DisclosureContent {...contentProps}>
         <LinksList items={items} tabIndex={isExpanded ? 0 : -1} />
@@ -49,8 +51,10 @@ const NavigationSectionPlain = ({
   id,
 }: NavigationSectionProps & { id: string }) => {
   return (
-    <nav aria-labelledby={id}>
-      <S.Heading id={id}>{heading}</S.Heading>
+    <nav aria-labelledby={id} className={styles.navigation}>
+      <h3 className={styles.heading} id={id}>
+        {heading}
+      </h3>
 
       <LinksList items={items} />
     </nav>

@@ -9,6 +9,10 @@ const link = style({
       ':hover': {
         color: vars.colors.link,
       },
+      ':focus-visible': {
+        outlineOffset: '0.1rem',
+        outline: '2px solid orange',
+      },
       selectors: {
         [`&[href^="tel:"]`]: {
           textDecoration: 'underline',

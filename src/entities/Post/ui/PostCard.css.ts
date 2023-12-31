@@ -1,5 +1,4 @@
 import { cardStyles } from '@/shared/components/Card'
-import { containerStyles } from '@/shared/components/Container'
 import { linkStyles } from '@/shared/components/Link'
 import { vars } from '@/shared/theme'
 import { style } from '@vanilla-extract/css'
@@ -17,9 +16,6 @@ const card = style([
 
     justifyContent: 'space-between',
 
-    // width: '100%',
-    // height: '100%',
-
     transition: 'outline-color 0.2s ease-in-out',
     outline: '5px solid transparent',
     outlineOffset: '0.2rem',
@@ -31,11 +27,6 @@ const card = style([
     },
   },
 ])
-
-//   & > h3 {
-//     text-decoration: underline;
-//   }
-// }
 
 const link = style([
   linkStyles.link,
@@ -84,6 +75,11 @@ const title = style({
   fontSize: '1.25rem',
   fontWeight: 500,
   lineHeight: 1.2,
+  selectors: {
+    [`${card} &:focus-within, ${card} &:has(a:hover)`]: {
+      textDecoration: 'underline',
+    },
+  },
 })
 
 const footer = style({

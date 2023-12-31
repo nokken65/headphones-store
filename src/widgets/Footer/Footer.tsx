@@ -8,7 +8,8 @@ import twitterIconId from '@/assets/images/svg/twitter.svg'
 import whatsappIconId from '@/assets/images/svg/whatsapp.svg'
 import youtubeIconId from '@/assets/images/svg/youtube.svg'
 
-import * as S from './Footer.styled'
+import * as styles from './Footer.css'
+
 import { LinksListIcon } from './LinksList'
 import { NavigationSection } from './NavigationSection'
 import { LinkIcon, LinkText } from './model/models'
@@ -76,18 +77,18 @@ const SOCIALS_LIST: Omit<TNavigationSection<LinkIcon>, 'heading'> = {
 
 const _Footer = () => {
   return (
-    <S.Footer>
-      <S.NavWrapper>
+    <footer className={styles.footer}>
+      <div className={styles.navContainer}>
         <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items} />{' '}
         <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items} />
         <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items} />
         <NavigationSection heading={CONTACTS_LIST.heading} items={CONTACTS_LIST.items} />
-      </S.NavWrapper>
-      <S.SocialsList aria-label={'socials'}>
-        <LinksListIcon items={SOCIALS_LIST.items} />
-      </S.SocialsList>
-      <S.Copyright>© 2022, All rights reserved</S.Copyright>
-    </S.Footer>
+      </div>
+      <nav aria-label={'socials'} className={styles.socialsNav}>
+        <LinksListIcon className={styles.socialsList} items={SOCIALS_LIST.items} />
+      </nav>
+      <small className={styles.copyright}>© 2022, All rights reserved</small>
+    </footer>
   )
 }
 

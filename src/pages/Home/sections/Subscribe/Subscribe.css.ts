@@ -9,7 +9,7 @@ const section = style([
   },
 ])
 
-const container = style([containerStyles.container, {}])
+const container = style([containerStyles.container])
 
 const heading = style([
   sectionStyles.heading,

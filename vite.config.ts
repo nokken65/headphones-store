@@ -26,14 +26,19 @@ export default defineConfig(({ mode }) => ({
   },
   preview: { port: 3000 },
   build: {
+    target: 'esnext',
     cssMinify: 'lightningcss',
     rollupOptions: {
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'nanostores-vendor': ['nanostores', '@nanostores/persistent', '@nanostores/react'],
-          'styled-components-vendor': ['styled-components'],
-          'utils-vendor': ['ramda'],
+          'vanilla-extract-vendor': [
+            '@vanilla-extract/css',
+            '@vanilla-extract/dynamic',
+            '@vanilla-extract/recipes',
+          ],
+          'utils-vendor': ['ramda', 'clsx'],
         },
       },
     },

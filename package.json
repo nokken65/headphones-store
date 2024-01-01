@@ -2,6 +2,7 @@
   "name": "headphones-store",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@floating-ui/react": "^0.26.4",
     "@nanostores/persistent": "^0.9.1",

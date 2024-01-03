@@ -1,7 +1,7 @@
 import type { SourceSizes, SourceSrcSet } from './types'
 
 const isValidateFormat = (format: string, srcSet: SourceSrcSet) =>
-  Object.values(srcSet).every(src => src.includes(`.${format}`))
+  Object.values(srcSet).every(src => src.includes(`.${format}`) || src.includes(`image/${format}`))
 
 const getSrcSetString = (srcSet: SourceSrcSet) =>
   Object.entries(srcSet).reduce(

@@ -17,10 +17,10 @@ const PostCard = ({ id, title, date, views, cover, tags }: PostCardProps) => {
         className={styles.cover}
         loading={'lazy'}
         sources={{
-          fallback: cover.original,
           avif: { srcSet: { '1x': cover.avif } },
           webp: { srcSet: { '1x': cover.webp } },
           png: { srcSet: { '1x': cover.original } },
+          fallback: cover.original,
         }}
       />
       {/* FIXME: a11y */}

@@ -30,7 +30,7 @@ function getImageSource(source: Source | Source[], format: string, key: number):
       return null
     }
     if (!isValidateFormat(format, source.srcSet)) {
-      throw new Error(`All images of ${format} srcset must be ".${format}"`)
+      throw new Error(`All images of ${JSON.stringify(source.srcSet)} must be ".${format}"`)
     }
 
     return (

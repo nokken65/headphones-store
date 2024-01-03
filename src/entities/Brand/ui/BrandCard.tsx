@@ -17,10 +17,10 @@ const BrandCard = ({ label, src, isDarkMode }: BrandProps) => {
         height={32}
         loading={'lazy'}
         sources={{
-          fallback: src.original,
           avif: { srcSet: { '1x': src.avif } },
           webp: { srcSet: { '1x': src.webp } },
           png: { srcSet: { '1x': src.original } },
+          fallback: src.original,
         }}
         src={src.original}
         width={220}

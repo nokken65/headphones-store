@@ -6,15 +6,13 @@ import { style } from '@vanilla-extract/css'
 const card = style([
   cardStyles.card,
   {
-    padding: '1rem',
     borderRadius: 'unset',
+    overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
     gap: '1rem',
-
-    position: 'relative',
-
     justifyContent: 'space-between',
+    position: 'relative',
 
     transition: 'outline-color 0.2s ease-in-out',
     outline: '5px solid transparent',
@@ -33,14 +31,15 @@ const link = style([
   {
     width: '100%',
     height: '100%',
+    position: 'unset',
 
+    ':after': {
+      display: 'none',
+    },
     ':before': {
-      content: '',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
+      width: 'unset',
+      height: 'unset',
+      inset: 0,
       zIndex: 1,
 
       backgroundColor: 'transparent',
@@ -52,8 +51,7 @@ const cover = style({
   maxInlineSize: 'unset',
   maxBlockSize: 'unset',
   objectFit: 'cover',
-  width: 'calc(100% + 2rem)',
-  margin: '-1rem -1rem 0',
+  width: '100%',
   aspectRatio: '1 / 1',
 })
 
@@ -61,6 +59,7 @@ const tagList = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: '0.5rem',
+  padding: '0 1rem',
 })
 
 const tag = style({
@@ -75,16 +74,13 @@ const title = style({
   fontSize: '1.25rem',
   fontWeight: 500,
   lineHeight: 1.2,
-  selectors: {
-    [`${card} &:focus-within, ${card} &:has(a:hover)`]: {
-      textDecoration: 'underline',
-    },
-  },
+  padding: '0 1rem',
 })
 
 const footer = style({
   marginTop: 'auto',
   opacity: 0.5,
+  padding: '0 1rem 1rem',
 
   display: 'flex',
   justifyContent: 'space-between',

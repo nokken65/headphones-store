@@ -4,49 +4,56 @@ import searchIconId from '@/assets/images/svg/search.svg'
 import { CartIconLink } from '@/entities/Cart'
 import { ProfileIconLink } from '@/entities/Profile'
 import { WishlistIconLink } from '@/entities/Wishlist'
-import { CitySelector } from '@/features/select-city'
 import { ColorSchemeSelector } from '@/features/select-color-scheme'
-import { LanguageSelector } from '@/features/select-language'
 import { Icon } from '@/shared/components/Icon'
-import { HEADER_HEIGHT } from '@/shared/constants'
 import { useScroll } from '@/shared/hooks/useScroll'
 
-import * as S from './Header.styled'
-import { Navigation } from './Navigation'
+import * as styles from './Header.css'
+// import { Navigation } from './Navigation'
 
 const _Header = () => {
   const { scrollY } = useScroll()
   const [isInverted, setIsInverted] = React.useState(
-    window.scrollY >= document.documentElement.clientHeight - HEADER_HEIGHT
+    window.scrollY >= document.documentElement.clientHeight - 64
   )
 
   React.useEffect(() => {
-    setIsInverted(scrollY >= document.documentElement.clientHeight - HEADER_HEIGHT)
+    setIsInverted(scrollY >= document.documentElement.clientHeight - 64)
   }, [scrollY])
 
   return (
-    <S.Header data-is-inverted={isInverted ? '' : undefined}>
-      <S.Heading>Headphones store</S.Heading>
-      <ColorSchemeSelector />
-      <LanguageSelector />
-      <CitySelector />
+    <header className={styles.header({ isInverted })}>
+      <div className={styles.container}>
+        <h1 className={styles.heading} style={{ marginRight: 'auto' }}>
+          Headphones store
+        </h1>
+        {/* <LanguageSelector />
+      <CitySelector /> */}
 
-      <Navigation />
+        {/* <Navigation /> */}
 
-      <button
-        aria-controls={'id'}
-        aria-expanded={false}
-        aria-haspopup={'dialog'}
-        aria-label={'search-dialog-trigger'}
-        style={{ marginLeft: 'auto' }}
-      >
-        <Icon height={18} id={searchIconId} width={18} />
-      </button>
+        <button
+          aria-controls={'id'}
+          aria-expanded={false}
+          aria-haspopup={'dialog'}
+          aria-label={'search-dialog-trigger'}
+          style={{
+            width: '3.5rem',
+            height: '3.5rem',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Icon height={24} id={searchIconId} width={24} />
+        </button>
 
-      <WishlistIconLink />
-      <CartIconLink />
-      <ProfileIconLink />
-    </S.Header>
+        <WishlistIconLink />
+        <CartIconLink />
+        <ProfileIconLink />
+        <ColorSchemeSelector />
+      </div>
+    </header>
   )
 }
 

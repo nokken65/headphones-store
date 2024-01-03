@@ -21,7 +21,7 @@ const _Blog = () => {
         </header>
         <ul className={styles.grid} role={'list'}>
           {POSTS.map(post => (
-            <li className={styles.gridItem} key={post.id}>
+            <li key={post.id}>
               <PostCard {...post} />
             </li>
           ))}

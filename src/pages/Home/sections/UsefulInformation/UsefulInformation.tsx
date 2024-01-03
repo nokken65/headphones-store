@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { sectionStyles } from '@/shared/components/Section'
+
 import * as styles from './UsefulInformation.css'
 
 const LINKS = [
@@ -21,11 +23,13 @@ const _UsefulInformation = () => {
         <h2 className={styles.heading} id={'useful-information-heading'}>
           Useful information
         </h2>
-        <nav aria-label={'useful-information-links'}>
+        <nav aria-label={'useful-information-links'} className={styles.navigation}>
           <ul className={styles.list} role={'list'}>
             {LINKS.map((link, index) => (
               <li className={styles.listItem} key={index}>
-                <a className={styles.link}>{link}</a>
+                <a aria-label={link} className={styles.link} href={'#'}>
+                  {link}
+                </a>
               </li>
             ))}
           </ul>

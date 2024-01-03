@@ -1,13 +1,14 @@
 import React from 'react'
 
 import { SubscribeToNewslettersForm } from '@/features/subscribe-to-newsletters'
+import { sectionStyles } from '@/shared/components/Section'
 
 import * as styles from './Subscribe.css'
 import { description } from './Subscribe.css'
 
 const _Subscribe = () => {
   return (
-    <section aria-labelledby={'subscribe-heading'} className={styles.section}>
+    <section aria-labelledby={'subscribe-heading'} className={sectionStyles.section}>
       <div className={styles.container}>
         <h2 className={styles.heading} id={'subscribe-heading'}>
           Subscribe to our newsletters

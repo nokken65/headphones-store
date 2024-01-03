@@ -4,9 +4,9 @@ import { style } from '@vanilla-extract/css'
 const card = style([
   cardStyles.card,
   {
-    width: '18.75rem',
-    minWidth: '18.75rem',
-    padding: '3rem 1.5rem',
+    width: '14.75rem',
+    minWidth: '14.75rem',
+    padding: '2rem 1.5rem',
   },
 ])
 

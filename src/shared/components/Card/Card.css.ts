@@ -5,7 +5,6 @@ import { style } from '@vanilla-extract/css'
 const card = style({
   '@layer': {
     [components]: {
-      padding: '1.5rem',
       backgroundColor: vars.colors.cardBackground,
       border: '1px solid',
       borderColor: vars.colors.cardBorder,

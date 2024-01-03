@@ -1,7 +1,7 @@
 import { THEME_ICON_MAP } from '@/shared/constants'
 import { useStore } from '@nanostores/react'
 
-import { triggerClass } from './ColorSchemeSelectorTrigger.css'
+import * as styles from './ColorSchemeSelectorTrigger.css'
 
 import { $currentColorScheme, setCurrentColorScheme } from '../model'
 
@@ -14,7 +14,7 @@ const ColorSchemeSelectorTrigger = () => {
       aria-expanded={false}
       aria-haspopup={'listbox'}
       aria-label={'color-scheme-selector-trigger'}
-      className={triggerClass}
+      className={styles.trigger}
       onClick={() => setCurrentColorScheme(currentColorScheme === 'dark' ? 'light' : 'dark')}
     >
       {THEME_ICON_MAP[currentColorScheme]}

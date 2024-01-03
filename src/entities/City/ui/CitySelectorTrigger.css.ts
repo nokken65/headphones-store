@@ -5,8 +5,11 @@ const trigger = style({
 })
 
 globalStyle(`${trigger} > svg`, {
-  width: '1rem',
-  height: '1rem',
+  verticalAlign: 'middle',
+  marginLeft: '0.2rem',
+  width: '0.6rem',
+  height: '0.6rem',
+  transform: 'rotate(-90deg)',
 })
 
 export { trigger }

@@ -2,21 +2,23 @@ import arrowIconId from '@/assets/images/svg/arrow.svg'
 import { Icon } from '@/shared/components/Icon'
 import { useStore } from '@nanostores/react'
 
+import * as styles from './LanguageSelectorTrigger.css'
+
 import { $currentLanguage } from '../model'
-import * as S from './LanguageSelectorTrigger.styled'
 
 const LanguageSelectorTrigger = () => {
   const currentLanguage = useStore($currentLanguage)
 
   return (
-    <S.Trigger
+    <button
       aria-controls={'id'}
       aria-expanded={false}
       aria-haspopup={'listbox'}
       aria-label={'current-language-selector-trigger'}
+      className={styles.trigger}
     >
       {currentLanguage} <Icon id={arrowIconId} />
-    </S.Trigger>
+    </button>
   )
 }
 

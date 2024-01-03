@@ -1,29 +1,38 @@
 import { containerStyles } from '@/shared/components/Container'
 import { linkStyles } from '@/shared/components/Link'
 import { sectionStyles } from '@/shared/components/Section'
-import { breakpoints } from '@/shared/theme'
+import { vars } from '@/shared/theme'
 import { style } from '@vanilla-extract/css'
 
-const section = style([sectionStyles.section])
+const section = style([
+  sectionStyles.section,
+  {
+    backgroundColor: vars.colors.backgroundPale,
+  },
+])
 
 const container = style([
   containerStyles.container,
   {
-    display: 'grid',
-    gridAutoRows: 'auto',
-    gridTemplateColumns: '1fr',
-    columnGap: '1rem',
-    rowGap: '2rem',
-    lineHeight: 1.4,
-
-    '@media': {
-      [breakpoints.md]: {
-        gridTemplateColumns: '1fr 1fr',
-        rowGap: '3rem',
-      },
-    },
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '1rem',
+    rowGap: 0,
   },
 ])
+
+const heading = style([
+  sectionStyles.heading,
+  {
+    flexBasis: '100%',
+  },
+])
+
+const navigation = style({
+  flex: 1,
+  minWidth: '20rem',
+  marginBottom: '1rem',
+})
 
 const list = style({
   lineHeight: 1.4,
@@ -38,24 +47,10 @@ const listItem = style({
   },
 })
 
-const heading = style([
-  sectionStyles.heading,
-  {
-    marginBottom: 0,
-
-    '@media': {
-      [breakpoints.md]: {
-        gridColumn: '1 / 3',
-      },
-    },
-  },
-])
-
 const link = style([
   linkStyles.link,
   {
     fontSize: '1.25rem',
-    textDecoration: 'underline',
   },
 ])
 
@@ -63,6 +58,9 @@ const description = style({
   fontSize: '1.25rem',
   lineHeight: 1.4,
   opacity: 0.7,
+
+  flex: 1,
+  minWidth: '20rem',
 })
 
-export { container, description, heading, link, list, listItem, section }
+export { container, description, heading, link, list, listItem, navigation, section }

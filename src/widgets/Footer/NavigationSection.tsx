@@ -33,7 +33,7 @@ const NavigationSectionDisclosure = ({
   const [isExpanded, { triggerProps, contentProps }] = useDisclosure()
 
   return (
-    <nav aria-labelledby={id} className={styles.navigation}>
+    <nav aria-labelledby={id} className={styles.navigationDisclosure}>
       <h3 className={styles.heading} id={id}>
         <DisclosureTrigger {...triggerProps}>{heading}</DisclosureTrigger>
       </h3>

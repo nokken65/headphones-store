@@ -3,12 +3,16 @@ import React from 'react'
 import { AdvantageCard } from '@/entities/Advantage'
 import { ADVANTAGES } from '@/entities/Advantage/mocks/advantages'
 import { Marquee } from '@/shared/components/Marquee'
+import { sectionStyles } from '@/shared/components/Section'
 
 import * as styles from './Advantages.css'
 
 const _Advantages = () => {
   return (
-    <section aria-label={'Advantages'} className={styles.section}>
+    <section aria-labelledby={'advantages-heading'} className={sectionStyles.section}>
+      <h2 aria-hidden className={styles.heading} hidden id={'advantages-heading'}>
+        Advantages
+      </h2>
       <Marquee
         items={ADVANTAGES.map(item => (
           <li key={item.id}>

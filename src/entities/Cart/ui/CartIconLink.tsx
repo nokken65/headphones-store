@@ -2,19 +2,21 @@ import React from 'react'
 
 import cartIconId from '@/assets/images/svg/cart.svg'
 import { Icon } from '@/shared/components/Icon'
+import { indicatorStyles } from '@/shared/components/Indicator'
 import { useStore } from '@nanostores/react'
 
+import * as styles from './CartIconLink.css'
+
 import { count } from '../model'
-import * as S from './CartIconLink.styled'
 
 const _CartIconLink = () => {
   const itemsCount = useStore(count.$value)
 
   return (
-    <S.Link href={'#'}>
-      <Icon height={18} id={cartIconId} width={18} />
-      {itemsCount !== 0 && <S.Count>{itemsCount}</S.Count>}
-    </S.Link>
+    <a className={styles.link} href={'#'}>
+      <Icon height={24} id={cartIconId} width={24} />
+      {itemsCount !== 0 && <span className={indicatorStyles.indicator({})}>{itemsCount}</span>}
+    </a>
   )
 }
 

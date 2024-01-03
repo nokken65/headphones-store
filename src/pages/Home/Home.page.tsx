@@ -4,7 +4,7 @@ import { DefaultLayout } from '../layouts/Default'
 import { Advantages } from './sections/Advantages'
 import { Blog } from './sections/Blog'
 import { Brands } from './sections/Brands'
-// import { Hero } from './sections/Hero'
+import { Hero } from './sections/Hero'
 // import { PopularProducts } from './sections/PopularProducts'
 
 // import { Stores } from './sections/Stores'
@@ -14,7 +14,7 @@ import { UsefulInformation } from './sections/UsefulInformation'
 const _Home = () => {
   return (
     <DefaultLayout>
-      {/* <Hero /> */}
+      <Hero />
       {/* <PopularProducts /> */}
       <Advantages />
       {/* <Stores /> */}

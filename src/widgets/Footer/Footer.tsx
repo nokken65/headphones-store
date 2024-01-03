@@ -78,7 +78,7 @@ const SOCIALS_LIST: Omit<TNavigationSection<LinkIcon>, 'heading'> = {
 const _Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.navContainer}>
+      <div className={styles.navigations}>
         <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items} />{' '}
         <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items} />
         <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items} />

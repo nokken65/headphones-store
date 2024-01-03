@@ -1,6 +1,7 @@
-import { sectionStyles } from '@/shared/components/Section'
 import { style } from '@vanilla-extract/css'
 
-const section = style([sectionStyles.section, {}])
+const heading = style({
+  display: 'none',
+})
 
-export { section }
+export { heading }

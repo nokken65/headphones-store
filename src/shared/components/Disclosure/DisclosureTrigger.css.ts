@@ -5,10 +5,6 @@ const trigger = recipe({
   base: {
     '@layer': {
       [components]: {
-        color: 'inherit',
-        fontSize: 'inherit',
-        fontFamily: 'inherit',
-        fontWeight: 'inherit',
         cursor: 'pointer',
         width: '100%',
         minHeight: '3rem',

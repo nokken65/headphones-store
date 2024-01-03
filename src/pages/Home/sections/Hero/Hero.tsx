@@ -1,15 +1,15 @@
 import React from 'react'
 
-import headphonesAvif from '@/assets/images/headphones/headphones_1@1x.avif'
-import headphonesPng from '@/assets/images/headphones/headphones_1@1x.png'
-import headphonesWebp from '@/assets/images/headphones/headphones_1@1x.webp'
+// import headphonesAvif from '@/assets/images/headphones/headphones_1@1x.avif'
+// import headphonesPng from '@/assets/images/headphones/headphones_1@1x.png'
+// import headphonesWebp from '@/assets/images/headphones/headphones_1@1x.webp'
 
-import * as S from './Hero.styled'
+// import * as S from './Hero.styled'
 
 const _Hero = () => {
   return (
-    <S.Section>
-      <S.Image>
+    <section style={{ minHeight: '100dvh' }}>
+      {/* <S.Image>
         <source srcSet={`${headphonesAvif} 1x`} type={'image/avif'} />
         <source srcSet={`${headphonesWebp} 1x`} type={'image/webp'} />
         <source srcSet={`${headphonesPng} 1x`} type={'image/png'} />
@@ -27,8 +27,8 @@ const _Hero = () => {
         </S.Price>
 
         <S.Action>buy now</S.Action>
-      </S.TextContent>
-    </S.Section>
+      </S.TextContent> */}
+    </section>
   )
 }
 

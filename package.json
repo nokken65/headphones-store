@@ -28,6 +28,7 @@
     "@types/react-dom": "18.2.18",
     "@vanilla-extract/vite-plugin": "^3.9.3",
     "@vitejs/plugin-react": "^4.2.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "babel-plugin-styled-components": "^2.1.4",
     "esbuild-vanilla-image-loader": "^0.1.3",
     "lightningcss": "^1.22.1",

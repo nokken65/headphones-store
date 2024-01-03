@@ -14,11 +14,6 @@ globalStyle('body', {
   padding: 0,
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
-
-  overflowX: 'hidden',
-  vars: {
-    '--scrollbar-width': 'calc(100vw - 100%)',
-  },
 })
 
 globalStyle('#app-root', {

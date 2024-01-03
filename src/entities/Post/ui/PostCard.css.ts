@@ -79,7 +79,7 @@ const title = style({
 
 const footer = style({
   marginTop: 'auto',
-  opacity: 0.5,
+  opacity: 0.7,
   padding: '0 1rem 1rem',
 
   display: 'flex',

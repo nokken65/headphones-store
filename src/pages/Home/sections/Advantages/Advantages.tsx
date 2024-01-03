@@ -5,12 +5,10 @@ import { ADVANTAGES } from '@/entities/Advantage/mocks/advantages'
 import { Marquee } from '@/shared/components/Marquee'
 import { sectionStyles } from '@/shared/components/Section'
 
-import * as styles from './Advantages.css'
-
 const _Advantages = () => {
   return (
     <section aria-labelledby={'advantages-heading'} className={sectionStyles.section}>
-      <h2 aria-hidden className={styles.heading} hidden id={'advantages-heading'}>
+      <h2 className={sectionStyles.heading} id={'advantages-heading'}>
         Advantages
       </h2>
       <Marquee

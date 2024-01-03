@@ -7,7 +7,7 @@ import * as styles from './ProfileIconLink.css'
 
 const _ProfileIconLink = () => {
   return (
-    <a className={styles.link} href={'#'}>
+    <a aria-label={'profile-link'} className={styles.link} href={'#'}>
       <Icon height={24} id={profileIconId} width={24} />
     </a>
   )

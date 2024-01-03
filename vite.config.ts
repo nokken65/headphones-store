@@ -25,9 +25,13 @@ export default defineConfig(({ mode }) => ({
     port: 3000,
   },
   preview: { port: 3000 },
+  css: {
+    transformer: 'lightningcss',
+  },
   build: {
     target: 'esnext',
     cssMinify: 'lightningcss',
+    cssCodeSplit: true,
     rollupOptions: {
       output: {
         manualChunks: {

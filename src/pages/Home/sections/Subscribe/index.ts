@@ -1,1 +1,1 @@
-export * from './Subscribe'
+export { Subscribe as default } from './Subscribe'

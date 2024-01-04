@@ -1,1 +1,1 @@
-export * as indicatorStyles from './Indicator.css'
+export { default as indicatorStyles } from './Indicator.module.css'

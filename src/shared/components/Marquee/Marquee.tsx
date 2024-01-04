@@ -1,20 +1,19 @@
 import React from 'react'
 
-import * as styles from './Marquee.css'
+import { useHover } from '@/shared/hooks/useHover'
+
+import styles from './Marquee.module.css'
 
 type MarqueeProps = {
   items: React.ReactNode[]
 }
 
 const _Marquee = ({ items }: MarqueeProps) => {
-  const [isPause, setIsPause] = React.useState(false)
+  const ref = React.useRef<HTMLDivElement>(null)
+  const isPause = useHover(ref)
 
   return (
-    <div
-      className={styles.marquee}
-      onPointerEnter={() => setIsPause(true)}
-      onPointerLeave={() => setIsPause(false)}
-    >
+    <div className={styles.marquee} ref={ref}>
       <div
         className={styles.container}
         style={{ animationPlayState: isPause ? 'paused' : 'running' }}

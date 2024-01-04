@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: clamp(1rem, 2dvw, 2rem);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(1rem, 2dvw, 3rem);
+}
+
+.heading {
+  margin-bottom: 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.linkIcon {
+  width: 2rem;
+  height: 1rem;
+}

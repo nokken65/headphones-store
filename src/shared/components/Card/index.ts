@@ -1,1 +1,1 @@
-export * as cardStyles from './Card.css'
+export { default as cardStyles } from './Card.module.css'

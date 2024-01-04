@@ -14,7 +14,7 @@ export const LinksList = ({ items, tabIndex = 0 }: LinksListProps) => {
       {items.map((item, index) => (
         <li className={styles.listItem} key={index}>
           {Array.isArray(item) ? (
-            <LinksListIcon items={item} />
+            <LinksListIcon items={item} tabIndex={tabIndex} />
           ) : (
             <a className={linkStyles.link} href={item.href} tabIndex={tabIndex}>
               {item.text}

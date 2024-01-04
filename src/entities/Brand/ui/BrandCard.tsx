@@ -1,19 +1,21 @@
 import type { Brand } from '../model/models'
 
+import { cardStyles } from '@/shared/components/Card'
 import { ProgressiveImage } from '@/shared/components/ProgressiveImage'
 import clsx from 'clsx'
 
-import * as styles from './BrandCard.css'
+import styles from './BrandCard.module.css'
 
 // FIXME: isDarkMode flag
 type BrandProps = Brand & { isDarkMode: boolean }
 
 const BrandCard = ({ label, src, isDarkMode }: BrandProps) => {
   return (
-    <article aria-label={label} className={styles.card}>
+    <article aria-label={label} className={clsx(cardStyles.card, styles.card)}>
       <ProgressiveImage
         alt={`${label} logo image`}
-        className={clsx(styles.image, isDarkMode ? styles.imageDark : styles.imageLight)}
+        className={clsx(styles.image)}
+        data-is-inverted={isDarkMode}
         height={32}
         loading={'lazy'}
         sources={{

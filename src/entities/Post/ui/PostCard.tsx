@@ -1,17 +1,20 @@
 import type { Post } from '../model/models'
 
 import eyeIconId from '@/assets/images/svg/eye.svg'
+import { cardStyles } from '@/shared/components/Card'
 import { Icon } from '@/shared/components/Icon'
+import { linkStyles } from '@/shared/components/Link'
 import { ProgressiveImage } from '@/shared/components/ProgressiveImage'
 import { formatDate } from '@/shared/utils/formatDate'
+import clsx from 'clsx'
 
-import * as styles from './PostCard.css'
+import styles from './PostCard.module.css'
 
 type PostCardProps = Post
 
 const PostCard = ({ id, title, date, views, cover, tags }: PostCardProps) => {
   return (
-    <article aria-labelledby={`post-heading-${id}`} className={styles.card}>
+    <article aria-labelledby={`post-heading-${id}`} className={clsx(cardStyles.card, styles.card)}>
       <ProgressiveImage
         alt={`${title} post image cover`}
         className={styles.cover}
@@ -32,7 +35,11 @@ const PostCard = ({ id, title, date, views, cover, tags }: PostCardProps) => {
         ))}
       </ul>
       <h3 className={styles.title} id={`post-heading-${id}`}>
-        <a aria-labelledby={`post-heading-${id}`} className={styles.link} href={'#' + id}>
+        <a
+          aria-labelledby={`post-heading-${id}`}
+          className={clsx(linkStyles.link, styles.link)}
+          href={'#' + id}
+        >
           {title}
         </a>
       </h3>

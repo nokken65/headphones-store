@@ -3,7 +3,7 @@ import type { LinkIcon, LinkText } from './model/models'
 import React from 'react'
 
 import { DisclosureContent, DisclosureTrigger, useDisclosure } from '@/shared/components/Disclosure'
-import { useWindowWidth } from '@/shared/hooks/useWindowWidth'
+import { useMediaQuery } from '@/shared/hooks/useMediaQuery'
 
 import styles from './NavigationSection.module.css'
 
@@ -14,49 +14,31 @@ type NavigationSectionProps = {
   items: (LinkIcon[] | LinkText)[]
 }
 
-const NavigationSection = (props: NavigationSectionProps) => {
+const NavigationSection = ({ heading, items }: NavigationSectionProps) => {
   const id = React.useId()
-  const width = useWindowWidth()
+  const isWideScreen = useMediaQuery('screen and (min-width: 768px)')
 
-  if (width >= 768) {
-    return <NavigationSectionPlain {...props} id={id} />
-  } else {
-    return <NavigationSectionDisclosure {...props} id={id} />
-  }
-}
-
-const NavigationSectionDisclosure = ({
-  heading,
-  items,
-  id,
-}: NavigationSectionProps & { id: string }) => {
   const [isExpanded, { triggerProps, contentProps }] = useDisclosure()
 
   return (
-    <nav aria-labelledby={id} className={styles.navigationDisclosure}>
+    <nav
+      aria-labelledby={id}
+      className={isWideScreen ? styles.navigation : styles.navigationDisclosure}
+    >
       <h3 className={styles.heading} id={id}>
-        <DisclosureTrigger {...triggerProps}>{heading}</DisclosureTrigger>
+        {isWideScreen ? (
+          heading
+        ) : (
+          <DisclosureTrigger {...triggerProps}>{heading}</DisclosureTrigger>
+        )}
       </h3>
-
-      <DisclosureContent {...contentProps}>
-        <LinksList items={items} tabIndex={isExpanded ? 0 : -1} />
-      </DisclosureContent>
-    </nav>
-  )
-}
-
-const NavigationSectionPlain = ({
-  heading,
-  items,
-  id,
-}: NavigationSectionProps & { id: string }) => {
-  return (
-    <nav aria-labelledby={id} className={styles.navigation}>
-      <h3 className={styles.heading} id={id}>
-        {heading}
-      </h3>
-
-      <LinksList items={items} />
+      {isWideScreen ? (
+        <LinksList items={items} />
+      ) : (
+        <DisclosureContent {...contentProps}>
+          <LinksList items={items} tabIndex={isExpanded ? 0 : -1} />
+        </DisclosureContent>
+      )}
     </nav>
   )
 }

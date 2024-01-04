@@ -1,4 +1,4 @@
-import { PartialRecord } from 'ramda'
+import type { PartialRecord } from 'ramda'
 
 import { FORMATS } from './constants'
 

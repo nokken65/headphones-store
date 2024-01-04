@@ -1,3 +1,7 @@
+/* eslint-disable perfectionist/sort-imports */
+import '@/shared/theme/styles/reset.css'
+import '@/shared/theme/styles/global.css'
+
 import { App } from '@/app/App'
 import { createRoot } from 'react-dom/client'
 

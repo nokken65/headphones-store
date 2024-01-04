@@ -5,6 +5,8 @@ import { style } from '@vanilla-extract/css'
 const section = style({
   '@layer': {
     [components]: {
+      contentVisibility: 'auto',
+      containIntrinsicSize: '1000px',
       backgroundColor: vars.colors.background,
       padding: '3rem clamp(1rem, 2dvw, 3rem)',
     },

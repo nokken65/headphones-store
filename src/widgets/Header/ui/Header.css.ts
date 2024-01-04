@@ -45,7 +45,7 @@ const container = style([
 ])
 
 const heading = style({
-  fontSize: '2rem',
+  fontSize: 'clamp(1rem, 2dvw, 2rem)',
   fontWeight: 700,
   textTransform: 'uppercase',
 })

@@ -1,0 +1,17 @@
+.content {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin-bottom: 0;
+  transition:
+    grid-template-rows 0.2s linear,
+    margin-bottom 0.2s linear;
+
+  &[data-is-expanded='true'] {
+    grid-template-rows: 1fr;
+    margin-bottom: 1rem;
+  }
+}
+
+.container {
+  overflow: hidden;
+}

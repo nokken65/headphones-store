@@ -50,6 +50,11 @@ type Theme = {
     screenW: Vw
     screenH: Vh
   }
+  backgroundSrcSet: {
+    avif: `url(${string})`
+    webp: `url(${string})`
+    jpg: `url(${string}) `
+  }
 }
 
 export type { Color, ColorHEX, ColorScheme, ColorShade, Theme }

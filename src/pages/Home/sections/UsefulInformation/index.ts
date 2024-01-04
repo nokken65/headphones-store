@@ -1,1 +1,1 @@
-export { UsefulInformation as default } from './UsefulInformation'
+export * from './UsefulInformation'

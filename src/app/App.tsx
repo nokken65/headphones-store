@@ -1,3 +1,7 @@
+/* eslint-disable perfectionist/sort-imports */
+import '@/shared/theme/styles/reset.css'
+import '@/shared/theme/styles/global.css'
+
 import { Routing } from '@/pages/Routing'
 
 import { withProviders } from './providers'

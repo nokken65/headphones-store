@@ -4,7 +4,7 @@ import { Icon } from '@/shared/components/Icon'
 import { linkStyles } from '@/shared/components/Link'
 import clsx from 'clsx'
 
-import * as styles from './LinksList.css'
+import styles from './LinksList.module.css'
 
 type LinksListProps = { items: (LinkIcon[] | LinkText)[]; tabIndex?: number }
 

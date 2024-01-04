@@ -1,8 +1,11 @@
 import React from 'react'
 
+import { containerStyles } from '@/shared/components/Container'
+import { linkStyles } from '@/shared/components/Link'
 import { sectionStyles } from '@/shared/components/Section'
+import clsx from 'clsx'
 
-import * as styles from './UsefulInformation.css'
+import * as styles from './UsefulInformation.module.css'
 
 const LINKS = [
   'Headphones',
@@ -18,16 +21,22 @@ const LINKS = [
 
 const _UsefulInformation = () => {
   return (
-    <section aria-labelledby={'useful-information-heading'} className={styles.section}>
-      <div className={styles.container}>
-        <h2 className={styles.heading} id={'useful-information-heading'}>
+    <section
+      aria-labelledby={'useful-information-heading'}
+      className={clsx(sectionStyles.section, styles.section)}
+    >
+      <div className={clsx(containerStyles.container, styles.container)}>
+        <h2
+          className={clsx(sectionStyles.heading, styles.heading)}
+          id={'useful-information-heading'}
+        >
           Useful information
         </h2>
         <nav aria-label={'useful-information-links'} className={styles.navigation}>
           <ul className={styles.list} role={'list'}>
             {LINKS.map((link, index) => (
               <li className={styles.listItem} key={index}>
-                <a aria-label={link} className={styles.link} href={'#'}>
+                <a aria-label={link} className={clsx(linkStyles.link, styles.link)} href={'#'}>
                   {link}
                 </a>
               </li>

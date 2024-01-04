@@ -7,8 +7,10 @@ import telegramIconId from '@/assets/images/svg/telegram.svg'
 import twitterIconId from '@/assets/images/svg/twitter.svg'
 import whatsappIconId from '@/assets/images/svg/whatsapp.svg'
 import youtubeIconId from '@/assets/images/svg/youtube.svg'
+import { containerStyles } from '@/shared/components/Container'
+import clsx from 'clsx'
 
-import * as styles from './Footer.css'
+import styles from './Footer.module.css'
 
 import { LinksListIcon } from './LinksList'
 import { NavigationSection } from './NavigationSection'
@@ -78,7 +80,7 @@ const SOCIALS_LIST: Omit<TNavigationSection<LinkIcon>, 'heading'> = {
 const _Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.navigations}>
+      <div className={clsx(containerStyles.container, styles.navigations)}>
         <NavigationSection heading={ACCOUNT_LIST.heading} items={ACCOUNT_LIST.items} />{' '}
         <NavigationSection heading={LINKS_LIST.heading} items={LINKS_LIST.items} />
         <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items} />

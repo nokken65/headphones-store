@@ -1,1 +1,1 @@
-export * as sectionStyles from './Section.css'
+export { default as sectionStyles } from './Section.module.css'

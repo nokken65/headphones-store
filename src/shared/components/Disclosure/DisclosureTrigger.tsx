@@ -2,7 +2,7 @@ import React from 'react'
 
 import plusIconId from '@/assets/images/svg/plus.svg'
 
-import * as styles from './DisclosureTrigger.css'
+import * as styles from './DisclosureTrigger.module.css'
 
 type DisclosureTriggerProps = React.ComponentPropsWithoutRef<'button'> & {
   isExpanded: boolean
@@ -20,9 +20,14 @@ const DisclosureTrigger = ({
   ...props
 }: DisclosureTriggerProps) => {
   return (
-    <button className={styles.trigger({ isExpanded })} onClick={() => toggle()} {...props}>
+    <button
+      className={styles.trigger}
+      data-is-expanded={isExpanded}
+      onClick={() => toggle()}
+      {...props}
+    >
       {children}
-      <svg className={styles.icon({ isExpanded })}>
+      <svg className={styles.icon} data-is-expanded={isExpanded}>
         <use xlinkHref={`#${plusIconId}`} />
       </svg>
     </button>

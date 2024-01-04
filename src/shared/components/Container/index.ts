@@ -1,1 +1,1 @@
-export * as containerStyles from './Container.css'
+export { default as containerStyles } from './Container.module.css'

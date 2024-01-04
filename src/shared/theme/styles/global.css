@@ -1,0 +1,31 @@
+/* import avif from '@/assets/images/background/background.avif'
+import jpg from '@/assets/images/background/background.jpg'
+import webp from '@/assets/images/background/background.webp' */
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--colors-text);
+
+  background-color: var(--colors-background);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
+}
+
+#app-root {
+  min-height: 100dvh;
+
+  background-color: var(--colors-background-fallback);
+  background-image: image-set(
+    var(--background-src-set-avif) 1x type('image/avif'),
+    var(--background-src-set-webp) 1x type('image/webp'),
+    var(--background-src-set-jpg) 1x type('image/jpeg')
+  );
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}

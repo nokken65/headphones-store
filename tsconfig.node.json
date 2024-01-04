@@ -1,7 +1,7 @@
 {
   "extends": "@nokken65/ts-config/vite",
   "include": [
-    "vite.config.ts"
+    "vite.config.ts",
   ],
   "exclude": [
     "node_modules"

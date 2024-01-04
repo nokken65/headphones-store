@@ -1,0 +1,47 @@
+.section {
+  background-color: var(--colors-background-pale);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 0;
+}
+
+.heading {
+  flex-basis: 100%;
+}
+
+.navigation {
+  flex: 1;
+  min-width: 20rem;
+  margin-bottom: 1rem;
+}
+
+.list {
+  line-height: 1.4;
+}
+
+.listItem {
+  display: inline-block;
+
+  &:not(:last-of-type) {
+    margin-right: 1.5rem;
+  }
+}
+
+.link {
+  font-size: 1.25rem;
+}
+
+.description {
+  flex: 1;
+
+  min-width: 20rem;
+
+  font-size: 1.25rem;
+  line-height: 1.4;
+
+  opacity: 0.7;
+}

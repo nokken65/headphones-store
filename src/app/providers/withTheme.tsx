@@ -1,19 +1,13 @@
 import React from 'react'
 
-import { selectColorSchemeModel } from '@/features/select-color-scheme'
-import { usePrevious } from '@/shared/hooks/usePrevious'
+import { colorSchemeModel } from '@/entities/ColorScheme'
+import { useTheme } from '@/shared/theme/hooks/useTheme'
 import { useStore } from '@nanostores/react'
 
 export const withTheme = (children: () => React.ReactNode) => () => {
-  const theme = useStore(selectColorSchemeModel.$theme)
-  const prevTheme = usePrevious(theme)
+  const colorScheme = useStore(colorSchemeModel.$currentColorScheme)
 
-  React.useEffect(() => {
-    if (prevTheme !== null) {
-      document.body.classList.remove(prevTheme)
-    }
-    document.body.classList.add(theme)
-  }, [prevTheme, theme])
+  useTheme(colorScheme)
 
   return <>{children()}</>
 }

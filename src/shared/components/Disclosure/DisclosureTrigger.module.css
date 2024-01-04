@@ -1,0 +1,32 @@
+.trigger {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 3rem;
+  margin-bottom: 0;
+
+  transition: margin-bottom 0.2s linear;
+
+  &:focus-visible {
+    outline: 2px solid orange;
+    outline-offset: 0.2rem;
+  }
+
+  &[data-is-expanded='true'] {
+    margin-bottom: 1rem;
+  }
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 0.2s linear;
+
+  &[data-is-expanded='true'] {
+    transform: rotateZ(45deg);
+  }
+}

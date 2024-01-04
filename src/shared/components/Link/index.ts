@@ -1,1 +1,1 @@
-export * as linkStyles from './Link.css'
+export { default as linkStyles } from './Link.module.css'

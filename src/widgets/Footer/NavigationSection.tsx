@@ -5,7 +5,7 @@ import React from 'react'
 import { DisclosureContent, DisclosureTrigger, useDisclosure } from '@/shared/components/Disclosure'
 import { useWindowWidth } from '@/shared/hooks/useWindowWidth'
 
-import * as styles from './NavigationSection.css'
+import styles from './NavigationSection.module.css'
 
 import { LinksList } from './LinksList'
 

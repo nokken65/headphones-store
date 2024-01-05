@@ -1,6 +1,5 @@
 declare const classNames: {
-  readonly marquee: "marquee";
-  readonly container: "container";
   readonly list: "list";
+  readonly marquee: "marquee";
 };
 export = classNames;

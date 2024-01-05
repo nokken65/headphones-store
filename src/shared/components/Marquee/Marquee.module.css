@@ -1,54 +1,45 @@
 @layer components {
-  @keyframes marquee-keyframes {
-    0% {
-      transform: translateX(0%);
-    }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 
-    100% {
-      transform: translateX(-50%);
+    margin: 0;
+    padding-block: 1rem;
+    padding-inline: 0;
+
+    & > li {
+      flex: 0 0 fit-content;
     }
   }
 
   .marquee {
-    position: relative;
-    overflow-x: hidden;
-    display: flex;
+    max-width: 100dvw;
 
-    &::before,
-    &::after {
-      content: '';
+    &[data-animated='true'] {
+      overflow: hidden;
+      -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+      mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
 
-      position: absolute;
-      z-index: 2;
-      top: 0;
+      & > .list {
+        flex-wrap: nowrap;
 
-      width: clamp(2rem, 5dvw, 5rem);
-      height: 100%;
-    }
+        width: max-content;
 
-    &::before {
-      left: 0;
-      background-image: linear-gradient(to right, var(--colors-background), transparent);
-    }
-
-    &::after {
-      right: 0;
-      background-image: linear-gradient(to left, var(--colors-background), transparent);
+        animation-name: scroll;
+        animation-duration: var(--animation-duration, 60s);
+        animation-play-state: var(--animation-play-state, running);
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: var(--animation-direction, normal);
+      }
     }
   }
 
-  .container {
-    display: flex;
-
-    animation-name: marquee-keyframes;
-    animation-duration: 60s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-
-  .list {
-    display: flex;
-    gap: 1.5rem;
-    margin-right: 1.5rem;
+  @keyframes scroll {
+    to {
+      translate: calc(-50% - 0.5rem);
+    }
   }
 }

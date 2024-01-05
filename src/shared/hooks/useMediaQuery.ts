@@ -1,7 +1,7 @@
 import React from 'react'
 
 type UseMediaQueryConfig = {
-  initial?: (() => boolean) | boolean
+  initial?: (() => boolean) | boolean | null
 }
 
 const useMediaQuery = (query: string, config?: UseMediaQueryConfig) => {

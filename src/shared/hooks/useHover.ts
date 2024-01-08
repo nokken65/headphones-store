@@ -13,7 +13,7 @@ const useHover = <T extends HTMLElement>(ref: React.RefObject<T>) => {
     const onPointerEnter = () => setIsHovered(true)
     const onPointerLeave = () => setIsHovered(false)
 
-    element.addEventListener('pointerenter', onPointerEnter)
+    element.addEventListener('pointerover', onPointerEnter)
     element.addEventListener('pointerleave', onPointerLeave)
 
     return () => {

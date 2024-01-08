@@ -7,7 +7,7 @@
   }
 
   .heading {
-    margin-bottom: clamp(1rem, 2dvw, 3rem);
+    margin-bottom: clamp(1rem, 5dvw, 3rem);
     font-size: clamp(2.5rem, 8dvw, 4rem);
     font-weight: 700;
   }

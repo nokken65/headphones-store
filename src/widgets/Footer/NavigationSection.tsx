@@ -16,7 +16,7 @@ type NavigationSectionProps = {
 
 const NavigationSection = ({ heading, items }: NavigationSectionProps) => {
   const id = React.useId()
-  const isWideScreen = useMediaQuery('screen and (min-width: 768px)')
+  const isWideScreen = useMediaQuery('(min-width: 768px)')
 
   const [isExpanded, { triggerProps, contentProps }] = useDisclosure()
 

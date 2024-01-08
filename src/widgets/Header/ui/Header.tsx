@@ -1,28 +1,21 @@
 import React from 'react'
 
-import searchIconId from '@/assets/images/svg/search.svg'
-import { CartIconLink } from '@/entities/Cart'
-import { ProfileIconLink } from '@/entities/Profile'
-import { WishlistIconLink } from '@/entities/Wishlist'
+// import searchIconId from '@/assets/images/svg/search.svg'
+// import { CartIconLink } from '@/entities/Cart'
+// import { ProfileIconLink } from '@/entities/Profile'
+// import { WishlistIconLink } from '@/entities/Wishlist'
 import { ColorSchemeSelector } from '@/features/select-color-scheme'
-import { Icon } from '@/shared/components/Icon'
-import { useScroll } from '@/shared/hooks/useScroll'
+// import { Icon } from '@/shared/components/Icon'
+import { useScrollY } from '@/shared/hooks/useScroll'
 
-import * as styles from './Header.css'
+import styles from './Header.module.css'
 // import { Navigation } from './Navigation'
 
 const _Header = () => {
-  const { scrollY } = useScroll()
-  const [isInverted, setIsInverted] = React.useState(
-    window.scrollY >= document.documentElement.clientHeight - 64
-  )
-
-  React.useEffect(() => {
-    setIsInverted(scrollY >= document.documentElement.clientHeight - 64)
-  }, [scrollY])
+  const isInverted = useScrollY(y => y >= document.documentElement.clientHeight - 64)
 
   return (
-    <header className={styles.header({ isInverted })}>
+    <header className={styles.header} data-is-fixed={isInverted}>
       <div className={styles.container}>
         <h1 className={styles.heading} style={{ marginRight: 'auto' }}>
           Headphones store
@@ -32,7 +25,7 @@ const _Header = () => {
 
         {/* <Navigation /> */}
 
-        <button
+        {/* <button
           aria-controls={'id'}
           aria-expanded={false}
           aria-haspopup={'dialog'}
@@ -50,7 +43,7 @@ const _Header = () => {
 
         <WishlistIconLink />
         <CartIconLink />
-        <ProfileIconLink />
+        <ProfileIconLink /> */}
         <ColorSchemeSelector />
       </div>
     </header>

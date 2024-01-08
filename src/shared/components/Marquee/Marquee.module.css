@@ -18,9 +18,22 @@
     max-width: 100dvw;
 
     &[data-animated='true'] {
-      overflow: hidden;
+      scrollbar-width: none;
+
+      overflow: -moz-scrollbars-none;
+      overflow-x: scroll;
+
       -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
       mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+
+      /* this will hide the scrollbar in internet explorers */
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0 !important;
+        height: 0 !important;
+      }
 
       & > .list {
         flex-wrap: nowrap;

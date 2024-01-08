@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: clamp(1rem, 2dvw, 3rem);
+  margin-bottom: clamp(1rem, 5dvw, 3rem);
 }
 
 .heading {

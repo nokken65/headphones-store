@@ -1,19 +1,25 @@
 import React from 'react'
 
-const useScroll = () => {
-  const [scrollY, setScrollY] = React.useState(window.scrollY)
-  const [scrollX, setScrollX] = React.useState(window.scrollX)
+const useScrollX = <SelectorReturn>(selector?: (scrollX: number) => SelectorReturn) => {
+  const scrollX = React.useSyncExternalStore(subscribe, () =>
+    selector === undefined ? window.scrollX : selector(window.scrollX)
+  )
 
-  React.useEffect(() => {
-    const getScroll = (event: Event) => {
-      setScrollX((event.currentTarget as Window).scrollX)
-      setScrollY((event.currentTarget as Window).scrollY)
-    }
-
-    window.addEventListener('scroll', getScroll)
-  }, [])
-
-  return { scrollX, scrollY }
+  return scrollX
 }
 
-export { useScroll }
+const useScrollY = <SelectorReturn>(selector?: (scrollY: number) => SelectorReturn) => {
+  const scrollY = React.useSyncExternalStore(subscribe, () =>
+    selector === undefined ? window.scrollY : selector(window.scrollY)
+  )
+
+  return scrollY
+}
+
+function subscribe(callback: VoidFunction) {
+  window.addEventListener('scroll', callback)
+
+  return () => window.removeEventListener('scroll', callback)
+}
+
+export { useScrollX, useScrollY }

@@ -1,27 +1,26 @@
 import React from 'react'
 
-type UseMediaQueryConfig = {
-  initial?: (() => boolean) | boolean | null
+type MediaQuery = string
+
+function getSnapshot(query: MediaQuery) {
+  return window.matchMedia(query).matches
 }
 
-const useMediaQuery = (query: string, config?: UseMediaQueryConfig) => {
-  const { initial }: UseMediaQueryConfig = { initial: window.matchMedia(query).matches, ...config }
+function subscribe(onChange: VoidFunction, query: MediaQuery) {
+  const mediaQueryList = window.matchMedia(query)
 
-  const [isMatch, setIsMatch] = React.useState(initial)
+  mediaQueryList.addEventListener('change', onChange)
 
-  React.useEffect(() => {
-    const list = window.matchMedia(query)
-
-    setIsMatch(list.matches)
-
-    const onChangeHandler = (event: MediaQueryListEvent) => setIsMatch(event.matches)
-
-    list.addEventListener('change', onChangeHandler)
-
-    return () => list.removeEventListener('change', onChangeHandler)
-  }, [query])
-
-  return isMatch
+  return () => mediaQueryList.removeEventListener('change', onChange)
 }
 
-export { useMediaQuery }
+export function useMediaQuery(query: MediaQuery) {
+  const subscribeMediaQuery = React.useCallback(
+    (onChange: VoidFunction) => subscribe(onChange, query),
+    [query]
+  )
+
+  const matches = React.useSyncExternalStore(subscribeMediaQuery, () => getSnapshot(query))
+
+  return matches
+}

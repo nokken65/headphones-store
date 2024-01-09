@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ColorSchemeSelectorTrigger } from '@/entities/ColorScheme'
+import { ColorSchemeSelectorTrigger } from './ColorSchemeSelectorTrigger'
 
 const _ColorSchemeSelector = () => {
   return (

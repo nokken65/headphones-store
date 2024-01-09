@@ -38,7 +38,7 @@ const PostCard = ({ id, title, date, views, cover, tags }: PostCardProps) => {
         <a
           aria-labelledby={`post-heading-${id}`}
           className={clsx(linkStyles.link, styles.link)}
-          href={'#' + id}
+          href={'/' + id}
         >
           {title}
         </a>

@@ -1,12 +1,10 @@
 import { THEME_ICON_MAP } from '@/shared/constants'
-import { useStore } from '@nanostores/react'
+import { useColorScheme } from '@/shared/theme/hooks/useColorScheme'
 
 import classNames from './ColorSchemeSelectorTrigger.module.css'
 
-import { $currentColorScheme, setCurrentColorScheme } from '../model'
-
 const ColorSchemeSelectorTrigger = () => {
-  const currentColorScheme = useStore($currentColorScheme)
+  const [currentColorScheme, setCurrentColorScheme] = useColorScheme()
 
   return (
     <button

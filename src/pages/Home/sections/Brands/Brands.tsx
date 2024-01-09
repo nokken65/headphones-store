@@ -2,16 +2,15 @@ import React from 'react'
 
 import { BrandCard } from '@/entities/Brand'
 import { BRANDS } from '@/entities/Brand/mocks/brands'
-import { colorSchemeModel } from '@/entities/ColorScheme'
 import { containerStyles } from '@/shared/components/Container'
 import { Marquee } from '@/shared/components/Marquee'
 import { sectionStyles } from '@/shared/components/Section'
+import { useColorScheme } from '@/shared/theme/hooks/useColorScheme'
 import { getColorScheme } from '@/shared/theme/utils/getColorScheme'
-import { useStore } from '@nanostores/react'
 import clsx from 'clsx'
 
 const _Brands = () => {
-  const colorScheme = useStore(colorSchemeModel.$currentColorScheme)
+  const [colorScheme] = useColorScheme()
 
   return (
     <section aria-labelledby={'brands-heading'} className={sectionStyles.section}>

@@ -1,5 +1,3 @@
-import type { ColorScheme } from '../types'
-
 import React from 'react'
 
 import { setCSSStyleSheet } from '@/shared/theme/utils/setCSSStyleSheet'
@@ -7,8 +5,11 @@ import { setCSSStyleSheet } from '@/shared/theme/utils/setCSSStyleSheet'
 import { common } from '../themes/common'
 import { getTheme } from '../utils/getTheme'
 import { objToArray } from '../utils/objToArray'
+import { useColorScheme } from './useColorScheme'
 
-const useTheme = (colorScheme: ColorScheme) => {
+const useTheme = () => {
+  const [colorScheme] = useColorScheme()
+
   React.useInsertionEffect(() => {
     setCSSStyleSheet({
       vars: objToArray(common),

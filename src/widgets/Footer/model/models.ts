@@ -1,4 +1,5 @@
-type LinkText = { href: string; text: string }
-type LinkIcon = { href: string; id: string; label: string }
+import { RouteInstance, RouteParams } from 'atomic-router'
 
-export type { LinkIcon, LinkText }
+type NavLink = { to: RouteInstance<RouteParams>; label: string }
+
+export type { NavLink }

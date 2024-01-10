@@ -1,5 +1,3 @@
-import type { NavLink } from './model/models'
-
 import React from 'react'
 
 import { DisclosureContent, DisclosureTrigger, useDisclosure } from '@/shared/components/Disclosure'
@@ -7,6 +5,7 @@ import { useMediaQuery } from '@/shared/hooks/useMediaQuery'
 
 import styles from './NavigationSection.module.css'
 
+import { NavLink } from '../model/models'
 import { LinksList } from './LinksList'
 
 type NavigationSectionProps = {

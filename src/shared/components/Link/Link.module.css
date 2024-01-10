@@ -3,24 +3,18 @@
     cursor: pointer;
     position: relative;
 
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      height: 2px;
-    }
-
     &::before {
-      left: 0;
-      width: 100%;
-      background-color: var(--colors-text);
-    }
+      content: '';
 
-    &::after {
+      position: absolute;
       right: 0;
+      bottom: 0;
+
       width: 0%;
+      height: 2px;
+
       background-color: var(--colors-link);
+
       transition: width 0.2s ease-in-out;
     }
 
@@ -34,15 +28,19 @@
       outline-offset: 0.1rem;
     }
 
-    &:hover::after,
-    &:focus-visible::after {
+    &:has(svg)::before {
+      display: none;
+    }
+
+    &:hover::before,
+    &:focus-visible::before {
       right: unset;
       left: 0;
       width: 100%;
     }
+  }
 
-    &:has(svg)::before {
-      display: none;
-    }
+  .active {
+    color: var(--colors-link);
   }
 }

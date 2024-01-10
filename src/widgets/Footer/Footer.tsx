@@ -8,15 +8,15 @@ import twitterIconId from '@/assets/images/svg/twitter.svg'
 import whatsappIconId from '@/assets/images/svg/whatsapp.svg'
 import youtubeIconId from '@/assets/images/svg/youtube.svg'
 import { containerStyles } from '@/shared/components/Container'
+import { routes } from '@/shared/config/routes'
 import clsx from 'clsx'
 
 import styles from './Footer.module.css'
 
-import { LinksListIcon } from './LinksList'
 import { NavigationSection } from './NavigationSection'
-import { LinkIcon, LinkText } from './model/models'
+import { NavLink } from './model/models'
 
-type TNavigationSection<Item = LinkText> = {
+type TNavigationSection<Item = NavLink> = {
   heading: string
   items: Item[]
 }
@@ -24,56 +24,41 @@ type TNavigationSection<Item = LinkText> = {
 const ACCOUNT_LIST: TNavigationSection = {
   heading: 'Account',
   items: [
-    { text: 'Wishlist', href: '#' },
-    { text: 'Cart', href: '#' },
-    { text: 'Track order', href: '#' },
-    { text: 'Shipping details', href: '#' },
+    { label: 'Wishlist', to: routes.index.route },
+    { label: 'Cart', to: routes.index.route },
+    { label: 'Track order', to: routes.index.route },
+    { label: 'Shipping details', to: routes.index.route },
   ],
 }
 
 const LINKS_LIST: TNavigationSection = {
   heading: 'Links',
   items: [
-    { text: 'About us', href: '#' },
-    { text: 'Contacts', href: '#' },
-    { text: 'Hot deals', href: '#' },
-    { text: 'Promotions', href: '#' },
-    { text: 'New products', href: '#' },
+    { label: 'About us', to: routes.index.route },
+    { label: 'Contacts', to: routes.index.route },
+    { label: 'Hot deals', to: routes.index.route },
+    { label: 'Promotions', to: routes.index.route },
+    { label: 'New products', to: routes.index.route },
   ],
 }
 const HELP_LIST: TNavigationSection = {
   heading: 'Help',
   items: [
-    { text: 'Payments', href: '#' },
-    { text: 'Refund', href: '#' },
-    { text: 'Checkout', href: '#' },
-    { text: 'Shipping', href: '#' },
-    { text: 'Q&A', href: '#' },
-    { text: 'Privacy Policy', href: '#' },
+    { label: 'Payments', to: routes.index.route },
+    { label: 'Refund', to: routes.index.route },
+    { label: 'Checkout', to: routes.index.route },
+    { label: 'Shipping', to: routes.index.route },
+    { label: 'Q&A', to: routes.index.route },
+    { label: 'Privacy Policy', to: routes.index.route },
   ],
 }
 
-const CONTACTS_LIST: TNavigationSection<LinkIcon[] | LinkText> = {
+const CONTACTS_LIST: TNavigationSection = {
   heading: 'Contacts',
   items: [
-    { href: '#', text: '+44 20 7234 3456' },
-    { href: '#', text: '+44 20 7234 3456' },
-    { href: '#', text: '+44 20 7234 3456' },
-    [
-      { href: '#', label: 'telegram', id: telegramIconId },
-      { href: '#', label: 'whatsapp', id: whatsappIconId },
-      { href: '#', label: 'email', id: emailIconId },
-    ],
-  ],
-}
-
-const SOCIALS_LIST: Omit<TNavigationSection<LinkIcon>, 'heading'> = {
-  items: [
-    { href: '#', label: 'telegram', id: telegramIconId },
-    { href: '#', label: 'youtube', id: youtubeIconId },
-    { href: '#', label: 'facebook', id: facebookIconId },
-    { href: '#', label: 'twitter', id: twitterIconId },
-    { href: '#', label: 'instagram', id: instagramIconId },
+    { to: routes.index.route, label: '+44 20 7234 3456' },
+    { to: routes.index.route, label: '+44 20 7234 3456' },
+    { to: routes.index.route, label: '+44 20 7234 3456' },
   ],
 }
 
@@ -86,10 +71,6 @@ const _Footer = () => {
         <NavigationSection heading={HELP_LIST.heading} items={HELP_LIST.items} />
         <NavigationSection heading={CONTACTS_LIST.heading} items={CONTACTS_LIST.items} />
       </div>
-      <nav aria-label={'socials'} className={styles.socialsNav}>
-        <LinksListIcon className={styles.socialsList} items={SOCIALS_LIST.items} />
-      </nav>
-      <small className={styles.copyright}>© 2022, All rights reserved</small>
     </footer>
   )
 }
